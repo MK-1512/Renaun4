@@ -6,10 +6,12 @@ export const HeroVideoWheel = () => {
   return (
     <div className="relative w-full max-w-[1900px] h-[220px] sm:h-[300px] md:h-[360px] overflow-hidden flex justify-center items-start mt-6">
       {/* Giant Rotating Wheel */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-        className="relative w-[1100px] sm:w-[1350px] md:w-[1580px] aspect-square flex-shrink-0 origin-center"
+      <div
+        className="relative w-[1100px] sm:w-[1350px] md:w-[1580px] aspect-square flex-shrink-0 origin-center animate-spin-wheel"
+        style={{
+          animation: "spinWheel 60s linear infinite",
+          willChange: "transform",
+        }}
       >
         {heroVideosData.map((item, idx) => {
           // Calculate polar coordinates on the wheel's perimeter
@@ -34,19 +36,23 @@ export const HeroVideoWheel = () => {
                 loop
                 muted
                 playsInline
-                preload="metadata"
+                preload="auto"
+                onLoadedMetadata={(e) => {
+                  e.currentTarget.muted = true;
+                  e.currentTarget.play().catch(() => {});
+                }}
                 className="w-full h-full object-cover select-none pointer-events-none"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
             </div>
           );
         })}
-      </motion.div>
+      </div>
 
       {/* Subtle fade overlays at the edges for smooth blending */}
-      <div className="absolute inset-y-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-[#fbfde9] to-transparent pointer-events-none z-10" />
-      <div className="absolute inset-y-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-[#fbfde9] to-transparent pointer-events-none z-10" />
-      <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#fbfde9] to-transparent pointer-events-none z-10" />
+      <div className="absolute inset-y-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-[#08090a] to-transparent pointer-events-none z-10" />
+      <div className="absolute inset-y-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-[#08090a] to-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#08090a] to-transparent pointer-events-none z-10" />
     </div>
   );
 };

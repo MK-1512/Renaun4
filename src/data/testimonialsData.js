@@ -15,7 +15,7 @@ export const testimonialsData = [
     rating: "4.5/5",
     stars: 5,
     quote:
-      '"Viralize helped our brand grow faster with clear strategy better content and consistent social engagement results"',
+      '"Renaun4 helped our brand grow faster with clear strategy better content and consistent social engagement results"',
     avatar:
       "https://framerusercontent.com/images/Bo1arJSjQszj3p0xQ0skJr4JMBY.png?width=1200&height=679",
   },

@@ -2,7 +2,7 @@ export const faqData = {
   header: {
     badge: "FAQ",
     title: "Frequently Asked Questions",
-    subtitle: "Everything you need to know about Viralize",
+    subtitle: "Everything you need to know about Renaun4",
   },
   card: {
     title: "Have questions?",

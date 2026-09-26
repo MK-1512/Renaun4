@@ -39,15 +39,15 @@ export const CaseStudyDetailPage = () => {
   };
 
   return (
-    <div className="w-full flex flex-col bg-[#fbfde9]">
+    <div className="w-full flex flex-col bg-[#08090a]">
       {/* Top Banner */}
-      <section className="relative w-full pt-36 sm:pt-44 md:pt-48 pb-14 px-4 sm:px-6 lg:px-8 border-b border-black/5">
+      <section className="relative w-full pt-36 sm:pt-44 md:pt-48 pb-14 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         <div className="max-w-5xl mx-auto flex flex-col gap-6">
           {/* Back link & Category Badge */}
           <div className="flex items-center justify-between">
             <Link
               to="/case-study"
-              className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-neutral-600 hover:text-black transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to Case Studies</span>
@@ -60,21 +60,21 @@ export const CaseStudyDetailPage = () => {
 
           {/* Heading */}
           <div className="flex flex-col gap-2">
-            <span className="text-sm font-mono text-[#a5b00f] uppercase tracking-wider">
+            <span className="text-sm font-mono text-[#d2e823] uppercase tracking-wider">
               {study.subtitle}
             </span>
-            <h1 className="font-heading font-bold text-4xl sm:text-6xl md:text-7xl text-[#0a0a0a] tracking-tight leading-[1.05]">
+            <h1 className="font-heading font-bold text-4xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[1.05]">
               {study.title}
             </h1>
           </div>
 
           {/* Project Meta Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 rounded-2xl bg-white/70 border border-black/5 mt-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 rounded-2xl bg-[#0e1014] border border-white/10 mt-4 shadow-sm">
             <div>
               <span className="text-xs font-mono uppercase text-neutral-400 block mb-1">
                 Category
               </span>
-              <span className="font-heading font-semibold text-base text-[#0a0a0a]">
+              <span className="font-heading font-semibold text-base text-white">
                 {study.category}
               </span>
             </div>
@@ -82,7 +82,7 @@ export const CaseStudyDetailPage = () => {
               <span className="text-xs font-mono uppercase text-neutral-400 block mb-1">
                 Year
               </span>
-              <span className="font-heading font-semibold text-base text-[#0a0a0a]">
+              <span className="font-heading font-semibold text-base text-white">
                 {study.year}
               </span>
             </div>
@@ -90,7 +90,7 @@ export const CaseStudyDetailPage = () => {
               <span className="text-xs font-mono uppercase text-neutral-400 block mb-1">
                 Platforms
               </span>
-              <span className="font-heading font-semibold text-base text-[#0a0a0a]">
+              <span className="font-heading font-semibold text-base text-white">
                 IG, TikTok, Meta
               </span>
             </div>
@@ -98,7 +98,7 @@ export const CaseStudyDetailPage = () => {
               <span className="text-xs font-mono uppercase text-neutral-400 block mb-1">
                 Timeline
               </span>
-              <span className="font-heading font-semibold text-base text-[#0a0a0a]">
+              <span className="font-heading font-semibold text-base text-white">
                 90 Days System
               </span>
             </div>
@@ -156,14 +156,14 @@ export const CaseStudyDetailPage = () => {
       <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto flex flex-col gap-16">
           {/* Introduction & Overview */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-white/70 border border-black/5 flex flex-col gap-4">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#a5b00f]">
+          <div className="p-8 sm:p-10 rounded-3xl bg-[#0e1014] border border-white/10 flex flex-col gap-4 shadow-sm">
+            <span className="text-xs font-mono uppercase tracking-wider text-[#d2e823]">
               Introduction
             </span>
-            <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#0a0a0a]">
+            <h3 className="font-heading font-bold text-2xl sm:text-3xl text-white">
               {study.overview}
             </h3>
-            <p className="text-base text-neutral-600 leading-relaxed">
+            <p className="text-base text-neutral-300 leading-relaxed font-body">
               {study.introduction}
             </p>
           </div>
@@ -171,23 +171,23 @@ export const CaseStudyDetailPage = () => {
           {/* Challenge & Approach 2-column Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* The Challenge */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-[#111418] text-white border border-white/10 flex flex-col gap-6">
+            <div className="p-8 sm:p-10 rounded-3xl bg-[#0e1014] text-white border border-white/10 flex flex-col gap-6 shadow-sm">
               <div className="flex items-center gap-2">
                 <AlertCircle className="w-5 h-5 text-[#d2e823]" />
                 <span className="text-xs font-mono uppercase tracking-wider text-[#d2e823]">
                   The Challenge
                 </span>
               </div>
-              <h4 className="font-heading font-bold text-2xl">
+              <h4 className="font-heading font-bold text-2xl text-white">
                 Main Issues Faced
               </h4>
               <ul className="flex flex-col gap-3.5">
                 {study.challenges.map((c, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-sm text-neutral-300"
+                    className="flex items-start gap-3 text-sm text-neutral-300 font-body"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#d2e823] mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#d2e823] mt-2 flex-shrink-0 shadow-[0_0_6px_#d2e823]" />
                     <span>{c}</span>
                   </li>
                 ))}
@@ -195,23 +195,23 @@ export const CaseStudyDetailPage = () => {
             </div>
 
             {/* Our Approach */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-white border border-black/10 flex flex-col gap-6 shadow-sm">
+            <div className="p-8 sm:p-10 rounded-3xl bg-[#0e1014] border border-[#d2e823]/40 flex flex-col gap-6 shadow-[0_0_25px_rgba(210,232,35,0.12)]">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-                <span className="text-xs font-mono uppercase tracking-wider text-emerald-700">
+                <CheckCircle2 className="w-5 h-5 text-[#d2e823]" />
+                <span className="text-xs font-mono uppercase tracking-wider text-[#d2e823]">
                   Our Approach
                 </span>
               </div>
-              <h4 className="font-heading font-bold text-2xl text-[#0a0a0a]">
+              <h4 className="font-heading font-bold text-2xl text-white">
                 The Growth System
               </h4>
               <ul className="flex flex-col gap-3.5">
                 {study.approaches.map((a, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-sm text-neutral-700"
+                    className="flex items-start gap-3 text-sm text-neutral-300 font-body"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#a5b00f] mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#d2e823] mt-2 flex-shrink-0 shadow-[0_0_6px_#d2e823]" />
                     <span>{a}</span>
                   </li>
                 ))}
@@ -220,18 +220,18 @@ export const CaseStudyDetailPage = () => {
           </div>
 
           {/* Highlights in Action */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-white/70 border border-black/5 flex flex-col gap-6">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#a5b00f]">
+          <div className="p-8 sm:p-10 rounded-3xl bg-[#0e1014] border border-white/10 flex flex-col gap-6 shadow-sm">
+            <span className="text-xs font-mono uppercase tracking-wider text-[#d2e823]">
               Content in Action
             </span>
-            <h4 className="font-heading font-bold text-2xl text-[#0a0a0a]">
+            <h4 className="font-heading font-bold text-2xl text-white">
               Highlights & Production Focus
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
               {study.highlights.map((h, i) => (
                 <div
                   key={i}
-                  className="p-4 rounded-2xl bg-white border border-black/5 text-sm font-medium text-neutral-800"
+                  className="p-4 rounded-2xl bg-white/[0.04] border border-white/10 text-sm font-medium text-neutral-200"
                 >
                   {h}
                 </div>
@@ -241,7 +241,7 @@ export const CaseStudyDetailPage = () => {
 
           {/* Client Feedback Card */}
           {study.testimonial && (
-            <div className="p-8 sm:p-12 rounded-3xl bg-[#0a0a0a] text-white border border-white/10 flex flex-col gap-6">
+            <div className="p-8 sm:p-12 rounded-3xl bg-[#0e1014] text-white border border-[#d2e823]/30 shadow-[0_0_30px_rgba(210,232,35,0.12)] flex flex-col gap-6">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono uppercase tracking-wider text-[#d2e823]">
                   Client Feedback

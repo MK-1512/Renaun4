@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Badge } from "../atoms/Badge";
 import { Button } from "../atoms/Button";
 import { HeroVideoWheel } from "./HeroVideoWheel";
@@ -6,36 +7,68 @@ import { siteData } from "../../data/siteData";
 
 export const HeroSection = () => {
   return (
-    <section className="relative w-full bg-[#fbfde9] pt-32 sm:pt-40 md:pt-44 pb-12 overflow-hidden flex flex-col items-center text-center">
+    <section className="relative w-full bg-[#08090a] pt-32 sm:pt-40 md:pt-44 pb-12 overflow-hidden flex flex-col items-center text-center">
+      {/* Subtle Ambient Radial Neon Glow behind Hero Title */}
+      <div className="absolute top-28 sm:top-36 left-1/2 -translate-x-1/2 w-[550px] sm:w-[750px] h-[300px] sm:h-[400px] bg-[#d2e823]/[0.07] blur-[140px] pointer-events-none rounded-full" />
+
       {/* Container */}
       <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col items-center">
         {/* Top Badge */}
-        <Badge
-          variant="cream"
-          hasDot
-          className="mb-6 shadow-sm border border-black/10 bg-[#ebf59a]"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
         >
-          Trusted by global brands
-        </Badge>
+          <Badge variant="cream" hasDot className="mb-6">
+            Trusted by global brands
+          </Badge>
+        </motion.div>
 
         {/* Main H1 Heading */}
-        <h1 className="font-heading font-bold text-4xl sm:text-6xl md:text-7xl lg:text-[76px] tracking-tight text-[#0a0a0a] leading-[1.08] max-w-4xl mx-auto mb-6">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.7,
+            delay: 0.1,
+            ease: [0.21, 0.47, 0.32, 0.98],
+          }}
+          className="font-heading font-bold text-4xl sm:text-6xl md:text-7xl lg:text-[76px] tracking-tight text-white leading-[1.08] max-w-4xl mx-auto mb-6"
+        >
           Build, Grow, and Scale Your Brand on Social Media
-        </h1>
+        </motion.h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto mb-10 leading-relaxed font-body">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.7,
+            delay: 0.2,
+            ease: [0.21, 0.47, 0.32, 0.98],
+          }}
+          className="text-base sm:text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-10 leading-relaxed font-body"
+        >
           {siteData.description}
-        </p>
+        </motion.p>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 mb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.7,
+            delay: 0.3,
+            ease: [0.21, 0.47, 0.32, 0.98],
+          }}
+          className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 mb-6"
+        >
           <Button
             to="/case-study"
-            variant="dark"
+            variant="primary"
             size="lg"
             showArrow
-            className="shadow-xl px-7"
+            className="shadow-[0_0_25px_rgba(210,232,35,0.3)] px-7 font-bold"
           >
             Case Studies
           </Button>
@@ -45,11 +78,11 @@ export const HeroSection = () => {
             variant="white"
             size="lg"
             showArrow
-            className="shadow-md px-7 border border-black/10"
+            className="px-7 border border-white/15 hover:border-[#d2e823]/50"
           >
             Explore Service
           </Button>
-        </div>
+        </motion.div>
       </div>
 
       {/* Signature Rotating Circular Video Wheel */}

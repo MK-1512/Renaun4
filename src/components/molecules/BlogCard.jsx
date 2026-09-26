@@ -15,43 +15,40 @@ export const BlogCard = ({
     <Link
       to={`/blog/${slug}`}
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-3xl bg-[#111418] border border-white/10 p-6 transition-all duration-300",
-        "hover:border-[#d2e823]/40 hover:shadow-xl",
+        "group flex flex-col cursor-pointer select-none",
         className,
       )}
     >
-      {/* Featured Image */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-neutral-900 mb-6">
+      {/* Top Image Container: Blurs on hover and reveals centered 'See Details' */}
+      <div className="relative aspect-[4/3] sm:aspect-[1.2/1] w-full overflow-hidden rounded-[28px] sm:rounded-[36px] bg-[#0e1014] border border-white/10 transition-all duration-500 group-hover:border-[#d2e823]/60 group-hover:shadow-[0_0_35px_rgba(210,232,35,0.22)]">
+        {/* Background Image: blurs and slightly zooms on hover */}
         <img
           src={image}
           alt={title}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-md"
           loading="lazy"
         />
+
+        {/* Hover Centered 'See Details' Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          <span className="font-heading font-bold text-2xl sm:text-3xl text-white tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] group-hover:text-[#d2e823] transition-colors">
+            See Details
+          </span>
+        </div>
       </div>
 
-      {/* Meta Date and Read Time */}
-      <div className="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-3">
-        <span>{date}</span>
-        <span>•</span>
-        <span>{readTime}</span>
-      </div>
-
-      {/* Title & Description */}
-      <div className="flex flex-col gap-2 flex-grow">
-        <h3 className="font-heading font-bold text-xl text-white group-hover:text-[#d2e823] transition-colors duration-200">
+      {/* Content Below the Image Frame (Date, Title, Description) */}
+      <div className="flex flex-col mt-4 sm:mt-5 px-1">
+        <span className="text-xs font-mono text-neutral-400">{date}</span>
+        <h3 className="font-heading font-bold text-lg sm:text-xl md:text-2xl text-white tracking-tight mt-1.5 leading-snug group-hover:text-[#d2e823] transition-colors duration-200">
           {title}
         </h3>
-        <p className="text-sm text-neutral-400 line-clamp-2 leading-relaxed">
+        <p className="text-xs sm:text-sm text-neutral-400 mt-1.5 leading-relaxed line-clamp-2">
           {description}
         </p>
-      </div>
-
-      {/* Footer Link */}
-      <div className="flex items-center justify-between mt-6 pt-4 border-t border-white/10 text-xs font-mono uppercase tracking-wider text-neutral-300 group-hover:text-[#d2e823]">
-        <span>See Details</span>
-        <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       </div>
     </Link>
   );
 };
+
+export default BlogCard;

@@ -1,4 +1,4 @@
-# VirallHub - Social Media Marketing Agency Website Replication
+# Renaun4 - Social Media Marketing Agency Website Replication
 
 A 100% exact, pixel-perfect replication of [https://virulhub.framer.website/](https://virulhub.framer.website/) built with **React**, **Tailwind CSS**, and **Framer Motion** utilizing **Atomic Design & Component-Based Architecture**.
 

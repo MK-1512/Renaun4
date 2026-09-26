@@ -18,10 +18,10 @@ export const ServiceCard = ({
     <div
       onMouseLeave={() => setIsRevealed(false)}
       className={cn(
-        "relative flex flex-col justify-between overflow-hidden rounded-[32px] p-7 sm:p-8 transition-colors duration-300 min-h-[490px] select-none",
+        "relative flex flex-col justify-between overflow-hidden rounded-[32px] p-7 sm:p-8 transition-all duration-300 min-h-[490px] select-none",
         isRevealed
-          ? "bg-[#d2e823] border border-[#c4da1d] shadow-[0_12px_36px_rgba(210,232,35,0.25)]"
-          : "bg-[#eef9a8] border border-[#d2e823] hover:shadow-[0_8px_30px_rgba(210,232,35,0.18)]",
+          ? "bg-[#111418] border border-[#d2e823]/60 shadow-[0_0_40px_rgba(210,232,35,0.22)]"
+          : "bg-[#0e1014] border border-white/10 hover:border-[#d2e823]/50 hover:shadow-[0_0_30px_rgba(210,232,35,0.15)]",
         className,
       )}
     >
@@ -40,17 +40,17 @@ export const ServiceCard = ({
               <img
                 src={image}
                 alt={title}
-                className="max-h-full max-w-[85%] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.15)] transition-transform duration-300 hover:scale-105"
+                className="max-h-full max-w-[85%] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] transition-transform duration-300 hover:scale-105"
                 loading="lazy"
               />
             </div>
 
             {/* Title & Subtitle */}
             <div className="flex flex-col items-center gap-2.5 my-auto">
-              <h3 className="font-heading font-bold text-2xl sm:text-[26px] text-black tracking-tight leading-tight">
+              <h3 className="font-heading font-bold text-2xl sm:text-[26px] text-white tracking-tight leading-tight">
                 {title}
               </h3>
-              <p className="text-sm text-neutral-800 leading-relaxed max-w-[270px]">
+              <p className="text-sm text-neutral-400 leading-relaxed max-w-[270px]">
                 {subtitle}
               </p>
             </div>
@@ -62,7 +62,7 @@ export const ServiceCard = ({
                 onMouseEnter={() => setIsRevealed(true)}
                 onClick={() => setIsRevealed(true)}
                 aria-label={`View includes for ${title}`}
-                className="w-12 h-12 rounded-full bg-[#d2e823] flex items-center justify-center text-black shadow-[0_4px_16px_rgba(210,232,35,0.9)] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
+                className="w-12 h-12 rounded-full bg-[#d2e823] flex items-center justify-center text-black shadow-[0_0_20px_rgba(210,232,35,0.55)] hover:bg-[#dff15c] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
               >
                 <ArrowUp className="w-5 h-5 stroke-[2.5]" />
               </button>
@@ -79,26 +79,26 @@ export const ServiceCard = ({
           >
             {/* Top Title & Subtitle */}
             <div className="flex flex-col gap-2 pt-1">
-              <h3 className="font-heading font-bold text-2xl sm:text-[28px] text-black tracking-tight leading-snug">
+              <h3 className="font-heading font-bold text-2xl sm:text-[28px] text-white tracking-tight leading-snug">
                 {title}
               </h3>
-              <p className="text-sm text-neutral-900 leading-relaxed font-body">
+              <p className="text-sm text-neutral-300 leading-relaxed font-body">
                 {subtitle}
               </p>
             </div>
 
             {/* Includes Section */}
             <div className="my-auto py-4">
-              <h4 className="font-heading font-bold text-lg text-black mb-3.5">
+              <h4 className="font-heading font-bold text-lg text-[#d2e823] mb-3.5">
                 Includes:
               </h4>
               <div className="grid grid-cols-2 gap-2.5 sm:gap-3 w-full">
                 {includes.map((item, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-black text-black font-body text-xs sm:text-sm font-medium bg-transparent"
+                    className="flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-white/15 text-white/90 font-body text-xs sm:text-sm font-medium bg-white/[0.04]"
                   >
-                    <span className="w-2 h-2 rounded-full bg-black shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#d2e823] shadow-[0_0_8px_#d2e823] shrink-0" />
                     <span className="truncate">{item}</span>
                   </div>
                 ))}
@@ -111,7 +111,7 @@ export const ServiceCard = ({
                 type="button"
                 onClick={() => setIsRevealed(false)}
                 aria-label={`Close details for ${title}`}
-                className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white shadow-[0_8px_25px_rgba(0,0,0,0.35)] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-all duration-300 cursor-pointer"
               >
                 <X className="w-5 h-5 stroke-[2.5]" />
               </button>

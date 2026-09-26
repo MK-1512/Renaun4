@@ -20,13 +20,15 @@ export const Button = ({
 
   const variants = {
     primary:
-      "bg-[#d2e823] text-black hover:bg-[#dff15c] shadow-[0_2px_12px_rgba(210,232,35,0.3)]",
-    dark: "bg-[#0a0a0a] text-white hover:bg-[#1a1a1a] border border-white/10 hover:border-white/20",
+      "bg-[#d2e823] text-black font-semibold hover:bg-[#dff15c] shadow-[0_0_20px_rgba(210,232,35,0.25)] hover:shadow-[0_0_30px_rgba(210,232,35,0.4)]",
+    dark: "bg-[#0e1014] text-white hover:bg-[#161a22] border border-white/10 hover:border-[#d2e823]/40 shadow-sm",
     white:
-      "bg-white text-black hover:bg-neutral-100 shadow-sm border border-neutral-200",
+      "bg-white/10 text-white hover:bg-white/15 backdrop-blur-md border border-white/15 hover:border-[#d2e823]/40 shadow-sm",
+    secondary:
+      "bg-white/5 text-white hover:bg-white/10 backdrop-blur-md border border-white/10 hover:border-[#d2e823]/30",
     outline:
-      "bg-transparent text-current border border-neutral-300 hover:border-neutral-800 dark:hover:border-white/40",
-    ghost: "bg-transparent text-current hover:bg-black/5 dark:hover:bg-white/5",
+      "bg-transparent text-white border border-white/20 hover:border-[#d2e823] hover:text-[#d2e823]",
+    ghost: "bg-transparent text-neutral-300 hover:text-white hover:bg-white/5",
   };
 
   const sizes = {

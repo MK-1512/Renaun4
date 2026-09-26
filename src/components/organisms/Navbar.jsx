@@ -31,8 +31,9 @@ export const Navbar = () => {
       <div
         className={cn(
           "pointer-events-auto w-full max-w-[880px] rounded-full transition-all duration-300",
-          "bg-black/90 backdrop-blur-md border border-white/10 px-4 sm:px-6 py-2.5 sm:py-3 shadow-2xl",
-          scrolled && "shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-white/15",
+          "bg-[#0a0b0e]/85 backdrop-blur-xl border border-white/10 px-4 sm:px-6 py-2.5 sm:py-3 shadow-2xl",
+          scrolled &&
+            "shadow-[0_10px_35px_rgba(0,0,0,0.8)] border-white/15 border-b-[#d2e823]/30",
         )}
       >
         <div className="flex items-center justify-between w-full">

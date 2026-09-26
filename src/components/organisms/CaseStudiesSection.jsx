@@ -4,14 +4,12 @@ import { Badge } from "../atoms/Badge";
 import { CaseStudyCard } from "../molecules/CaseStudyCard";
 import { caseStudiesData } from "../../data/caseStudiesData";
 
-export const CaseStudiesSection = ({ showAll = false, className = "" }) => {
-  const displayStudies = showAll
-    ? caseStudiesData
-    : caseStudiesData.slice(0, 3);
+export const CaseStudiesSection = ({ showAll = true, className = "" }) => {
+  const displayStudies = caseStudiesData;
 
   return (
     <section
-      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#fbfde9] ${className}`}
+      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#08090a] ${className}`}
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Centered Header Block */}
@@ -20,11 +18,11 @@ export const CaseStudiesSection = ({ showAll = false, className = "" }) => {
             Case Studies
           </Badge>
 
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-black tracking-tight leading-[1.1] mb-4">
+          <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.1] mb-4">
             Growth you can actually measure
           </h2>
 
-          <p className="text-base sm:text-lg text-neutral-600 max-w-xl mb-8 leading-relaxed font-body">
+          <p className="text-base sm:text-lg text-neutral-400 max-w-xl mb-8 leading-relaxed font-body">
             We focus on what matters — engagement, leads, and revenue.
           </p>
 
@@ -32,13 +30,13 @@ export const CaseStudiesSection = ({ showAll = false, className = "" }) => {
           <div className="flex items-center gap-3.5">
             <Link
               to="/blog"
-              className="px-6 py-2.5 rounded-full bg-white border border-[#d2e823] text-black text-sm font-medium hover:bg-[#d2e823]/10 transition-colors shadow-sm"
+              className="px-6 py-2.5 rounded-full bg-white/5 border border-white/15 text-white text-sm font-medium hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-all shadow-sm"
             >
               See Blogs
             </Link>
             <Link
               to="/service"
-              className="px-6 py-2.5 rounded-full bg-black text-white text-sm font-medium hover:bg-neutral-800 transition-colors shadow-sm"
+              className="px-6 py-2.5 rounded-full bg-[#d2e823] text-black text-sm font-semibold hover:bg-[#dff15c] transition-all shadow-[0_0_20px_rgba(210,232,35,0.25)]"
             >
               Explore Service
             </Link>

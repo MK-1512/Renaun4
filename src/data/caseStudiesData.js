@@ -44,7 +44,7 @@ export const caseStudiesData = [
       "Within 90 days, Radiance saw a massive surge across all key brand metrics, tripling engagement and scaling ROAS to 4.6x.",
     testimonial: {
       quote:
-        "Viralize helped our brand grow faster with clear strategy, better content, and consistent social engagement results.",
+        "Renaun4 helped our brand grow faster with clear strategy, better content, and consistent social engagement results.",
       author: "Olivia Bennett",
       role: "Marketing Director of Radiance",
       rating: "4.5 ★★★★★",

@@ -40,7 +40,7 @@ export const TestimonialsSection = ({ className = "" }) => {
 
   return (
     <section
-      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#fbfde9] overflow-hidden ${className}`}
+      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#08090a] overflow-hidden ${className}`}
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Section Header */}
@@ -52,7 +52,7 @@ export const TestimonialsSection = ({ className = "" }) => {
         />
 
         {/* Testimonial Video directly below the subtitle */}
-        <div className="relative w-full max-w-4xl mx-auto rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-black/10 bg-black aspect-video mb-16 sm:mb-20 group">
+        <div className="relative w-full max-w-4xl mx-auto rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.6)] border border-white/10 bg-black aspect-video mb-16 sm:mb-20 group">
           <video
             ref={videoRef}
             src={testimonialVideo}
@@ -69,7 +69,7 @@ export const TestimonialsSection = ({ className = "" }) => {
             <button
               onClick={togglePlay}
               aria-label={isPlaying ? "Pause video" : "Play video"}
-              className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-black transition-colors cursor-pointer"
+              className="w-10 h-10 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-colors cursor-pointer"
             >
               {isPlaying ? (
                 <Pause className="w-4 h-4 fill-white text-white" />
@@ -81,7 +81,7 @@ export const TestimonialsSection = ({ className = "" }) => {
             <button
               onClick={toggleMute}
               aria-label={isMuted ? "Unmute audio" : "Mute audio"}
-              className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-black transition-colors cursor-pointer"
+              className="w-10 h-10 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-colors cursor-pointer"
             >
               {isMuted ? (
                 <VolumeX className="w-4 h-4 text-white" />
@@ -96,10 +96,10 @@ export const TestimonialsSection = ({ className = "" }) => {
       {/* Marquee Ticker: cards moving from right to left with edge fade masks */}
       <div className="relative w-full overflow-hidden">
         {/* Left edge fade gradient */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#fbfde9] to-transparent z-10" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#08090a] to-transparent z-10" />
 
         {/* Right edge fade gradient */}
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#fbfde9] to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#08090a] to-transparent z-10" />
 
         {/* Moving row of testimonial cards */}
         <motion.div

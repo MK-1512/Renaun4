@@ -61,26 +61,26 @@ export const PrivacyPolicyPage = () => {
     {
       title: "9. Contact Information",
       items: [
-        "If you have any questions or data requests, please contact our data privacy officer at privacy@viralize.com.",
+        "If you have any questions or data requests, please contact our data privacy officer at privacy@Renaun4.com.",
       ],
     },
   ];
 
   return (
-    <div className="w-full flex flex-col bg-[#fbfde9] pt-36 sm:pt-44 md:pt-48 pb-24 px-4 sm:px-6 lg:px-8">
+    <div className="w-full flex flex-col bg-[#08090a] pt-36 sm:pt-44 md:pt-48 pb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto flex flex-col gap-10">
         {/* Header */}
-        <div className="flex flex-col gap-4 text-center items-center pb-8 border-b border-black/10">
+        <div className="flex flex-col gap-4 text-center items-center pb-8 border-b border-white/10">
           <Badge variant="lime" hasDot>
             Privacy
           </Badge>
-          <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-[#0a0a0a] tracking-tight">
+          <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight">
             Privacy Policy
           </h1>
-          <p className="text-base text-neutral-600 max-w-xl">
+          <p className="text-base text-neutral-400 max-w-xl">
             How we collect, use, and protect your information.
           </p>
-          <span className="text-xs font-mono text-neutral-500">
+          <span className="text-xs font-mono text-neutral-400">
             Last Updated: March 2026 • Your privacy matters to us
           </span>
         </div>
@@ -90,18 +90,18 @@ export const PrivacyPolicyPage = () => {
           {sections.map((sec, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-3xl bg-white border border-black/5 shadow-sm flex flex-col gap-4"
+              className="p-8 rounded-3xl bg-[#0e1014] border border-white/10 hover:border-[#d2e823]/30 transition-colors shadow-sm flex flex-col gap-4"
             >
-              <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0a0a0a]">
+              <h2 className="font-heading font-bold text-xl sm:text-2xl text-white">
                 {sec.title}
               </h2>
               <ul className="flex flex-col gap-2.5">
                 {sec.items.map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-sm sm:text-base text-neutral-700 leading-relaxed font-body"
+                    className="flex items-start gap-3 text-sm sm:text-base text-neutral-300 leading-relaxed font-body"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#d2e823] ring-1 ring-black/20 mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#d2e823] shadow-[0_0_6px_#d2e823] mt-2 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}

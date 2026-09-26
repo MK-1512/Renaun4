@@ -6,7 +6,7 @@ import { servicesData } from "../../data/servicesData";
 export const ServicesSection = ({ className = "" }) => {
   return (
     <section
-      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#fbfde9] ${className}`}
+      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#08090a] ${className}`}
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Section Header */}

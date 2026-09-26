@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Badge } from "../atoms/Badge";
 import { cn } from "../../utils/cn";
 
@@ -8,7 +9,7 @@ export const SectionHeader = ({
   title,
   subtitle,
   align = "center",
-  theme = "light",
+  theme = "dark",
   className = "",
   titleTag: TitleTag = "h2",
 }) => {
@@ -18,10 +19,14 @@ export const SectionHeader = ({
     right: "text-right items-end",
   };
 
-  const isDark = theme === "dark";
+  const isLight = theme === "light";
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.65, ease: [0.21, 0.47, 0.32, 0.98] }}
       className={cn(
         "flex flex-col gap-4 max-w-3xl",
         alignments[align] || alignments.center,
@@ -29,7 +34,7 @@ export const SectionHeader = ({
       )}
     >
       {badge && (
-        <Badge variant={isDark ? "dark" : badgeVariant} hasDot>
+        <Badge variant={badgeVariant} hasDot>
           {badge}
         </Badge>
       )}
@@ -38,7 +43,7 @@ export const SectionHeader = ({
         <TitleTag
           className={cn(
             "font-heading font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.15]",
-            isDark ? "text-white" : "text-[#0a0a0a]",
+            isLight ? "text-[#0a0a0a]" : "text-white",
           )}
         >
           {title}
@@ -49,12 +54,12 @@ export const SectionHeader = ({
         <p
           className={cn(
             "text-sm sm:text-base md:text-lg leading-relaxed",
-            isDark ? "text-neutral-400" : "text-neutral-600",
+            isLight ? "text-neutral-600" : "text-neutral-400",
           )}
         >
           {subtitle}
         </p>
       )}
-    </div>
+    </motion.div>
   );
 };

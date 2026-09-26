@@ -120,19 +120,14 @@ export const CtaSection = ({
         <div className="pointer-events-none absolute right-0 inset-y-0 w-24 sm:w-48 bg-gradient-to-l from-black via-black/80 to-transparent z-20" />
 
         {/* 3D Rotating Cylinder Ring */}
-        <motion.div
-          animate={{ rotateY: [0, -360] }}
-          transition={{
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 38,
-            ease: "linear",
-          }}
-          className="relative origin-center pointer-events-auto hover:[animation-play-state:paused]"
+        <div
+          className="relative origin-center pointer-events-auto animate-spin-cylinder"
           style={{
             transformStyle: "preserve-3d",
             width: "100%",
             height: "100%",
+            animation: "spinCylinder 38s linear infinite",
+            willChange: "transform",
           }}
         >
           {ctaVideos.map((videoSrc, idx) => {
@@ -160,13 +155,18 @@ export const CtaSection = ({
                   loop
                   muted
                   playsInline
+                  preload="auto"
+                  onLoadedMetadata={(e) => {
+                    e.currentTarget.muted = true;
+                    e.currentTarget.play().catch(() => {});
+                  }}
                   className="w-full h-full object-cover pointer-events-none select-none"
                 />
                 <div className="absolute inset-0 bg-black/10 pointer-events-none" />
               </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

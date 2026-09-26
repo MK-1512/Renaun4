@@ -8,12 +8,14 @@ export const Badge = ({
   hasDot = false,
 }) => {
   const variants = {
-    cream: "bg-[#fbfde9] text-[#0a0a0a] border border-[#0a0a0a]/10",
-    lime: "bg-[#d2e823] text-black font-semibold",
-    limeSubtle: "bg-[#d2e823]/20 text-[#363508] border border-[#d2e823]/40",
-    dark: "bg-[#111418] text-[#fbfde9] border border-white/10",
-    white: "bg-white text-black border border-black/10 shadow-sm",
-    outline: "bg-transparent text-current border border-current/20",
+    cream:
+      "bg-[#d2e823]/10 text-[#d2e823] border border-[#d2e823]/30 shadow-[0_0_15px_rgba(210,232,35,0.12)] font-semibold",
+    lime: "bg-[#d2e823] text-black font-bold shadow-[0_0_20px_rgba(210,232,35,0.35)]",
+    limeSubtle:
+      "bg-[#d2e823]/15 text-[#d2e823] border border-[#d2e823]/40 shadow-[0_0_12px_rgba(210,232,35,0.15)]",
+    dark: "bg-[#0e1014] text-[#d2e823] border border-white/10 shadow-sm",
+    white: "bg-white/10 text-white border border-white/20 backdrop-blur-md",
+    outline: "bg-transparent text-[#d2e823] border border-[#d2e823]/30",
   };
 
   return (
@@ -25,9 +27,11 @@ export const Badge = ({
       )}
     >
       {hasDot && (
-        <span className="w-1.5 h-1.5 rounded-full bg-[black] ring-2 ring-black/20" />
+        <span className="w-1.5 h-1.5 rounded-full bg-[#d2e823] shadow-[0_0_8px_#d2e823]" />
       )}
       {children}
     </span>
   );
 };
+
+export default Badge;

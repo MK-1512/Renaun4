@@ -40,9 +40,9 @@ export const ContactPage = () => {
   };
 
   return (
-    <div className="w-full flex flex-col bg-[#fbfde9]">
+    <div className="w-full flex flex-col bg-[#08090a]">
       {/* Contact Banner */}
-      <section className="relative w-full pt-36 sm:pt-44 md:pt-48 pb-12 px-4 sm:px-6 lg:px-8 border-b border-black/5">
+      <section className="relative w-full pt-36 sm:pt-44 md:pt-48 pb-12 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
           <SectionHeader
             badge="Contact Us"
@@ -59,7 +59,7 @@ export const ContactPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Form Column (7 Cols) */}
-            <div className="lg:col-span-7 p-8 sm:p-12 rounded-3xl bg-[#0a0a0a] text-white border border-white/10 shadow-2xl">
+            <div className="lg:col-span-7 p-8 sm:p-12 rounded-3xl bg-[#0e1014] text-white border border-white/10 shadow-2xl">
               <div className="flex flex-col gap-2 mb-8">
                 <span className="text-xs font-mono uppercase tracking-wider text-[#d2e823]">
                   Form
@@ -200,10 +200,10 @@ export const ContactPage = () => {
             {/* Info Cards Column (5 Cols) */}
             <div className="lg:col-span-5 flex flex-col gap-6">
               <div className="flex flex-col gap-2 mb-2">
-                <span className="text-xs font-mono uppercase tracking-wider text-[#a5b00f]">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#d2e823]">
                   Help
                 </span>
-                <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#0a0a0a]">
+                <h3 className="font-heading font-bold text-2xl sm:text-3xl text-white">
                   Reach out to us, we’re ready to help
                 </h3>
               </div>

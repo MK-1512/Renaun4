@@ -6,8 +6,8 @@ import { Badge } from "../atoms/Badge";
 import { cn } from "../../utils/cn";
 
 export const PricingSection = ({ className = "" }) => {
-  // "left" is initially active, matching screenshot
-  const [hoveredCard, setHoveredCard] = useState("left");
+  // "right" ("Growth") is initially active to match the user's screenshot
+  const [hoveredCard, setHoveredCard] = useState("right");
   const [billingCycle, setBillingCycle] = useState("monthly");
 
   const leftPrice = billingCycle === "monthly" ? "3,990€" : "3,190€";
@@ -23,7 +23,7 @@ export const PricingSection = ({ className = "" }) => {
   const premiumFeatures = [
     "Everything in Starter",
     "Daily posting & engagement",
-    "Daily posting & engagement",
+    "Dedicated content strategist",
     "Paid ads setup & management",
   ];
 
@@ -35,7 +35,7 @@ export const PricingSection = ({ className = "" }) => {
 
   return (
     <section
-      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#fbfde9] ${className}`}
+      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#08090a] ${className}`}
     >
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Section Header */}
@@ -43,65 +43,68 @@ export const PricingSection = ({ className = "" }) => {
           <Badge variant="lime" hasDot className="mb-4">
             Pricing
           </Badge>
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-black tracking-tight leading-[1.1] mb-4">
+          <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.1] mb-4">
             Simple pricing.
             <br />
             Scalable growth.
           </h2>
-          <p className="text-base sm:text-lg text-neutral-600 max-w-xl leading-relaxed font-body">
+          <p className="text-base sm:text-lg text-neutral-400 max-w-xl leading-relaxed font-body">
             Choose a plan that fits your stage — and scale as you grow.
           </p>
         </div>
 
-        {/* 2 Interactive Accordion Cards */}
-        <div className="flex flex-col lg:flex-row gap-6 w-full items-stretch min-h-[460px]">
+        {/* 2 Interactive Accordion Cards with CONSTANT height and WIDTH expansion only */}
+        <div className="flex flex-col lg:flex-row gap-6 w-full items-stretch lg:h-[500px]">
           {/* ================= LEFT CARD (BASIC / STARTER) ================= */}
-          <motion.div
-            layout
-            transition={{ type: "spring", stiffness: 240, damping: 26 }}
+          <div
             onMouseEnter={() => setHoveredCard("left")}
             onClick={() => setHoveredCard("left")}
+            style={{
+              flex: hoveredCard === "left" ? "1.85 1 0%" : "1 1 0%",
+              willChange: "flex",
+            }}
             className={cn(
-              "relative rounded-[32px] p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 cursor-pointer overflow-hidden",
+              "relative rounded-[32px] p-7 sm:p-8 md:p-9 flex flex-col justify-between cursor-pointer overflow-hidden transition-[flex,box-shadow,border-color] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]",
+              "lg:h-full lg:max-h-[500px] lg:min-h-[500px]",
               hoveredCard === "left"
-                ? "lg:flex-[1.85] bg-white border-2 border-[#d2e823] shadow-[0_12px_40px_rgba(210,232,35,0.18)]"
-                : "lg:flex-[1] bg-white/90 border border-black/10 hover:border-[#d2e823]/60 shadow-sm",
+                ? "bg-[#0e1014] border-2 border-[#d2e823] shadow-[0_0_35px_rgba(210,232,35,0.18)] text-white"
+                : "bg-[#0e1014] border border-white/10 text-white hover:border-[#d2e823]/50 shadow-sm",
             )}
           >
             <div>
               {/* Header */}
-              <div className="flex items-start justify-between w-full mb-6">
+              <div className="flex items-start justify-between w-full mb-5">
                 <div>
-                  <h3 className="font-heading font-bold text-2xl sm:text-3xl text-black">
+                  <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-white">
                     Starter
                   </h3>
-                  <p className="text-xs sm:text-sm text-neutral-500 font-body mt-1">
+                  <p className="text-xs sm:text-sm text-neutral-400 font-body mt-1">
                     Small businesses starting their social presence
                   </p>
                 </div>
-                <span className="bg-[#d2e823] text-black font-bold text-xs px-3.5 py-1 rounded-full flex items-center gap-1.5 shadow-sm shrink-0">
+                <span className="bg-[#d2e823] text-black font-bold text-xs px-3.5 py-1 rounded-full flex items-center gap-1.5 shadow-[0_0_12px_rgba(210,232,35,0.3)] shrink-0">
                   <Star className="w-3.5 h-3.5 fill-black text-black" />
                   Basic
                 </span>
               </div>
 
               {/* Body Content */}
-              <div className="flex flex-col md:flex-row gap-6 md:gap-8 my-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 my-3">
                 {/* Column 1: Features Included */}
-                <div className="flex-1 min-w-[220px]">
-                  <h4 className="font-heading font-bold text-sm sm:text-base text-black mb-3.5">
+                <div className="min-w-0">
+                  <h4 className="font-heading font-bold text-sm sm:text-base text-white mb-3">
                     Features included:
                   </h4>
                   <ul className="flex flex-col gap-2.5">
                     {basicFeatures.map((feat, idx) => (
                       <li
                         key={idx}
-                        className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-800 font-body"
+                        className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-300 font-body"
                       >
-                        <div className="w-4 h-4 rounded-full bg-black text-white flex items-center justify-center shrink-0">
+                        <div className="w-4 h-4 rounded-full bg-[#d2e823]/20 border border-[#d2e823]/50 text-[#d2e823] flex items-center justify-center shrink-0">
                           <Check className="w-2.5 h-2.5 stroke-[3]" />
                         </div>
-                        <span>{feat}</span>
+                        <span className="truncate">{feat}</span>
                       </li>
                     ))}
                   </ul>
@@ -111,19 +114,19 @@ export const PricingSection = ({ className = "" }) => {
                 <AnimatePresence>
                   {hoveredCard === "left" && (
                     <motion.div
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: 20 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                       transition={{ duration: 0.25 }}
-                      className="flex-1 min-w-[230px] flex flex-col justify-between pt-2 md:pt-0"
+                      className="min-w-0 flex flex-col justify-between pt-2 md:pt-0"
                     >
                       {/* Billing Cycle Pill */}
                       <div>
                         <div className="flex items-center justify-between gap-2 mb-2">
-                          <span className="font-heading font-semibold text-xs sm:text-sm text-black">
-                            Select Billing Cyle
+                          <span className="font-heading font-semibold text-xs sm:text-sm text-white">
+                            Select Billing Cycle
                           </span>
-                          <div className="bg-neutral-900 p-1 rounded-full inline-flex items-center gap-1">
+                          <div className="bg-white/5 border border-white/10 p-1 rounded-full inline-flex items-center gap-1">
                             <button
                               type="button"
                               onClick={(e) => {
@@ -133,7 +136,7 @@ export const PricingSection = ({ className = "" }) => {
                               className={cn(
                                 "px-3.5 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer",
                                 billingCycle === "monthly"
-                                  ? "bg-white text-black shadow-sm"
+                                  ? "bg-[#d2e823] text-black shadow-sm"
                                   : "text-neutral-400 hover:text-white",
                               )}
                             >
@@ -148,7 +151,7 @@ export const PricingSection = ({ className = "" }) => {
                               className={cn(
                                 "px-3.5 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer",
                                 billingCycle === "yearly"
-                                  ? "bg-white text-black shadow-sm"
+                                  ? "bg-[#d2e823] text-black shadow-sm"
                                   : "text-neutral-400 hover:text-white",
                               )}
                             >
@@ -158,18 +161,18 @@ export const PricingSection = ({ className = "" }) => {
                         </div>
 
                         {/* Additional Benefits */}
-                        <div className="mt-4">
-                          <span className="italic font-semibold text-xs sm:text-sm text-[#8e9d0c] block mb-2.5">
+                        <div className="mt-3">
+                          <span className="italic font-semibold text-xs sm:text-sm text-[#d2e823] block mb-2">
                             Additional Benefits:
                           </span>
                           <ul className="flex flex-col gap-2">
                             {additionalBenefits.map((benefit, idx) => (
                               <li
                                 key={idx}
-                                className="flex items-center gap-2 text-xs sm:text-sm text-neutral-800 font-medium"
+                                className="flex items-center gap-2 text-xs sm:text-sm text-neutral-300 font-medium"
                               >
-                                <Rocket className="w-3.5 h-3.5 text-[#8e9d0c] shrink-0" />
-                                <span>{benefit}</span>
+                                <Rocket className="w-3.5 h-3.5 text-[#d2e823] shrink-0" />
+                                <span className="truncate">{benefit}</span>
                               </li>
                             ))}
                           </ul>
@@ -182,72 +185,75 @@ export const PricingSection = ({ className = "" }) => {
             </div>
 
             {/* Bottom Row */}
-            <div className="flex items-center justify-between gap-4 pt-6 mt-6 border-t border-black/5">
+            <div className="flex items-center justify-between gap-4 pt-5 mt-auto border-t border-white/10">
               <div className="flex items-baseline gap-1.5">
-                <span className="font-heading font-bold text-3xl sm:text-4xl text-black">
+                <span className="font-heading font-extrabold text-3xl sm:text-4xl text-white">
                   {leftPrice}
                 </span>
-                <span className="text-xs sm:text-sm text-neutral-500 font-body">
+                <span className="text-xs sm:text-sm text-neutral-400 font-body">
                   /month
                 </span>
               </div>
 
               <Link
                 to="/contact"
-                className="bg-black text-white font-bold py-3.5 px-8 rounded-full text-sm hover:bg-neutral-800 transition-colors shadow-md text-center"
+                className="bg-[#d2e823] text-black font-bold py-3.5 px-8 rounded-full text-sm hover:bg-[#dff15c] transition-all shadow-[0_0_20px_rgba(210,232,35,0.25)] text-center"
               >
                 Start Now
               </Link>
             </div>
-          </motion.div>
+          </div>
 
-          {/* ================= RIGHT CARD (PREMIUM / STARTER) ================= */}
-          <motion.div
-            layout
-            transition={{ type: "spring", stiffness: 240, damping: 26 }}
+          {/* ================= RIGHT CARD (PREMIUM / GROWTH) ================= */}
+          <div
             onMouseEnter={() => setHoveredCard("right")}
             onClick={() => setHoveredCard("right")}
+            style={{
+              flex: hoveredCard === "right" ? "1.85 1 0%" : "1 1 0%",
+              willChange: "flex",
+            }}
             className={cn(
-              "relative rounded-[32px] p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 cursor-pointer overflow-hidden",
+              "relative rounded-[32px] p-7 sm:p-8 md:p-9 flex flex-col justify-between cursor-pointer overflow-hidden transition-[flex,box-shadow,border-color] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]",
+              "lg:h-full lg:max-h-[500px] lg:min-h-[500px]",
               hoveredCard === "right"
-                ? "lg:flex-[1.85] bg-[#0a0a0a] border-2 border-white/20 shadow-2xl text-white"
-                : "lg:flex-[1] bg-[#0a0a0a] border border-white/10 text-white hover:border-white/20 shadow-xl",
+                ? "bg-white border-2 border-[#d2e823] shadow-[0_10px_35px_rgba(210,232,35,0.25)] text-black"
+                : "bg-white/95 border border-neutral-200 text-black hover:border-[#d2e823]/60 shadow-sm",
             )}
           >
             <div>
               {/* Header */}
-              <div className="flex items-start justify-between w-full mb-6">
+              <div className="flex items-start justify-between w-full mb-5">
                 <div>
-                  <h3 className="font-heading font-bold text-2xl sm:text-3xl text-white">
-                    Starter
+                  <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-black">
+                    Growth
                   </h3>
-                  <p className="text-xs sm:text-sm text-neutral-400 font-body mt-1">
-                    Small businesses starting their social presence
+                  <p className="text-xs sm:text-sm text-neutral-600 font-body mt-1">
+                    Established brands ready to scale aggressively
                   </p>
                 </div>
-                <span className="bg-white text-black font-bold text-xs px-3.5 py-1 rounded-full flex items-center gap-1.5 shadow-sm shrink-0">
-                  <Crown className="w-3.5 h-3.5 text-black" />
+                <span className="bg-[#d2e823] text-black font-bold text-xs px-3.5 py-1 rounded-full flex items-center gap-1.5 shadow-sm shrink-0">
+                  <Crown className="w-3.5 h-3.5 fill-black text-black" />
                   Premium
                 </span>
               </div>
 
               {/* Body Content */}
-              <div className="flex flex-col md:flex-row gap-6 md:gap-8 my-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 my-3">
                 {/* Column 1: Features Included */}
-                <div className="flex-1 min-w-[220px]">
-                  <h4 className="font-heading font-bold text-sm sm:text-base text-white mb-3.5">
+                <div className="min-w-0">
+                  <h4 className="font-heading font-bold text-sm sm:text-base text-black mb-3">
                     Features included:
                   </h4>
                   <ul className="flex flex-col gap-2.5">
                     {premiumFeatures.map((feat, idx) => (
                       <li
                         key={idx}
-                        className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-200 font-body"
+                        className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-800 font-body font-medium"
                       >
-                        <div className="w-4 h-4 rounded-full bg-white text-black flex items-center justify-center shrink-0">
+                        <div className="w-4 h-4 rounded-full bg-[#d2e823] text-black flex items-center justify-center shrink-0 shadow-sm">
                           <Check className="w-2.5 h-2.5 stroke-[3]" />
                         </div>
-                        <span>{feat}</span>
+                        <span className="truncate">{feat}</span>
                       </li>
                     ))}
                   </ul>
@@ -257,19 +263,19 @@ export const PricingSection = ({ className = "" }) => {
                 <AnimatePresence>
                   {hoveredCard === "right" && (
                     <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -20 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                       transition={{ duration: 0.25 }}
-                      className="flex-1 min-w-[230px] flex flex-col justify-between pt-2 md:pt-0"
+                      className="min-w-0 flex flex-col justify-between pt-2 md:pt-0"
                     >
                       {/* Billing Cycle Pill */}
                       <div>
                         <div className="flex items-center justify-between gap-2 mb-2">
-                          <span className="font-heading font-semibold text-xs sm:text-sm text-white">
-                            Select Billing Cyle
+                          <span className="font-heading font-bold text-xs sm:text-sm text-black">
+                            Select Billing Cycle
                           </span>
-                          <div className="bg-neutral-800 p-1 rounded-full inline-flex items-center gap-1 border border-white/10">
+                          <div className="bg-neutral-100 border border-neutral-200/80 p-1 rounded-full inline-flex items-center gap-1">
                             <button
                               type="button"
                               onClick={(e) => {
@@ -277,10 +283,10 @@ export const PricingSection = ({ className = "" }) => {
                                 setBillingCycle("monthly");
                               }}
                               className={cn(
-                                "px-3.5 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer",
+                                "px-3.5 py-1 rounded-full text-xs font-bold transition-all cursor-pointer",
                                 billingCycle === "monthly"
-                                  ? "bg-white text-black shadow-sm"
-                                  : "text-neutral-400 hover:text-white",
+                                  ? "bg-[#d2e823] text-black shadow-sm"
+                                  : "text-neutral-600 hover:text-black",
                               )}
                             >
                               Monthly
@@ -292,10 +298,10 @@ export const PricingSection = ({ className = "" }) => {
                                 setBillingCycle("yearly");
                               }}
                               className={cn(
-                                "px-3.5 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer",
+                                "px-3.5 py-1 rounded-full text-xs font-bold transition-all cursor-pointer",
                                 billingCycle === "yearly"
-                                  ? "bg-white text-black shadow-sm"
-                                  : "text-neutral-400 hover:text-white",
+                                  ? "bg-[#d2e823] text-black shadow-sm"
+                                  : "text-neutral-600 hover:text-black",
                               )}
                             >
                               Yearly
@@ -304,18 +310,18 @@ export const PricingSection = ({ className = "" }) => {
                         </div>
 
                         {/* Additional Benefits */}
-                        <div className="mt-4">
-                          <span className="italic font-semibold text-xs sm:text-sm text-[#d2e823] block mb-2.5">
+                        <div className="mt-3">
+                          <span className="italic font-bold text-xs sm:text-sm text-[#6b7c03] block mb-2">
                             Additional Benefits:
                           </span>
                           <ul className="flex flex-col gap-2">
                             {additionalBenefits.map((benefit, idx) => (
                               <li
                                 key={idx}
-                                className="flex items-center gap-2 text-xs sm:text-sm text-neutral-200 font-medium"
+                                className="flex items-center gap-2 text-xs sm:text-sm text-neutral-800 font-medium"
                               >
-                                <Rocket className="w-3.5 h-3.5 text-[#d2e823] shrink-0" />
-                                <span>{benefit}</span>
+                                <Rocket className="w-3.5 h-3.5 text-[#7b8f04] shrink-0" />
+                                <span className="truncate">{benefit}</span>
                               </li>
                             ))}
                           </ul>
@@ -328,24 +334,24 @@ export const PricingSection = ({ className = "" }) => {
             </div>
 
             {/* Bottom Row */}
-            <div className="flex items-center justify-between gap-4 pt-6 mt-6 border-t border-white/10">
+            <div className="flex items-center justify-between gap-4 pt-5 mt-auto border-t border-neutral-200">
               <div className="flex items-baseline gap-1.5">
-                <span className="font-heading font-bold text-3xl sm:text-4xl text-white">
+                <span className="font-heading font-extrabold text-3xl sm:text-4xl text-black">
                   {rightPrice}
                 </span>
-                <span className="text-xs sm:text-sm text-neutral-400 font-body">
+                <span className="text-xs sm:text-sm text-neutral-500 font-body">
                   /month
                 </span>
               </div>
 
               <Link
                 to="/contact"
-                className="bg-[#d2e823] text-black font-bold py-3.5 px-8 rounded-full text-sm hover:bg-[#dff15c] transition-colors shadow-md text-center"
+                className="bg-[#d2e823] text-black font-bold py-3.5 px-8 rounded-full text-sm hover:bg-[#dff15c] transition-all shadow-[0_4px_15px_rgba(210,232,35,0.35)] text-center"
               >
                 Start Now
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

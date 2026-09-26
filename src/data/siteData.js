@@ -1,11 +1,10 @@
 export const siteData = {
-  name: "Viralize",
-  fullName: "VirallHub - Social Media Marketing Agency",
+  name: "Renaun4",
+  fullName: "Renaun4 - Social Media Marketing Agency",
   tagline: "Build, Grow, and Scale Your Brand on Social Media",
   description:
     "We combine content, management, and paid media to help brands grow, engage, and convert — on the platforms that matter most.",
-  logoUrl:
-    "https://framerusercontent.com/images/BUlaV1wTT1uDyXzU3JeF7eXOQ.svg?width=169&height=52",
+  logoUrl: "src/assets/logo.png",
   navLinks: [
     { label: "About", href: "/about-us" },
     { label: "Services", href: "/service" },
@@ -17,7 +16,7 @@ export const siteData = {
     href: "/contact",
   },
   contact: {
-    email: "viralize@email.com",
+    email: "Renaun4@email.com",
     phone: "+123 456 789",
     location: "London, UK",
     addressMapUrl: "https://google.com/maps/@51.5287398,-0.2664026,11z",

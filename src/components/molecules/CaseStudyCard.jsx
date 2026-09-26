@@ -57,21 +57,23 @@ export const CaseStudyCard = ({
             : "opacity-100 translate-y-0",
         )}
       >
-        <div className="p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/25 flex items-center justify-between shadow-lg">
+        <div className="p-4 rounded-2xl bg-[#0c0d11]/85 backdrop-blur-md border border-white/15 flex items-center justify-between shadow-xl">
           <div className="flex flex-col gap-0.5">
             <h4 className="font-heading font-bold text-base sm:text-lg text-white leading-tight">
               {title}
             </h4>
-            <span className="text-xs text-white/80 font-body">{subtitle}</span>
+            <span className="text-xs text-neutral-400 font-body">
+              {subtitle}
+            </span>
           </div>
 
-          <span className="bg-[#d2e823] text-black font-semibold text-xs px-3.5 py-1 rounded-full shadow-sm">
+          <span className="bg-[#d2e823] text-black font-semibold text-xs px-3.5 py-1 rounded-full shadow-[0_0_10px_rgba(210,232,35,0.3)]">
             {category}
           </span>
         </div>
       </div>
 
-      {/* Hovered State: Full Warm Frosted Glass Metrics Overlay */}
+      {/* Hovered State: Full Obsidian Frosted Glass Metrics Overlay with Neon Accents */}
       <AnimatePresence>
         {isHovered && (
           <motion.div
@@ -79,20 +81,20 @@ export const CaseStudyCard = ({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="absolute inset-0 z-20 flex flex-col justify-between p-6 sm:p-7 bg-[#d5896f]/80 backdrop-blur-xl border-2 border-[#d97757]/60"
+            className="absolute inset-0 z-20 flex flex-col justify-between p-6 sm:p-7 bg-[#0c0d11]/92 backdrop-blur-xl border-2 border-[#d2e823]/50 shadow-[0_0_35px_rgba(210,232,35,0.2)]"
           >
             {/* Top row: Title/Subtitle and Category badge */}
             <div className="flex items-start justify-between w-full">
               <div className="flex flex-col">
-                <h3 className="font-heading font-bold text-2xl text-black leading-tight">
+                <h3 className="font-heading font-bold text-2xl text-white leading-tight">
                   {title}
                 </h3>
-                <span className="text-xs sm:text-sm text-neutral-800 font-body mt-0.5">
+                <span className="text-xs sm:text-sm text-neutral-400 font-body mt-0.5">
                   {subtitle}
                 </span>
               </div>
 
-              <span className="bg-[#d2e823] text-black font-bold text-xs px-3.5 py-1 rounded-full shadow-sm">
+              <span className="bg-[#d2e823] text-black font-bold text-xs px-3.5 py-1 rounded-full shadow-[0_0_12px_rgba(210,232,35,0.4)]">
                 {category}
               </span>
             </div>
@@ -101,37 +103,37 @@ export const CaseStudyCard = ({
             <div className="flex flex-col w-full my-auto py-2">
               {/* Metric 1: Views */}
               <div className="flex flex-col items-center text-center">
-                <span className="font-heading font-bold text-3xl sm:text-4xl text-black tracking-tight leading-none">
+                <span className="font-heading font-bold text-3xl sm:text-4xl text-[#d2e823] tracking-tight leading-none drop-shadow-[0_0_8px_rgba(210,232,35,0.3)]">
                   {statsData.views}
                 </span>
-                <span className="text-xs text-neutral-800 font-medium flex items-center gap-1.5 mt-1.5">
-                  <Eye className="w-3.5 h-3.5 text-black/75 stroke-[2.2]" />
+                <span className="text-xs text-neutral-300 font-medium flex items-center gap-1.5 mt-1.5">
+                  <Eye className="w-3.5 h-3.5 text-[#d2e823] stroke-[2.2]" />
                   Views
                 </span>
               </div>
 
-              <div className="border-t border-black/15 my-3.5 sm:my-4 w-full" />
+              <div className="border-t border-white/10 my-3.5 sm:my-4 w-full" />
 
               {/* Metric 2: Click */}
               <div className="flex flex-col items-center text-center">
-                <span className="font-heading font-bold text-3xl sm:text-4xl text-black tracking-tight leading-none">
+                <span className="font-heading font-bold text-3xl sm:text-4xl text-[#d2e823] tracking-tight leading-none drop-shadow-[0_0_8px_rgba(210,232,35,0.3)]">
                   {statsData.click}
                 </span>
-                <span className="text-xs text-neutral-800 font-medium flex items-center gap-1.5 mt-1.5">
-                  <MousePointerClick className="w-3.5 h-3.5 text-black/75 stroke-[2.2]" />
+                <span className="text-xs text-neutral-300 font-medium flex items-center gap-1.5 mt-1.5">
+                  <MousePointerClick className="w-3.5 h-3.5 text-[#d2e823] stroke-[2.2]" />
                   Click
                 </span>
               </div>
 
-              <div className="border-t border-black/15 my-3.5 sm:my-4 w-full" />
+              <div className="border-t border-white/10 my-3.5 sm:my-4 w-full" />
 
               {/* Metric 3: Growth */}
               <div className="flex flex-col items-center text-center">
-                <span className="font-heading font-bold text-3xl sm:text-4xl text-black tracking-tight leading-none">
+                <span className="font-heading font-bold text-3xl sm:text-4xl text-[#d2e823] tracking-tight leading-none drop-shadow-[0_0_8px_rgba(210,232,35,0.3)]">
                   {statsData.growth}
                 </span>
-                <span className="text-xs text-neutral-800 font-medium flex items-center gap-1.5 mt-1.5">
-                  <Users className="w-3.5 h-3.5 text-black/75 stroke-[2.2]" />
+                <span className="text-xs text-neutral-300 font-medium flex items-center gap-1.5 mt-1.5">
+                  <Users className="w-3.5 h-3.5 text-[#d2e823] stroke-[2.2]" />
                   Growth
                 </span>
               </div>
@@ -141,7 +143,7 @@ export const CaseStudyCard = ({
             <div className="pt-2 w-full">
               <Link
                 to={`/case-study/${id}`}
-                className="w-full py-3.5 rounded-full bg-black text-white text-center font-bold text-sm hover:bg-neutral-900 transition-colors shadow-lg block"
+                className="w-full py-3.5 rounded-full bg-[#d2e823] text-black text-center font-bold text-sm hover:bg-[#dff15c] transition-all shadow-[0_0_20px_rgba(210,232,35,0.3)] block"
               >
                 View Case Study
               </Link>

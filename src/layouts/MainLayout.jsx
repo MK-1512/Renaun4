@@ -92,11 +92,11 @@ export const MainLayout = () => {
   }, [location.hash, location.pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#fbfde9] text-[#0a0a0a]">
+    <div className="min-h-screen flex flex-col bg-[#08090a] text-[#f5f5f7]">
       <ScrollToTop lenisRef={lenisRef} />
       <Navbar />
       <main className="flex-grow flex flex-col">
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}
             initial={{ opacity: 0, y: 18 }}

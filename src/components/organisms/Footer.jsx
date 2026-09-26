@@ -33,25 +33,26 @@ const TiktokIcon = (props) => (
 
 export const Footer = () => {
   return (
-    <footer className="relative w-full bg-[#fbfde9] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-black/5">
+    <footer className="relative w-full bg-[#08090a] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 items-stretch">
-        {/* ================= LEFT CARD (LIME) ================= */}
-        <div className="bg-[#d2e823] rounded-[32px] p-8 sm:p-10 flex flex-col justify-between lg:w-[38%] shadow-sm">
+        {/* ================= LEFT CARD (OBSIDIAN WITH NEON ACCENTS) ================= */}
+        <div className="bg-[#0e1014] rounded-[32px] p-8 sm:p-10 flex flex-col justify-between lg:w-[38%] border border-white/10 shadow-xl">
           <div>
             {/* Logo Emblem & Brand Name */}
             <Link to="/" className="inline-flex items-center gap-3 group">
-              <div className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-sm">
-                <div className="w-6 h-6 rounded-full bg-black flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">✦</span>
+              <div className="w-11 h-11 rounded-full bg-[#d2e823]/10 border border-[#d2e823]/30 flex items-center justify-center shadow-[0_0_15px_rgba(210,232,35,0.2)]">
+                <div className="w-6 h-6 rounded-full bg-[#d2e823] flex items-center justify-center">
+                  <span className="text-black text-xs font-bold">✦</span>
                 </div>
               </div>
-              <span className="font-heading font-bold text-2xl sm:text-3xl text-black tracking-tight">
-                {siteData.name}
+              <span className="font-heading font-bold text-2xl sm:text-3xl text-white tracking-tight">
+                {/* {siteData.name} */}
+                <img src="src/assets/logo.png" alt="" />
               </span>
             </Link>
 
             {/* Tagline */}
-            <p className="text-sm sm:text-base text-neutral-900 leading-relaxed font-body mt-5 mb-10 max-w-sm">
+            <p className="text-sm sm:text-base text-neutral-400 leading-relaxed font-body mt-5 mb-10 max-w-sm">
               We combine content, management, & paid media to help brands grow,
               engage, & convert — on the platforms that matter most.
             </p>
@@ -59,7 +60,7 @@ export const Footer = () => {
 
           {/* Follow Us Grid */}
           <div>
-            <h4 className="font-heading font-bold text-xl text-black mb-4">
+            <h4 className="font-heading font-bold text-xl text-white mb-4">
               Follow Us
             </h4>
             <div className="grid grid-cols-2 gap-3">
@@ -67,9 +68,9 @@ export const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white text-black font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-neutral-50 transition-colors"
+                className="bg-white/5 border border-white/10 text-white font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-all"
               >
-                <FacebookIcon className="w-4 h-4 fill-black text-black" />
+                <FacebookIcon className="w-4 h-4 fill-current" />
                 <span>Facebook</span>
               </a>
 
@@ -77,9 +78,9 @@ export const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white text-black font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-neutral-50 transition-colors"
+                className="bg-white/5 border border-white/10 text-white font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-all"
               >
-                <InstagramIcon className="w-4 h-4 text-black" />
+                <InstagramIcon className="w-4 h-4" />
                 <span>Instagram</span>
               </a>
 
@@ -87,9 +88,9 @@ export const Footer = () => {
                 href="https://tiktok.com"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white text-black font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-neutral-50 transition-colors"
+                className="bg-white/5 border border-white/10 text-white font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-all"
               >
-                <TiktokIcon className="w-4 h-4 fill-current text-black" />
+                <TiktokIcon className="w-4 h-4 fill-current" />
                 <span>Tiktok</span>
               </a>
 
@@ -97,17 +98,17 @@ export const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white text-black font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-neutral-50 transition-colors"
+                className="bg-white/5 border border-white/10 text-white font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-all"
               >
-                <MessageCircle className="w-4 h-4 text-black" />
-                <span>Facebook</span>
+                <MessageCircle className="w-4 h-4" />
+                <span>Community</span>
               </a>
             </div>
           </div>
         </div>
 
-        {/* ================= RIGHT CARD (BLACK) ================= */}
-        <div className="bg-black rounded-[32px] p-8 sm:p-12 flex flex-col justify-between lg:w-[62%] text-white shadow-2xl">
+        {/* ================= RIGHT CARD (OBSIDIAN) ================= */}
+        <div className="bg-[#0e1014] rounded-[32px] p-8 sm:p-12 flex flex-col justify-between lg:w-[62%] text-white border border-white/10 shadow-2xl">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10">
             {/* Column 1: Main & CMS */}
             <div className="flex flex-col">
@@ -221,13 +222,13 @@ export const Footer = () => {
               <ul className="flex flex-col gap-4 text-sm text-neutral-300">
                 <li>
                   <a
-                    href="mailto:viralize@email.com"
+                    href="mailto:Renaun4@email.com"
                     className="flex items-center gap-3 group hover:text-white transition-colors"
                   >
                     <div className="w-9 h-9 rounded-full bg-neutral-800 text-neutral-300 flex items-center justify-center shrink-0 group-hover:bg-[#d2e823] group-hover:text-black transition-colors">
                       <Mail className="w-4 h-4" />
                     </div>
-                    <span className="break-all">viralize@email.com</span>
+                    <span className="break-all">Renaun4@email.com</span>
                   </a>
                 </li>
                 <li>
@@ -255,7 +256,7 @@ export const Footer = () => {
 
           {/* Bottom Copyright Row inside Black Card */}
           <div className="pt-8 mt-12 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-500 font-mono">
-            <p>© {new Date().getFullYear()} Viralize. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Renaun4. All rights reserved.</p>
             <p>Replicated in React & Tailwind</p>
           </div>
         </div>
