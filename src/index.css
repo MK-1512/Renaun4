@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-lime: #d2e823;
+  --color-brand-lime-hover: #dff15c;
+  --color-brand-lime-subtle: #f3fbc9;
+  --color-brand-lime-cream: #fbfde9;
+  --color-brand-lime-dark: #a5b00f;
+  --color-brand-dark: #0a0a0a;
+  --color-brand-black: #000000;
+  --color-brand-card: #111418;
+  --color-brand-card-dark: #141416;
+  --color-brand-zinc: #09090b;
+  --color-brand-gray: #737373;
+
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Fragment Mono", monospace;
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-spin-very-slow: spin 60s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+:root {
+  --token-lime: #d2e823;
+  --token-lime-hover: #dff15c;
+  --token-lime-subtle: #f3fbc9;
+  --token-lime-cream: #fbfde9;
+  --token-dark: #0a0a0a;
+  --token-card: #111418;
+  --token-border: rgba(255, 255, 255, 0.08);
+  --token-gray: #737373;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background-color: #fbfde9;
+  color: #0a0a0a;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #d2e823;
+  color: #000000;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,8 @@
+node_modules
+dist
+dist-ssr
+*.local
+scraped_pages
+blogs_data.json
+case_studies_data.json
+.DS_Store
