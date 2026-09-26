@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { motion } from "framer-motion";
 
 import socialAwardVideo from "../../assets/social_award.mp4";
 import marketingAwardVideo from "../../assets/marketing_award.mp4";
@@ -67,10 +67,38 @@ export const awardsData = [
 
 export const AwardsSection = ({ className = "" }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const isTransitioningRef = useRef(false);
+  const transitionTimerRef = useRef(null);
+
+  const handleActivate = (idx) => {
+    if (idx === activeIndex) return;
+
+    // Prevent spurious rapid re-triggers while layout is animating
+    if (isTransitioningRef.current) return;
+
+    setActiveIndex(idx);
+    isTransitioningRef.current = true;
+
+    if (transitionTimerRef.current) clearTimeout(transitionTimerRef.current);
+    transitionTimerRef.current = setTimeout(() => {
+      isTransitioningRef.current = false;
+    }, 350);
+  };
+
+  const handleSelect = (idx) => {
+    setActiveIndex(idx);
+    isTransitioningRef.current = true;
+
+    if (transitionTimerRef.current) clearTimeout(transitionTimerRef.current);
+    transitionTimerRef.current = setTimeout(() => {
+      isTransitioningRef.current = false;
+    }, 350);
+  };
 
   return (
     <section
-      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a] text-white overflow-hidden ${className}`}
+      style={{ overflowAnchor: "none" }}
+      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a] text-white ${className}`}
     >
       <div className="max-w-7xl mx-auto flex flex-col">
         {/* Section Heading */}
@@ -93,102 +121,110 @@ export const AwardsSection = ({ className = "" }) => {
               <div
                 key={award.id}
                 className="relative border-b border-[#222222]"
-                onMouseEnter={() => setActiveIndex(idx)}
+                style={{ overflowAnchor: "none" }}
               >
-                <AnimatePresence initial={false} mode="wait">
-                  {isExpanded ? (
-                    <motion.div
-                      key={`expanded-${award.id}`}
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
-                      className="overflow-hidden py-4 sm:py-6"
-                    >
-                      <div className="bg-[#d2e823] text-black rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 md:p-10 shadow-xl">
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 items-stretch">
-                          {/* Left Column: Sculpture Video */}
-                          <div className="lg:col-span-4 xl:col-span-4 flex">
-                            <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square rounded-[22px] sm:rounded-[26px] overflow-hidden bg-black/10 shadow-inner">
-                              <video
-                                src={award.video}
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                          </div>
+                {/* Collapsed Row */}
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: isExpanded ? 0 : "auto",
+                    opacity: isExpanded ? 0 : 1,
+                  }}
+                  transition={{ duration: 0.28, ease: [0.25, 1, 0.5, 1] }}
+                  className="overflow-hidden"
+                >
+                  <div
+                    className="w-full py-7 sm:py-9 px-3 sm:px-6 flex items-center justify-between gap-6 cursor-pointer group hover:bg-white/[0.03] transition-colors duration-200 select-none"
+                    onMouseEnter={() => handleActivate(idx)}
+                    onClick={() => handleSelect(idx)}
+                  >
+                    {/* Left: Title */}
+                    <h3 className="font-heading font-bold text-lg sm:text-xl md:text-2xl text-white group-hover:text-[#d2e823] transition-colors duration-200 shrink-0 w-full sm:w-[40%] text-left">
+                      {award.title}
+                    </h3>
 
-                          {/* Right Column: Details & Stats */}
-                          <div className="lg:col-span-8 xl:col-span-8 flex flex-col justify-between">
-                            {/* Top: Title & Description + Year */}
-                            <div className="flex items-start justify-between gap-4">
-                              <div className="max-w-xl">
-                                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-[#0a0a0a] tracking-tight leading-snug">
-                                  {award.title}
-                                </h3>
-                                <p className="text-[#323b06] text-sm sm:text-base mt-2 font-normal leading-relaxed">
-                                  {award.description}
-                                </p>
-                              </div>
-                              <span className="font-heading font-bold text-xl sm:text-2xl text-[#0a0a0a] shrink-0 pt-0.5">
-                                {award.year}
-                              </span>
-                            </div>
+                    {/* Middle: Description */}
+                    <p className="text-neutral-400 text-xs sm:text-sm md:text-base hidden sm:block flex-1 text-left leading-relaxed">
+                      {award.description}
+                    </p>
 
-                            {/* Middle: 3 Dark Olive Green Metric Cards */}
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 my-6 sm:my-8">
-                              {award.stats.map((stat, statIdx) => (
-                                <div
-                                  key={statIdx}
-                                  className="bg-[#485306] p-5 sm:p-6 rounded-2xl flex flex-col justify-center"
-                                >
-                                  <span className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-[#d2e823] tracking-tight">
-                                    {stat.value}
-                                  </span>
-                                  <span className="text-xs sm:text-sm text-[#cbd686] mt-2 font-medium leading-snug">
-                                    {stat.label}
-                                  </span>
-                                </div>
-                              ))}
-                            </div>
+                    {/* Right: Year */}
+                    <span className="text-neutral-400 font-heading font-medium text-base sm:text-lg text-right shrink-0">
+                      {award.year}
+                    </span>
+                  </div>
+                </motion.div>
 
-                            {/* Bottom Note */}
-                            <p className="text-[#566308] font-medium text-xs sm:text-sm">
-                              {award.note}
-                            </p>
+                {/* Expanded Card */}
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: isExpanded ? "auto" : 0,
+                    opacity: isExpanded ? 1 : 0,
+                  }}
+                  transition={{ duration: 0.28, ease: [0.25, 1, 0.5, 1] }}
+                  className="overflow-hidden"
+                >
+                  <div className="py-4 sm:py-6">
+                    <div className="bg-[#d2e823] text-black rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 md:p-10 shadow-xl">
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 items-stretch">
+                        {/* Left Column: Sculpture Video */}
+                        <div className="lg:col-span-4 xl:col-span-4 flex">
+                          <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square rounded-[22px] sm:rounded-[26px] overflow-hidden bg-black/10 shadow-inner">
+                            <video
+                              src={award.video}
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                              className="w-full h-full object-cover"
+                            />
                           </div>
                         </div>
+
+                        {/* Right Column: Details & Stats */}
+                        <div className="lg:col-span-8 xl:col-span-8 flex flex-col justify-between">
+                          {/* Top: Title & Description + Year */}
+                          <div className="flex items-start justify-between gap-4">
+                            <div className="max-w-xl">
+                              <h3 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-[#0a0a0a] tracking-tight leading-snug">
+                                {award.title}
+                              </h3>
+                              <p className="text-[#323b06] text-sm sm:text-base mt-2 font-normal leading-relaxed">
+                                {award.description}
+                              </p>
+                            </div>
+                            <span className="font-heading font-bold text-xl sm:text-2xl text-[#0a0a0a] shrink-0 pt-0.5">
+                              {award.year}
+                            </span>
+                          </div>
+
+                          {/* Middle: 3 Dark Olive Green Metric Cards */}
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 my-6 sm:my-8">
+                            {award.stats.map((stat, statIdx) => (
+                              <div
+                                key={statIdx}
+                                className="bg-[#485306] p-5 sm:p-6 rounded-2xl flex flex-col justify-center"
+                              >
+                                <span className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-[#d2e823] tracking-tight">
+                                  {stat.value}
+                                </span>
+                                <span className="text-xs sm:text-sm text-[#cbd686] mt-2 font-medium leading-snug">
+                                  {stat.label}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+
+                          {/* Bottom Note */}
+                          <p className="text-[#566308] font-medium text-xs sm:text-sm">
+                            {award.note}
+                          </p>
+                        </div>
                       </div>
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key={`collapsed-${award.id}`}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="w-full py-7 sm:py-9 px-3 sm:px-6 flex items-center justify-between gap-6 cursor-pointer group hover:bg-white/[0.02] transition-colors duration-200"
-                    >
-                      {/* Left: Title */}
-                      <h4 className="font-heading font-bold text-lg sm:text-xl md:text-2xl text-white group-hover:text-[#d2e823] transition-colors duration-200 shrink-0 w-full sm:w-[40%] text-left">
-                        {award.title}
-                      </h4>
-
-                      {/* Middle: Description */}
-                      <p className="text-neutral-400 text-xs sm:text-sm md:text-base hidden sm:block flex-1 text-left leading-relaxed">
-                        {award.description}
-                      </p>
-
-                      {/* Right: Year */}
-                      <span className="text-neutral-400 font-heading font-medium text-base sm:text-lg text-right shrink-0">
-                        {award.year}
-                      </span>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             );
           })}

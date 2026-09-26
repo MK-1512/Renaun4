@@ -1,40 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Badge } from "../atoms/Badge";
 import { CaseStudyCard } from "../molecules/CaseStudyCard";
 import { caseStudiesData } from "../../data/caseStudiesData";
 
 export const CaseStudiesSection = ({ showAll = false, className = "" }) => {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const categories = [
-    "All",
-    "Beauty",
-    "Fitness",
-    "Lifestyle",
-    "Fashion",
-    "Fintech",
-    "Technology",
-  ];
-
-  const filteredStudies =
-    activeCategory === "All"
-      ? caseStudiesData
-      : caseStudiesData.filter(
-          (item) =>
-            item.category.toLowerCase() === activeCategory.toLowerCase(),
-        );
-
   const displayStudies = showAll
-    ? filteredStudies
-    : filteredStudies.slice(0, 3);
+    ? caseStudiesData
+    : caseStudiesData.slice(0, 3);
 
   return (
     <section
       className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#fbfde9] ${className}`}
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
-        {/* Centered Header Block matching screenshot */}
+        {/* Centered Header Block */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14 sm:mb-16">
           <Badge variant="lime" hasDot className="mb-4">
             Case Studies
@@ -64,25 +44,6 @@ export const CaseStudiesSection = ({ showAll = false, className = "" }) => {
             </Link>
           </div>
         </div>
-
-        {/* Category Filters (shown when showAll is true, e.g. on full case studies page) */}
-        {showAll && (
-          <div className="flex flex-wrap items-center justify-center w-full gap-2 mb-10 overflow-x-auto pb-2 no-scrollbar">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-200 cursor-pointer ${
-                  activeCategory === cat
-                    ? "bg-[#0a0a0a] text-white shadow-sm"
-                    : "bg-black/5 text-[#0a0a0a] hover:bg-black/10"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        )}
 
         {/* Case Studies Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">

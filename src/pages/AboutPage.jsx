@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import aboutVideo from "../assets/about.mp4";
 import missionTargetImg from "../assets/mission-target.jpg";
 import { AwardsSection } from "../components/organisms/AwardsSection";
@@ -39,22 +40,59 @@ export const AboutPage = () => {
       <section className="relative w-full pt-32 sm:pt-40 md:pt-44 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#dbe88d]/80 text-[#2c3605] text-xs font-semibold uppercase tracking-wider mb-6 sm:mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.05,
+              ease: [0.21, 0.47, 0.32, 0.98],
+            }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#dbe88d]/80 text-[#2c3605] text-xs font-semibold uppercase tracking-wider mb-6 sm:mb-8"
+          >
             <span className="w-2 h-2 rounded-full bg-[#394a08]" />
             About
-          </div>
+          </motion.div>
 
           {/* Heading & Subtitle */}
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#0a0a0a] text-center tracking-tight leading-[1.1] max-w-4xl">
+          <motion.h1
+            initial={{ opacity: 0, y: 35 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.7,
+              delay: 0.15,
+              ease: [0.21, 0.47, 0.32, 0.98],
+            }}
+            className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#0a0a0a] text-center tracking-tight leading-[1.1] max-w-4xl"
+          >
             We Build Brands That Grow on Social
-          </h1>
-          <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-neutral-600 text-center max-w-2xl mx-auto leading-relaxed">
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.7,
+              delay: 0.25,
+              ease: [0.21, 0.47, 0.32, 0.98],
+            }}
+            className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-neutral-600 text-center max-w-2xl mx-auto leading-relaxed"
+          >
             We help brands turn content, strategy, and paid media into real
             growth, engagement, and revenue.
-          </p>
+          </motion.p>
 
           {/* Hero Video */}
-          <div className="w-full mt-10 sm:mt-14 rounded-3xl sm:rounded-[36px] overflow-hidden shadow-lg aspect-[16/9] sm:aspect-[21/9] max-h-[580px] bg-black/5">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.35,
+              ease: [0.21, 0.47, 0.32, 0.98],
+            }}
+            className="w-full mt-10 sm:mt-14 rounded-3xl sm:rounded-[36px] overflow-hidden shadow-lg aspect-[16/9] sm:aspect-[21/9] max-h-[580px] bg-black/5"
+          >
             <video
               src={aboutVideo}
               autoPlay
@@ -63,13 +101,21 @@ export const AboutPage = () => {
               playsInline
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
 
           {/* 4 Lime Stat Cards */}
           <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-6 sm:mt-8">
             {statsData.map((stat, idx) => (
-              <div
+              <motion.div
                 key={idx}
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.6,
+                  delay: idx * 0.08,
+                  ease: [0.21, 0.47, 0.32, 0.98],
+                }}
                 className="bg-[#d2e823] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center justify-center text-center shadow-sm"
               >
                 <span className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl text-[#0a0a0a] tracking-tight">
@@ -78,7 +124,7 @@ export const AboutPage = () => {
                 <span className="font-medium text-xs sm:text-sm md:text-base text-[#0a0a0a] mt-2 sm:mt-3 leading-snug">
                   {stat.label}
                 </span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -88,7 +134,13 @@ export const AboutPage = () => {
       <section className="relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 border-t border-black/5">
         <div className="max-w-7xl mx-auto flex flex-col">
           {/* Header */}
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-20"
+          >
             <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#7f9506] uppercase tracking-wider mb-3">
               <span className="w-2 h-2 rounded-full bg-[#8fa907]" />
               Mission &amp; Vision
@@ -100,12 +152,18 @@ export const AboutPage = () => {
               To help brands grow faster by turning social media into a reliable
               and scalable growth channel.
             </p>
-          </div>
+          </motion.div>
 
           {/* 2-Column Content: Left Target Graphic, Right Stepper */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Column: 3D Target Bullseye */}
-            <div className="lg:col-span-5 flex justify-center items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.75, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="lg:col-span-5 flex justify-center items-center"
+            >
               <div className="w-full max-w-[420px] rounded-3xl overflow-hidden drop-shadow-md">
                 <img
                   src={missionTargetImg}
@@ -113,10 +171,20 @@ export const AboutPage = () => {
                   className="w-full h-auto object-cover"
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Column: Mission Statement & 4-Step Vertical Timeline */}
-            <div className="lg:col-span-7 flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.75,
+                delay: 0.1,
+                ease: [0.21, 0.47, 0.32, 0.98],
+              }}
+              className="lg:col-span-7 flex flex-col justify-center"
+            >
               <h3 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-[#0a0a0a] leading-tight mb-8 sm:mb-12">
                 Our mission is to help brands turn social media into a reliable
                 growth engine.
@@ -144,7 +212,7 @@ export const AboutPage = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

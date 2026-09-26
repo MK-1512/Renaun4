@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
 import { cn } from "../../utils/cn";
 
 export const BlogCard = ({

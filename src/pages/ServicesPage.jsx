@@ -5,7 +5,6 @@ import { PricingSection } from "../components/organisms/PricingSection";
 import { FaqSection } from "../components/organisms/FaqSection";
 import { CtaSection } from "../components/organisms/CtaSection";
 import { servicesData } from "../data/servicesData";
-import { Check } from "lucide-react";
 
 export const ServicesPage = () => {
   return (
@@ -23,39 +22,20 @@ export const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Services Deep Dive */}
+      {/* Services Cards */}
       <section className="relative w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#fbfde9]">
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {servicesData.map((service) => (
-              <div key={service.id} className="flex flex-col gap-6">
-                <ServiceCard
-                  number={service.number}
-                  title={service.title}
-                  subtitle={service.subtitle}
-                  image={service.image}
-                  includes={service.includes}
-                  href="#pricing"
-                />
-
-                {/* Extended Details Box */}
-                <div className="p-6 rounded-3xl bg-white/60 border border-black/5 flex flex-col gap-4">
-                  <p className="text-sm text-neutral-600 leading-relaxed">
-                    {service.details}
-                  </p>
-                  <ul className="flex flex-col gap-2 pt-2 border-t border-black/5">
-                    {service.features.map((feat, i) => (
-                      <li
-                        key={i}
-                        className="flex items-center gap-2.5 text-xs font-mono text-neutral-700"
-                      >
-                        <Check className="w-4 h-4 text-[#a5b00f] flex-shrink-0" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              <ServiceCard
+                key={service.id}
+                number={service.number}
+                title={service.title}
+                subtitle={service.subtitle}
+                image={service.image}
+                includes={service.includes}
+                href="#pricing"
+              />
             ))}
           </div>
         </div>
@@ -74,3 +54,5 @@ export const ServicesPage = () => {
     </div>
   );
 };
+
+export default ServicesPage;
