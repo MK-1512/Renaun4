@@ -6,7 +6,6 @@ import { Badge } from "../atoms/Badge";
 import { cn } from "../../utils/cn";
 
 export const PricingSection = ({ className = "" }) => {
-  // "right" ("Growth") is initially active to match the user's screenshot
   const [hoveredCard, setHoveredCard] = useState("right");
   const [billingCycle, setBillingCycle] = useState("monthly");
 
@@ -38,7 +37,6 @@ export const PricingSection = ({ className = "" }) => {
       className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#08090a] ${className}`}
     >
       <div className="max-w-6xl mx-auto flex flex-col items-center">
-        {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14 sm:mb-20">
           <Badge variant="lime" hasDot className="mb-4">
             Pricing
@@ -53,9 +51,7 @@ export const PricingSection = ({ className = "" }) => {
           </p>
         </div>
 
-        {/* 2 Interactive Accordion Cards with CONSTANT height and WIDTH expansion only */}
         <div className="flex flex-col lg:flex-row gap-6 w-full items-stretch lg:h-[500px]">
-          {/* ================= LEFT CARD (BASIC / STARTER) ================= */}
           <div
             onMouseEnter={() => setHoveredCard("left")}
             onClick={() => setHoveredCard("left")}
@@ -72,7 +68,6 @@ export const PricingSection = ({ className = "" }) => {
             )}
           >
             <div>
-              {/* Header */}
               <div className="flex items-start justify-between w-full mb-5">
                 <div>
                   <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-white">
@@ -88,9 +83,7 @@ export const PricingSection = ({ className = "" }) => {
                 </span>
               </div>
 
-              {/* Body Content */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 my-3">
-                {/* Column 1: Features Included */}
                 <div className="min-w-0">
                   <h4 className="font-heading font-bold text-sm sm:text-base text-white mb-3">
                     Features included:
@@ -110,7 +103,6 @@ export const PricingSection = ({ className = "" }) => {
                   </ul>
                 </div>
 
-                {/* Column 2: Select Billing Cycle & Additional Benefits (when expanded) */}
                 <AnimatePresence>
                   {hoveredCard === "left" && (
                     <motion.div
@@ -120,7 +112,6 @@ export const PricingSection = ({ className = "" }) => {
                       transition={{ duration: 0.25 }}
                       className="min-w-0 flex flex-col justify-between pt-2 md:pt-0"
                     >
-                      {/* Billing Cycle Pill */}
                       <div>
                         <div className="flex items-center justify-between gap-2 mb-2">
                           <span className="font-heading font-semibold text-xs sm:text-sm text-white">
@@ -160,7 +151,6 @@ export const PricingSection = ({ className = "" }) => {
                           </div>
                         </div>
 
-                        {/* Additional Benefits */}
                         <div className="mt-3">
                           <span className="italic font-semibold text-xs sm:text-sm text-[#d2e823] block mb-2">
                             Additional Benefits:
@@ -184,7 +174,6 @@ export const PricingSection = ({ className = "" }) => {
               </div>
             </div>
 
-            {/* Bottom Row */}
             <div className="flex items-center justify-between gap-4 pt-5 mt-auto border-t border-white/10">
               <div className="flex items-baseline gap-1.5">
                 <span className="font-heading font-extrabold text-3xl sm:text-4xl text-white">
@@ -204,7 +193,6 @@ export const PricingSection = ({ className = "" }) => {
             </div>
           </div>
 
-          {/* ================= RIGHT CARD (PREMIUM / GROWTH) ================= */}
           <div
             onMouseEnter={() => setHoveredCard("right")}
             onClick={() => setHoveredCard("right")}
@@ -221,7 +209,6 @@ export const PricingSection = ({ className = "" }) => {
             )}
           >
             <div>
-              {/* Header */}
               <div className="flex items-start justify-between w-full mb-5">
                 <div>
                   <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-black">
@@ -237,9 +224,7 @@ export const PricingSection = ({ className = "" }) => {
                 </span>
               </div>
 
-              {/* Body Content */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 my-3">
-                {/* Column 1: Features Included */}
                 <div className="min-w-0">
                   <h4 className="font-heading font-bold text-sm sm:text-base text-black mb-3">
                     Features included:
@@ -259,7 +244,6 @@ export const PricingSection = ({ className = "" }) => {
                   </ul>
                 </div>
 
-                {/* Column 2: Select Billing Cycle & Additional Benefits (when expanded) */}
                 <AnimatePresence>
                   {hoveredCard === "right" && (
                     <motion.div
@@ -269,7 +253,6 @@ export const PricingSection = ({ className = "" }) => {
                       transition={{ duration: 0.25 }}
                       className="min-w-0 flex flex-col justify-between pt-2 md:pt-0"
                     >
-                      {/* Billing Cycle Pill */}
                       <div>
                         <div className="flex items-center justify-between gap-2 mb-2">
                           <span className="font-heading font-bold text-xs sm:text-sm text-black">
@@ -309,7 +292,6 @@ export const PricingSection = ({ className = "" }) => {
                           </div>
                         </div>
 
-                        {/* Additional Benefits */}
                         <div className="mt-3">
                           <span className="italic font-bold text-xs sm:text-sm text-[#6b7c03] block mb-2">
                             Additional Benefits:
@@ -333,7 +315,6 @@ export const PricingSection = ({ className = "" }) => {
               </div>
             </div>
 
-            {/* Bottom Row */}
             <div className="flex items-center justify-between gap-4 pt-5 mt-auto border-t border-neutral-200">
               <div className="flex items-baseline gap-1.5">
                 <span className="font-heading font-extrabold text-3xl sm:text-4xl text-black">

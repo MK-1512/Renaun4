@@ -46,7 +46,6 @@ export const Button = ({
     </>
   );
 
-  // Combine classes with full priority to user's className
   const classes = cn(
     "group",
     baseStyles,

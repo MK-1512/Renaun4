@@ -1,38 +1,26 @@
-export const partnersData = [
+export const servicesTickerData = [
+  { id: "brand-strategy", name: "Brand Strategy & Identity", color: "#FFB800" },
+  { id: "social-media", name: "Social Media Marketing", color: "#00F0FF" },
+  { id: "content-creative", name: "Content & Creative", color: "#FF2E93" },
+  { id: "video-production", name: "Video Production", color: "#FF3366" },
   {
-    name: "Partner 1",
-    logo: "https://framerusercontent.com/images/2J4WUpQteH39lGtZooERZZHWVa0.png?width=218&height=64",
+    id: "performance-marketing",
+    name: "Performance Marketing",
+    color: "#D2E823",
+  },
+  { id: "seo-ai-search", name: "SEO & AI Search", color: "#00FFA3" },
+  { id: "website-conversion", name: "Website & Conversion", color: "#A855F7" },
+  {
+    id: "lead-gen-funnels",
+    name: "Lead Generation & Funnels",
+    color: "#FF7A00",
   },
   {
-    name: "Partner 2",
-    logo: "https://framerusercontent.com/images/eJhR4SSwTBYRoOqkdp9O8y2gAog.png?width=255&height=64",
+    id: "crm-automation",
+    name: "CRM & Marketing Automation",
+    color: "#38BDF8",
   },
-  {
-    name: "Partner 3",
-    logo: "https://framerusercontent.com/images/dxi2KPfJDjICvUnIOzxvSO3BzA.png?width=236&height=64",
-  },
-  {
-    name: "Partner 4",
-    logo: "https://framerusercontent.com/images/iGSXde80QLbX94u347NITeiO66Q.png?width=231&height=64",
-  },
-  {
-    name: "Partner 5",
-    logo: "https://framerusercontent.com/images/JXsDV1FNNW9ylaDcfF7qJ8YRtCc.png?width=226&height=64",
-  },
-  {
-    name: "Partner 6",
-    logo: "https://framerusercontent.com/images/FqLvc0KV3U84yPjwMUI9N3GPFos.png?width=240&height=64",
-  },
-  {
-    name: "Partner 7",
-    logo: "https://framerusercontent.com/images/Vy5w9vNYbI926xUuS1fh6RIOMQ.png?width=227&height=64",
-  },
-  {
-    name: "Partner 8",
-    logo: "https://framerusercontent.com/images/9XV7PYEJU4jpiLQs2DW1iEx979k.png?width=268&height=64",
-  },
-  {
-    name: "Partner 9",
-    logo: "https://framerusercontent.com/images/5C6zEKo6cv2PJN61w19URiqJM.png?width=214&height=64",
-  },
+  { id: "ai-solutions", name: "AI Marketing & AI Solutions", color: "#E056FD" },
 ];
+
+export const partnersData = servicesTickerData;

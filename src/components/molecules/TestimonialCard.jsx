@@ -18,19 +18,16 @@ export const TestimonialCard = ({
       )}
     >
       <div className="flex flex-col gap-6">
-        {/* Rating Row */}
         <div className="flex items-center justify-between">
           <StarRating count={5} />
           <span className="text-xs font-mono text-neutral-400">{rating}</span>
         </div>
 
-        {/* Quote */}
         <p className="text-base sm:text-lg text-neutral-200 leading-relaxed italic">
           "{quote.replace(/^"|"$/g, "")}"
         </p>
       </div>
 
-      {/* Author Footer */}
       <div className="flex items-center gap-4 mt-8 pt-6 border-t border-white/10">
         {avatar && (
           <img

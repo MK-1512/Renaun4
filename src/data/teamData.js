@@ -23,16 +23,4 @@ export const teamData = [
     image:
       "https://framerusercontent.com/images/sPJvxGCZHe8wQ1ON9OCwFxRofIY.png?width=655&height=1200",
   },
-  {
-    name: "Tariq Malik",
-    role: "UI/UX Lead",
-    image:
-      "https://framerusercontent.com/images/x5dQAI8dggdvbkghM3epPChmU.png?width=1200&height=904",
-  },
-  {
-    name: "Yusuf Karim",
-    role: "Brand Manager",
-    image:
-      "https://framerusercontent.com/images/saCK0AdLHTLiaDLsB0bxMUY.png?width=837&height=1199",
-  },
 ];

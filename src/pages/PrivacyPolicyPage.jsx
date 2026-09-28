@@ -8,7 +8,7 @@ export const PrivacyPolicyPage = () => {
       items: [
         "Name and contact details provided during inquiry or onboarding",
         "Business information including brand guidelines, social accounts, and goals",
-        "Communication data sent via contact forms, emails, and calls",
+        "Communication data sent via contact forms, emails, and messages",
       ],
     },
     {
@@ -69,7 +69,6 @@ export const PrivacyPolicyPage = () => {
   return (
     <div className="w-full flex flex-col bg-[#08090a] pt-36 sm:pt-44 md:pt-48 pb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto flex flex-col gap-10">
-        {/* Header */}
         <div className="flex flex-col gap-4 text-center items-center pb-8 border-b border-white/10">
           <Badge variant="lime" hasDot>
             Privacy
@@ -85,7 +84,6 @@ export const PrivacyPolicyPage = () => {
           </span>
         </div>
 
-        {/* Content Sections */}
         <div className="flex flex-col gap-8">
           {sections.map((sec, idx) => (
             <div

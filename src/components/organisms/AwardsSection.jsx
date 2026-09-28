@@ -73,7 +73,6 @@ export const AwardsSection = ({ className = "" }) => {
   const handleActivate = (idx) => {
     if (idx === activeIndex) return;
 
-    // Prevent spurious rapid re-triggers while layout is animating
     if (isTransitioningRef.current) return;
 
     setActiveIndex(idx);
@@ -101,7 +100,6 @@ export const AwardsSection = ({ className = "" }) => {
       className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a] text-white ${className}`}
     >
       <div className="max-w-7xl mx-auto flex flex-col">
-        {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-[1.15]">
             Trusted &amp; Recognized
@@ -112,7 +110,6 @@ export const AwardsSection = ({ className = "" }) => {
           </p>
         </div>
 
-        {/* Awards Accordion List */}
         <div className="flex flex-col border-t border-[#222222]">
           {awardsData.map((award, idx) => {
             const isExpanded = activeIndex === idx;
@@ -123,7 +120,6 @@ export const AwardsSection = ({ className = "" }) => {
                 className="relative border-b border-[#222222]"
                 style={{ overflowAnchor: "none" }}
               >
-                {/* Collapsed Row */}
                 <motion.div
                   initial={false}
                   animate={{
@@ -138,24 +134,20 @@ export const AwardsSection = ({ className = "" }) => {
                     onMouseEnter={() => handleActivate(idx)}
                     onClick={() => handleSelect(idx)}
                   >
-                    {/* Left: Title */}
                     <h3 className="font-heading font-bold text-lg sm:text-xl md:text-2xl text-white group-hover:text-[#d2e823] transition-colors duration-200 shrink-0 w-full sm:w-[40%] text-left">
                       {award.title}
                     </h3>
 
-                    {/* Middle: Description */}
                     <p className="text-neutral-400 text-xs sm:text-sm md:text-base hidden sm:block flex-1 text-left leading-relaxed">
                       {award.description}
                     </p>
 
-                    {/* Right: Year */}
                     <span className="text-neutral-400 font-heading font-medium text-base sm:text-lg text-right shrink-0">
                       {award.year}
                     </span>
                   </div>
                 </motion.div>
 
-                {/* Expanded Card */}
                 <motion.div
                   initial={false}
                   animate={{
@@ -168,7 +160,6 @@ export const AwardsSection = ({ className = "" }) => {
                   <div className="py-4 sm:py-6">
                     <div className="bg-[#d2e823] text-black rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 md:p-10 shadow-xl">
                       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 items-stretch">
-                        {/* Left Column: Sculpture Video */}
                         <div className="lg:col-span-4 xl:col-span-4 flex">
                           <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square rounded-[22px] sm:rounded-[26px] overflow-hidden bg-black/10 shadow-inner">
                             <video
@@ -182,9 +173,7 @@ export const AwardsSection = ({ className = "" }) => {
                           </div>
                         </div>
 
-                        {/* Right Column: Details & Stats */}
                         <div className="lg:col-span-8 xl:col-span-8 flex flex-col justify-between">
-                          {/* Top: Title & Description + Year */}
                           <div className="flex items-start justify-between gap-4">
                             <div className="max-w-xl">
                               <h3 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-[#0a0a0a] tracking-tight leading-snug">
@@ -199,7 +188,6 @@ export const AwardsSection = ({ className = "" }) => {
                             </span>
                           </div>
 
-                          {/* Middle: 3 Dark Olive Green Metric Cards */}
                           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 my-6 sm:my-8">
                             {award.stats.map((stat, statIdx) => (
                               <div
@@ -216,7 +204,6 @@ export const AwardsSection = ({ className = "" }) => {
                             ))}
                           </div>
 
-                          {/* Bottom Note */}
                           <p className="text-[#566308] font-medium text-xs sm:text-sm">
                             {award.note}
                           </p>

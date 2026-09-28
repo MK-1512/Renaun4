@@ -27,7 +27,6 @@ export const PricingCard = ({
       )}
     >
       <div>
-        {/* Top Badges */}
         <div className="flex items-center justify-between gap-4 mb-6">
           <Badge
             variant={isFeatured ? "lime" : "outline"}
@@ -40,7 +39,6 @@ export const PricingCard = ({
           </span>
         </div>
 
-        {/* Pricing Number */}
         <div className="flex items-baseline gap-2 mb-3">
           <h4 className="font-heading font-bold text-4xl sm:text-5xl text-white">
             {price}
@@ -52,12 +50,10 @@ export const PricingCard = ({
           {description}
         </p>
 
-        {/* Feature List Header */}
         <div className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-4 pb-2 border-b border-white/10">
           Features included:
         </div>
 
-        {/* Feature list */}
         <ul className="flex flex-col gap-3.5 mb-10">
           {features.map((feature, idx) => (
             <li
@@ -73,7 +69,6 @@ export const PricingCard = ({
         </ul>
       </div>
 
-      {/* Button */}
       <Button
         to={buttonLink}
         variant={isFeatured ? "primary" : "white"}

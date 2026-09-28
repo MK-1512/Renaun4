@@ -1,24 +1,29 @@
 import React from "react";
 import { SectionHeader } from "../molecules/SectionHeader";
 import { ServiceCard } from "../molecules/ServiceCard";
+import { PartnersTicker } from "./PartnersTicker";
 import { servicesData } from "../../data/servicesData";
 
 export const ServicesSection = ({ className = "" }) => {
   return (
     <section
-      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#08090a] ${className}`}
+      className={`relative w-full py-20 sm:py-28 md:py-32 bg-[#08090a] ${className}`}
     >
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
-        {/* Section Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         <SectionHeader
           badge="Services"
           title="Everything you need to grow on social — done for you"
           subtitle="We handle the strategy, execution, and optimization — so you can focus on your business."
-          className="mb-14 sm:mb-20"
+          className="mb-10 sm:mb-14"
         />
+      </div>
 
-        {/* 3 Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full">
+      <div className="w-full mb-14 sm:mb-20">
+        <PartnersTicker />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
           {servicesData.map((service) => (
             <ServiceCard
               key={service.id}
@@ -35,3 +40,5 @@ export const ServicesSection = ({ className = "" }) => {
     </section>
   );
 };
+
+export default ServicesSection;

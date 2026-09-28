@@ -11,7 +11,7 @@ A 100% exact, pixel-perfect replication of [https://virulhub.framer.website/](ht
 - **Animations**: Framer Motion (infinite circular rotating video orbit wheel, collapsible accordions, hover transitions)
 - **Routing**: React Router v7 (Code-split with React.lazy and Suspense)
 - **Icons**: Lucide React + custom Framer SVGs
-- **Typography**: Google Fonts (_Space Grotesk_, _Fragment Mono_, _Inter_)
+- **Typography**: Google Fonts (_Original Surfer_)
 - **Theme Palette**:
   - Lime Accent: `#d2e823`
   - Lime Hover: `#dff15c`
@@ -27,6 +27,7 @@ src/
 ├── assets/                  # Brand SVG icons and media
 ├── components/
 │   ├── atoms/              # Base UI atoms
+│   │   ├── CustomCursor.jsx # Smooth interactive neon follower cursor
 │   │   ├── Badge.jsx        # Status pills, categories, tags with indicator dots
 │   │   ├── Button.jsx       # Primary lime, dark, white, and outline pill buttons
 │   │   ├── Logo.jsx         # SVG Brand Logo with fallback

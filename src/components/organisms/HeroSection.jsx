@@ -8,12 +8,9 @@ import { siteData } from "../../data/siteData";
 export const HeroSection = () => {
   return (
     <section className="relative w-full bg-[#08090a] pt-32 sm:pt-40 md:pt-44 pb-12 overflow-hidden flex flex-col items-center text-center">
-      {/* Subtle Ambient Radial Neon Glow behind Hero Title */}
       <div className="absolute top-28 sm:top-36 left-1/2 -translate-x-1/2 w-[550px] sm:w-[750px] h-[300px] sm:h-[400px] bg-[#d2e823]/[0.07] blur-[140px] pointer-events-none rounded-full" />
 
-      {/* Container */}
       <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col items-center">
-        {/* Top Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -24,7 +21,6 @@ export const HeroSection = () => {
           </Badge>
         </motion.div>
 
-        {/* Main H1 Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -38,7 +34,6 @@ export const HeroSection = () => {
           Build, Grow, and Scale Your Brand on Social Media
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,7 +47,6 @@ export const HeroSection = () => {
           {siteData.description}
         </motion.p>
 
-        {/* Action Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,7 +79,6 @@ export const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Signature Rotating Circular Video Wheel */}
       <HeroVideoWheel />
     </section>
   );

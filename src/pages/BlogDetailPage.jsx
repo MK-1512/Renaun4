@@ -15,7 +15,6 @@ export const BlogDetailPage = () => {
 
   return (
     <div className="w-full flex flex-col bg-[#08090a]">
-      {/* Article Header */}
       <section className="relative w-full pt-36 sm:pt-44 md:pt-48 pb-12 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         <div className="max-w-3xl mx-auto flex flex-col gap-6">
           <Link
@@ -52,7 +51,6 @@ export const BlogDetailPage = () => {
         </div>
       </section>
 
-      {/* Featured Banner Image */}
       <section className="relative w-full py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="relative aspect-[16/9] w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10">
@@ -65,7 +63,6 @@ export const BlogDetailPage = () => {
         </div>
       </section>
 
-      {/* Article Body Content */}
       <article className="relative w-full py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto flex flex-col gap-10">
           {post.sections.map((sec, idx) => (
@@ -79,7 +76,6 @@ export const BlogDetailPage = () => {
             </div>
           ))}
 
-          {/* Core Framework Checklist Box */}
           <div className="p-8 rounded-3xl bg-[#0e1014] border border-white/10 shadow-xl mt-4 flex flex-col gap-4">
             <span className="text-xs font-mono uppercase tracking-wider text-[#d2e823]">
               Conversion Checklist
@@ -102,7 +98,6 @@ export const BlogDetailPage = () => {
         </div>
       </article>
 
-      {/* CTA Section */}
       <CtaSection />
     </div>
   );

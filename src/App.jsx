@@ -1,8 +1,7 @@
 import React, { Suspense, lazy } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { MainLayout } from "./layouts/MainLayout";
 
-// Lazy-loaded pages for optimal chunking and fast initial load
 const HomePage = lazy(() =>
   import("./pages/HomePage").then((m) => ({ default: m.HomePage })),
 );
@@ -21,12 +20,6 @@ const CaseStudyDetailPage = lazy(() =>
   import("./pages/CaseStudyDetailPage").then((m) => ({
     default: m.CaseStudyDetailPage,
   })),
-);
-const BlogPage = lazy(() =>
-  import("./pages/BlogPage").then((m) => ({ default: m.BlogPage })),
-);
-const BlogDetailPage = lazy(() =>
-  import("./pages/BlogDetailPage").then((m) => ({ default: m.BlogDetailPage })),
 );
 const ContactPage = lazy(() =>
   import("./pages/ContactPage").then((m) => ({ default: m.ContactPage })),
@@ -64,9 +57,8 @@ export function App() {
             <Route path="/about-us" element={<AboutPage />} />
             <Route path="/service" element={<ServicesPage />} />
             <Route path="/case-study" element={<CaseStudiesPage />} />
-            <Route path="/case-study/:id" element={<CaseStudyDetailPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/blog/:slug" element={<BlogDetailPage />} />
+            <Route path="/blog" element={<Navigate to="/" replace />} />
+            <Route path="/blog/:slug" element={<Navigate to="/" replace />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/coming-soon" element={<ComingSoonPage />} />
             <Route

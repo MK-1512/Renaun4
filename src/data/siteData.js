@@ -9,7 +9,6 @@ export const siteData = {
     { label: "About", href: "/about-us" },
     { label: "Services", href: "/service" },
     { label: "Case Studies", href: "/case-study" },
-    { label: "Blog", href: "/blog" },
   ],
   ctaButton: {
     label: "Book a Call",
@@ -17,7 +16,9 @@ export const siteData = {
   },
   contact: {
     email: "Renaun4@email.com",
-    phone: "+123 456 789",
+    phone: "+91 99086 80481",
+    whatsapp: "919908680481",
+    whatsappCallUrl: "https://call.whatsapp.com/voice/bgl6yZftAJDs7B4Vdko6i9",
     location: "London, UK",
     addressMapUrl: "https://google.com/maps/@51.5287398,-0.2664026,11z",
   },
@@ -31,15 +32,8 @@ export const siteData = {
       { label: "About", href: "/about-us" },
       { label: "Services", href: "/service" },
       { label: "Case Studies", href: "/case-study" },
-      { label: "Blog", href: "/blog" },
     ],
-    cms: [
-      { label: "Case Studies Details", href: "/case-study/radiance" },
-      {
-        label: "Blog Details",
-        href: "/blog/how-to-create-content-that-actually-converts",
-      },
-    ],
+    cms: [{ label: "Case Studies Details", href: "/case-study/radiance" }],
     other: [
       { label: "Terms & Condition", href: "/privacy-terms/terms-conditions" },
       { label: "Privacy & Policy", href: "/privacy-terms/privacy-policy" },

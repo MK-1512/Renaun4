@@ -5,7 +5,7 @@ import missionTargetImg from "../assets/mission-target.jpg";
 import { Badge } from "../components/atoms/Badge";
 import { AwardsSection } from "../components/organisms/AwardsSection";
 import { TeamSection } from "../components/organisms/TeamSection";
-import { TestimonialsSection } from "../components/organisms/TestimonialsSection";
+import { ReviewsSection } from "../components/organisms/ReviewsSection";
 import { CtaSection } from "../components/organisms/CtaSection";
 
 const statsData = [
@@ -37,10 +37,8 @@ const missionSteps = [
 export const AboutPage = () => {
   return (
     <div className="w-full flex flex-col bg-[#08090a]">
-      {/* 1. Hero Section */}
       <section className="relative w-full pt-32 sm:pt-40 md:pt-44 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
-          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -55,7 +53,6 @@ export const AboutPage = () => {
             </Badge>
           </motion.div>
 
-          {/* Heading & Subtitle */}
           <motion.h1
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
@@ -83,7 +80,6 @@ export const AboutPage = () => {
             growth, engagement, and revenue.
           </motion.p>
 
-          {/* Hero Video */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -104,7 +100,6 @@ export const AboutPage = () => {
             />
           </motion.div>
 
-          {/* 4 Obsidian Stat Cards with Glowing Neon Figures */}
           <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-6 sm:mt-8">
             {statsData.map((stat, idx) => (
               <motion.div
@@ -131,10 +126,8 @@ export const AboutPage = () => {
         </div>
       </section>
 
-      {/* 2. Mission & Vision Section */}
       <section className="relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 border-t border-white/10">
         <div className="max-w-7xl mx-auto flex flex-col">
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -154,9 +147,7 @@ export const AboutPage = () => {
             </p>
           </motion.div>
 
-          {/* 2-Column Content: Left Target Graphic, Right Stepper */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left Column: 3D Target Bullseye */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -173,7 +164,6 @@ export const AboutPage = () => {
               </div>
             </motion.div>
 
-            {/* Right Column: Mission Statement & 4-Step Vertical Timeline */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -190,17 +180,13 @@ export const AboutPage = () => {
                 growth engine.
               </h3>
 
-              {/* Vertical Stepper with dotted lines */}
               <div className="flex flex-col">
                 {missionSteps.map((step, idx) => (
                   <div key={idx} className="flex items-start gap-5 relative">
-                    {/* Vertical connector line */}
                     {idx !== missionSteps.length - 1 && (
                       <div className="absolute left-[7px] top-[22px] bottom-0 w-[2px] border-l-2 border-dashed border-white/20" />
                     )}
-                    {/* Lime bullet dot */}
                     <div className="relative z-10 w-4 h-4 rounded-full bg-[#d2e823] border-2 border-[#d2e823] shadow-[0_0_10px_#d2e823] shrink-0 mt-1" />
-                    {/* Text */}
                     <div className="pb-8 sm:pb-10">
                       <h4 className="font-heading font-bold text-lg sm:text-xl text-white">
                         {step.title}
@@ -217,16 +203,12 @@ export const AboutPage = () => {
         </div>
       </section>
 
-      {/* 3. Trusted & Recognized / Awards Section */}
       <AwardsSection />
 
-      {/* 4. Meet the Team Section */}
       <TeamSection />
 
-      {/* 5. Testimonials Section (with video & marquee) */}
-      <TestimonialsSection />
+      <ReviewsSection />
 
-      {/* 6. CTA / Get Started Section (with 3D cylinder carousel) */}
       <CtaSection />
     </div>
   );

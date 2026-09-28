@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -23,9 +22,9 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['"Space Grotesk"', "sans-serif"],
-        body: ["Inter", '"Open Sauce One"', "sans-serif"],
-        mono: ['"Fragment Mono"', "monospace"],
+        heading: ['"Original Surfer"', "cursive", "sans-serif"],
+        body: ['"Original Surfer"', "cursive", "sans-serif"],
+        mono: ['"Original Surfer"', "cursive", "monospace"],
       },
       animation: {
         "spin-very-slow": "spin 50s linear infinite",

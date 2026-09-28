@@ -11,7 +11,6 @@ export const FaqSection = ({ className = "" }) => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          {/* Left Column: Heading & Support Card */}
           <div className="lg:col-span-5 flex flex-col gap-8">
             <SectionHeader
               badge={faqData.header.badge}
@@ -21,7 +20,6 @@ export const FaqSection = ({ className = "" }) => {
               theme="dark"
             />
 
-            {/* Support Callout Card */}
             <div className="flex flex-col sm:flex-row items-center gap-6 p-6 sm:p-8 rounded-3xl bg-[#111418] border border-white/10 overflow-hidden relative">
               <div className="flex-1 flex flex-col gap-3 z-10">
                 <h4 className="font-heading font-bold text-xl text-white">
@@ -43,7 +41,6 @@ export const FaqSection = ({ className = "" }) => {
                 </div>
               </div>
 
-              {/* Decorative Image */}
               <div className="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 rounded-2xl overflow-hidden bg-black/40 border border-white/10">
                 <img
                   src={faqData.card.image}
@@ -55,7 +52,6 @@ export const FaqSection = ({ className = "" }) => {
             </div>
           </div>
 
-          {/* Right Column: Accordion Items */}
           <div className="lg:col-span-7 w-full">
             <FaqAccordion items={faqData.items} />
           </div>

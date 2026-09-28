@@ -68,7 +68,6 @@ export const TermsConditionsPage = () => {
   return (
     <div className="w-full flex flex-col bg-[#08090a] pt-36 sm:pt-44 md:pt-48 pb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto flex flex-col gap-10">
-        {/* Header */}
         <div className="flex flex-col gap-4 text-center items-center pb-8 border-b border-white/10">
           <Badge variant="lime" hasDot>
             Terms of Service
@@ -85,7 +84,6 @@ export const TermsConditionsPage = () => {
           </span>
         </div>
 
-        {/* Content Sections */}
         <div className="flex flex-col gap-8">
           {sections.map((sec) => (
             <div

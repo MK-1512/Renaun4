@@ -12,12 +12,10 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -37,10 +35,8 @@ export const Navbar = () => {
         )}
       >
         <div className="flex items-center justify-between w-full">
-          {/* Logo */}
           <Logo />
 
-          {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-1">
             {siteData.navLinks.map((link) => (
               <NavItem key={link.href} to={link.href}>
@@ -49,7 +45,6 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          {/* CTA Button & Mobile Toggle */}
           <div className="flex items-center gap-3">
             <Button
               to={siteData.ctaButton.href}
@@ -60,7 +55,6 @@ export const Navbar = () => {
               {siteData.ctaButton.label}
             </Button>
 
-            {/* Mobile menu trigger */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
@@ -75,7 +69,6 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
         {isOpen && (
           <div className="md:hidden mt-4 pt-4 border-t border-white/10 flex flex-col gap-2 pb-2">
             {siteData.navLinks.map((link) => (

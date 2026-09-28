@@ -9,7 +9,6 @@ import { servicesData } from "../data/servicesData";
 export const ServicesPage = () => {
   return (
     <div className="w-full flex flex-col">
-      {/* Services Top Banner */}
       <section className="relative w-full bg-[#08090a] pt-36 sm:pt-44 md:pt-48 pb-16 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
           <SectionHeader
@@ -22,10 +21,9 @@ export const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Services Cards */}
       <section className="relative w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#08090a]">
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {servicesData.map((service) => (
               <ServiceCard
                 key={service.id}
@@ -41,15 +39,12 @@ export const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
       <div id="pricing">
         <PricingSection />
       </div>
 
-      {/* FAQ Section */}
       <FaqSection />
 
-      {/* CTA Section */}
       <CtaSection />
     </div>
   );

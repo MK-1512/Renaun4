@@ -17,7 +17,6 @@ export const CaseStudyCard = ({
   const [isHovered, setIsHovered] = useState(false);
   const videoRef = useRef(null);
 
-  // Fallback default metrics if not explicitly passed
   const statsData = metrics || {
     views: "+280%",
     click: "4.2x",
@@ -34,7 +33,6 @@ export const CaseStudyCard = ({
         className,
       )}
     >
-      {/* Background Video / Poster */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-black">
         <video
           ref={videoRef}
@@ -48,7 +46,6 @@ export const CaseStudyCard = ({
         />
       </div>
 
-      {/* Default Unhovered State: Bottom Floating Frosted Glass Capsule */}
       <div
         className={cn(
           "relative z-10 m-3 sm:m-4 transition-all duration-300 pointer-events-none",
@@ -73,7 +70,6 @@ export const CaseStudyCard = ({
         </div>
       </div>
 
-      {/* Hovered State: Full Obsidian Frosted Glass Metrics Overlay with Neon Accents */}
       <AnimatePresence>
         {isHovered && (
           <motion.div
@@ -83,7 +79,6 @@ export const CaseStudyCard = ({
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="absolute inset-0 z-20 flex flex-col justify-between p-6 sm:p-7 bg-[#0c0d11]/92 backdrop-blur-xl border-2 border-[#d2e823]/50 shadow-[0_0_35px_rgba(210,232,35,0.2)]"
           >
-            {/* Top row: Title/Subtitle and Category badge */}
             <div className="flex items-start justify-between w-full">
               <div className="flex flex-col">
                 <h3 className="font-heading font-bold text-2xl text-white leading-tight">
@@ -99,9 +94,7 @@ export const CaseStudyCard = ({
               </span>
             </div>
 
-            {/* Middle: 3 Metrics with clean dividers */}
             <div className="flex flex-col w-full my-auto py-2">
-              {/* Metric 1: Views */}
               <div className="flex flex-col items-center text-center">
                 <span className="font-heading font-bold text-3xl sm:text-4xl text-[#d2e823] tracking-tight leading-none drop-shadow-[0_0_8px_rgba(210,232,35,0.3)]">
                   {statsData.views}
@@ -114,7 +107,6 @@ export const CaseStudyCard = ({
 
               <div className="border-t border-white/10 my-3.5 sm:my-4 w-full" />
 
-              {/* Metric 2: Click */}
               <div className="flex flex-col items-center text-center">
                 <span className="font-heading font-bold text-3xl sm:text-4xl text-[#d2e823] tracking-tight leading-none drop-shadow-[0_0_8px_rgba(210,232,35,0.3)]">
                   {statsData.click}
@@ -127,7 +119,6 @@ export const CaseStudyCard = ({
 
               <div className="border-t border-white/10 my-3.5 sm:my-4 w-full" />
 
-              {/* Metric 3: Growth */}
               <div className="flex flex-col items-center text-center">
                 <span className="font-heading font-bold text-3xl sm:text-4xl text-[#d2e823] tracking-tight leading-none drop-shadow-[0_0_8px_rgba(210,232,35,0.3)]">
                   {statsData.growth}
@@ -139,7 +130,6 @@ export const CaseStudyCard = ({
               </div>
             </div>
 
-            {/* Bottom Button */}
             <div className="pt-2 w-full">
               <Link
                 to={`/case-study/${id}`}

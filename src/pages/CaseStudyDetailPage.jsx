@@ -40,10 +40,8 @@ export const CaseStudyDetailPage = () => {
 
   return (
     <div className="w-full flex flex-col bg-[#08090a]">
-      {/* Top Banner */}
       <section className="relative w-full pt-36 sm:pt-44 md:pt-48 pb-14 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         <div className="max-w-5xl mx-auto flex flex-col gap-6">
-          {/* Back link & Category Badge */}
           <div className="flex items-center justify-between">
             <Link
               to="/case-study"
@@ -58,7 +56,6 @@ export const CaseStudyDetailPage = () => {
             </Badge>
           </div>
 
-          {/* Heading */}
           <div className="flex flex-col gap-2">
             <span className="text-sm font-mono text-[#d2e823] uppercase tracking-wider">
               {study.subtitle}
@@ -68,7 +65,6 @@ export const CaseStudyDetailPage = () => {
             </h1>
           </div>
 
-          {/* Project Meta Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 rounded-2xl bg-[#0e1014] border border-white/10 mt-4 shadow-sm">
             <div>
               <span className="text-xs font-mono uppercase text-neutral-400 block mb-1">
@@ -106,7 +102,6 @@ export const CaseStudyDetailPage = () => {
         </div>
       </section>
 
-      {/* Main Video Showcase */}
       <section className="relative w-full py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative aspect-video w-full rounded-3xl overflow-hidden bg-black shadow-2xl border border-black/10 group">
@@ -120,7 +115,6 @@ export const CaseStudyDetailPage = () => {
               playsInline
               className="w-full h-full object-cover"
             />
-            {/* Play/Pause Button overlay */}
             <button
               onClick={togglePlay}
               className="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#d2e823] hover:text-black transition-all duration-300"
@@ -136,7 +130,6 @@ export const CaseStudyDetailPage = () => {
         </div>
       </section>
 
-      {/* Key Metrics / Results Counters */}
       <section className="relative w-full py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -152,10 +145,8 @@ export const CaseStudyDetailPage = () => {
         </div>
       </section>
 
-      {/* Case Study Content Breakdown */}
       <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto flex flex-col gap-16">
-          {/* Introduction & Overview */}
           <div className="p-8 sm:p-10 rounded-3xl bg-[#0e1014] border border-white/10 flex flex-col gap-4 shadow-sm">
             <span className="text-xs font-mono uppercase tracking-wider text-[#d2e823]">
               Introduction
@@ -168,9 +159,7 @@ export const CaseStudyDetailPage = () => {
             </p>
           </div>
 
-          {/* Challenge & Approach 2-column Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* The Challenge */}
             <div className="p-8 sm:p-10 rounded-3xl bg-[#0e1014] text-white border border-white/10 flex flex-col gap-6 shadow-sm">
               <div className="flex items-center gap-2">
                 <AlertCircle className="w-5 h-5 text-[#d2e823]" />
@@ -194,7 +183,6 @@ export const CaseStudyDetailPage = () => {
               </ul>
             </div>
 
-            {/* Our Approach */}
             <div className="p-8 sm:p-10 rounded-3xl bg-[#0e1014] border border-[#d2e823]/40 flex flex-col gap-6 shadow-[0_0_25px_rgba(210,232,35,0.12)]">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-[#d2e823]" />
@@ -219,7 +207,6 @@ export const CaseStudyDetailPage = () => {
             </div>
           </div>
 
-          {/* Highlights in Action */}
           <div className="p-8 sm:p-10 rounded-3xl bg-[#0e1014] border border-white/10 flex flex-col gap-6 shadow-sm">
             <span className="text-xs font-mono uppercase tracking-wider text-[#d2e823]">
               Content in Action
@@ -239,7 +226,6 @@ export const CaseStudyDetailPage = () => {
             </div>
           </div>
 
-          {/* Client Feedback Card */}
           {study.testimonial && (
             <div className="p-8 sm:p-12 rounded-3xl bg-[#0e1014] text-white border border-[#d2e823]/30 shadow-[0_0_30px_rgba(210,232,35,0.12)] flex flex-col gap-6">
               <div className="flex items-center justify-between">
@@ -264,7 +250,6 @@ export const CaseStudyDetailPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <CtaSection />
     </div>
   );

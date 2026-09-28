@@ -9,7 +9,6 @@ export const TeamSection = ({ className = "" }) => {
       className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#08090a] ${className}`}
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
-        {/* Section Header */}
         <SectionHeader
           badge="Team"
           title="Meet the Team"
@@ -17,9 +16,8 @@ export const TeamSection = ({ className = "" }) => {
           className="mb-14 sm:mb-20"
         />
 
-        {/* 6 Members Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
-          {teamData.map((member, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto w-full">
+          {teamData.slice(0, 4).map((member, idx) => (
             <TeamMemberCard
               key={idx}
               name={member.name}
@@ -32,3 +30,5 @@ export const TeamSection = ({ className = "" }) => {
     </section>
   );
 };
+
+export default TeamSection;

@@ -8,7 +8,6 @@ import { blogData } from "../data/blogData";
 export const BlogPage = () => {
   return (
     <div className="w-full flex flex-col bg-[#08090a]">
-      {/* Blog Top Banner */}
       <section className="relative w-full pt-36 sm:pt-44 md:pt-48 pb-12 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
           <Badge variant="lime" hasDot className="mb-4">
@@ -25,7 +24,6 @@ export const BlogPage = () => {
             brand — we&apos;ll show you how to grow.
           </p>
 
-          {/* Action Buttons matching screenshot */}
           <div className="flex items-center gap-3.5">
             <Link
               to="/case-study"
@@ -43,7 +41,6 @@ export const BlogPage = () => {
         </div>
       </section>
 
-      {/* Blog Posts Grid (2 columns on tablet/desktop as shown in design) */}
       <section className="relative w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
@@ -62,7 +59,6 @@ export const BlogPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <CtaSection />
     </div>
   );

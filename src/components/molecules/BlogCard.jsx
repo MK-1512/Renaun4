@@ -19,9 +19,7 @@ export const BlogCard = ({
         className,
       )}
     >
-      {/* Top Image Container: Blurs on hover and reveals centered 'See Details' */}
       <div className="relative aspect-[4/3] sm:aspect-[1.2/1] w-full overflow-hidden rounded-[28px] sm:rounded-[36px] bg-[#0e1014] border border-white/10 transition-all duration-500 group-hover:border-[#d2e823]/60 group-hover:shadow-[0_0_35px_rgba(210,232,35,0.22)]">
-        {/* Background Image: blurs and slightly zooms on hover */}
         <img
           src={image}
           alt={title}
@@ -29,7 +27,6 @@ export const BlogCard = ({
           loading="lazy"
         />
 
-        {/* Hover Centered 'See Details' Overlay */}
         <div className="absolute inset-0 flex items-center justify-center bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
           <span className="font-heading font-bold text-2xl sm:text-3xl text-white tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] group-hover:text-[#d2e823] transition-colors">
             See Details
@@ -37,7 +34,6 @@ export const BlogCard = ({
         </div>
       </div>
 
-      {/* Content Below the Image Frame (Date, Title, Description) */}
       <div className="flex flex-col mt-4 sm:mt-5 px-1">
         <span className="text-xs font-mono text-neutral-400">{date}</span>
         <h3 className="font-heading font-bold text-lg sm:text-xl md:text-2xl text-white tracking-tight mt-1.5 leading-snug group-hover:text-[#d2e823] transition-colors duration-200">

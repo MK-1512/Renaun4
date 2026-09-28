@@ -1,54 +1,86 @@
 export const servicesData = [
   {
-    id: "content-creation",
+    id: "brand-strategy",
     number: "01",
-    title: "Content Creation",
-    subtitle: "Create scroll-stopping content that builds attention and trust.",
+    title: "Brand Strategy & Identity",
+    subtitle: "Build a brand people remember.",
     image:
-      "https://framerusercontent.com/images/0D9HnLt8mHA5oLg1j072AxwKys.png?width=400&height=400",
-    includes: ["Ideation", "Video Assets", "Filming", "Grphics"],
-    features: [
-      "High-retention short-form video hooks",
-      "Platform-native visual aesthetic & editing",
-      "Trend-driven viral storytelling formats",
-      "Brand voice consistency across TikTok & Reels",
+      "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=800&q=80",
+    includes: [
+      "Brand strategy & positioning",
+      "Market & competitor research",
+      "Visual identity",
+      "Brand guidelines",
     ],
-    details:
-      "We conceptualize, script, film, and edit high-impact short-form videos and visual assets tailored to capture attention in the first 3 seconds and convert passive scrollers into committed brand advocates.",
   },
   {
-    id: "social-management",
+    id: "social-media",
     number: "02",
-    title: "Social Media Management",
-    subtitle:
-      "Consistent posting, engagement, and growth — without the stress.",
+    title: "Social Media Marketing",
+    subtitle: "Turn attention into an audience.",
     image:
-      "https://framerusercontent.com/images/fRtbGYIobgGiuHzLrZfihyTcIU.png?width=400&height=400",
-    includes: ["Curating", "Daily Posting", "Oversight", "Reporting"],
-    features: [
-      "Full month-by-month calendar roadmap",
-      "Proactive comment & DM community management",
-      "Platform algorithm optimization & hashtag strategies",
-      "Performance reporting & growth analytics",
+      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80",
+    includes: [
+      "Social media strategy",
+      "Content calendars",
+      "Organic growth",
+      "Community management",
     ],
-    details:
-      "Never worry about what to post next. We manage your presence end-to-end, handling scheduling, community engagement, audience interaction, and optimization across Instagram, TikTok, and YouTube.",
   },
   {
-    id: "paid-media",
+    id: "content-creative",
     number: "03",
-    title: "Paid Media (Ads)",
-    subtitle: "Turn views into revenue with high-performing ad campaigns.",
+    title: "Content & Creative",
+    subtitle: "Create content that gets noticed.",
     image:
-      "https://framerusercontent.com/images/jtcbfgjVghJIpmsRwOnGQWEQVJo.png?width=400&height=400",
-    includes: ["Targeting", "AdSet Launch", "Tracking", "Analyzing"],
-    features: [
-      "Full-funnel Meta & TikTok ad campaigns",
-      "Creative iteration & rigorous A/B hook testing",
-      "Retargeting funnels that maximize LTV",
-      "Transparent ROAS and acquisition tracking",
+      "https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=800&q=80",
+    includes: [
+      "Content strategy",
+      "Ad creatives",
+      "Graphic design",
+      "Motion graphics",
     ],
-    details:
-      "Scale proven organic winners into multi-platform paid ad campaigns. We combine psychological hook triggers with precision targeting to achieve industry-leading ROAS and lower CPA.",
+  },
+  {
+    id: "performance-marketing",
+    number: "04",
+    title: "Performance Marketing",
+    subtitle: "Turn ad spend into measurable growth.",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    includes: [
+      "Meta Ads",
+      "Google Ads",
+      "ROAS optimization",
+      "Conversion tracking",
+    ],
+  },
+  {
+    id: "website-conversion",
+    number: "05",
+    title: "Website & Conversion",
+    subtitle: "Turn visitors into customers.",
+    image:
+      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+    includes: [
+      "Website design",
+      "Landing pages",
+      "UI/UX design",
+      "Conversion Rate Optimization",
+    ],
+  },
+  {
+    id: "ai-solutions",
+    number: "06",
+    title: "AI Marketing & AI Solutions",
+    subtitle: "Use AI to create, automate and scale.",
+    image:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+    includes: [
+      "AI marketing strategy",
+      "AI content creation",
+      "AI workflow automation",
+      "Custom AI solutions",
+    ],
   },
 ];

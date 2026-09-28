@@ -1,58 +1,265 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { heroVideosData } from "../../data/heroVideosData";
+import React, { useEffect, useRef, useState } from "react";
+
+const sphereImages = [
+  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=85",
+  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=85",
+  "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=85",
+  "https://framerusercontent.com/images/WUDb6I7B9y8L3jYkrOHh2C00Oiw.png?width=900&height=1200",
+  "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=85",
+  "https://framerusercontent.com/images/yqf6ebGWcixisXDtgOmph82TDeA.png?width=1200&height=933",
+  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=85",
+  "https://framerusercontent.com/images/4Ft4BHj6NGDvJiQFYoSHIL1Le40.png?width=876&height=1200",
+
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85",
+  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=85",
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=85",
+  "https://framerusercontent.com/images/tkXDrbRAWTXHyfqSxSSe2wmGHNg.png?width=800&height=1200",
+  "https://framerusercontent.com/images/sPJvxGCZHe8wQ1ON9OCwFxRofIY.png?width=655&height=1200",
+  "https://framerusercontent.com/images/x5dQAI8dggdvbkghM3epPChmU.png?width=1200&height=904",
+  "https://framerusercontent.com/images/saCK0AdLHTLiaDLsB0bxMUY.png?width=837&height=1199",
+  "https://framerusercontent.com/images/Bo1arJSjQszj3p0xQ0skJr4JMBY.png?width=1200&height=679",
+
+  "https://framerusercontent.com/images/Bnb5C8aD9bMXulZDvYKX7FP1fJM.jpg?width=768&height=1020",
+  "https://framerusercontent.com/images/0xgrhBDNmzaO3KmGGPBiN22Hkk.png?width=904&height=1200",
+  "https://framerusercontent.com/images/vISuSBCQTcFMPuGS5HXuILHMc.png?width=992&height=1200",
+  "https://framerusercontent.com/images/37ixGJCI8TkrMSifcexb6ncGz5g.png?width=640&height=850",
+  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=85",
+  "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=85",
+  "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=85",
+  "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=85",
+];
 
 export const HeroVideoWheel = () => {
+  const sphereRef = useRef(null);
+  const isDraggingRef = useRef(false);
+  const dragStartRef = useRef({ x: 0, y: 0 });
+  const velocityRef = useRef({ x: 0, y: 0 });
+  const rotRef = useRef({ x: -4, y: 0 });
+
+  const [dimensions, setDimensions] = useState({
+    radius: 350,
+    midCardWidth: 205,
+    midCardHeight: 255,
+    topCardWidth: 170,
+    topCardHeight: 185,
+    bottomCardWidth: 170,
+    bottomCardHeight: 185,
+    latitudeAngle: 38,
+    perspective: 1100,
+  });
+
+  useEffect(() => {
+    const updateSize = () => {
+      const w = window.innerWidth;
+      if (w < 640) {
+        setDimensions({
+          radius: 190,
+          midCardWidth: 110,
+          midCardHeight: 145,
+          topCardWidth: 90,
+          topCardHeight: 105,
+          bottomCardWidth: 90,
+          bottomCardHeight: 105,
+          latitudeAngle: 38,
+          perspective: 680,
+        });
+      } else if (w < 1024) {
+        setDimensions({
+          radius: 275,
+          midCardWidth: 160,
+          midCardHeight: 205,
+          topCardWidth: 135,
+          topCardHeight: 150,
+          bottomCardWidth: 135,
+          bottomCardHeight: 150,
+          latitudeAngle: 38,
+          perspective: 900,
+        });
+      } else {
+        setDimensions({
+          radius: 350,
+          midCardWidth: 205,
+          midCardHeight: 255,
+          topCardWidth: 170,
+          topCardHeight: 185,
+          bottomCardWidth: 170,
+          bottomCardHeight: 185,
+          latitudeAngle: 38,
+          perspective: 1100,
+        });
+      }
+    };
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
+  useEffect(() => {
+    let animId;
+    let lastTime = performance.now();
+
+    const loop = (time) => {
+      const dt = Math.min((time - lastTime) / 1000, 0.1);
+      lastTime = time;
+
+      if (!isDraggingRef.current) {
+        velocityRef.current.x *= 0.95;
+        velocityRef.current.y *= 0.95;
+
+        const constantSpeed = 14;
+        rotRef.current.y += constantSpeed * dt + velocityRef.current.x;
+        rotRef.current.x = Math.max(
+          -25,
+          Math.min(25, rotRef.current.x + velocityRef.current.y),
+        );
+
+        if (Math.abs(velocityRef.current.y) < 0.01) {
+          const defaultTilt = -4;
+          rotRef.current.x += (defaultTilt - rotRef.current.x) * 0.02;
+        }
+      }
+
+      if (sphereRef.current) {
+        sphereRef.current.style.transform = `rotateX(${rotRef.current.x.toFixed(2)}deg) rotateY(${rotRef.current.y.toFixed(2)}deg)`;
+      }
+
+      animId = requestAnimationFrame(loop);
+    };
+
+    animId = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
+  const handlePointerDown = (e) => {
+    isDraggingRef.current = true;
+    dragStartRef.current = { x: e.clientX, y: e.clientY };
+    velocityRef.current = { x: 0, y: 0 };
+  };
+
+  const handlePointerMove = (e) => {
+    if (!isDraggingRef.current) return;
+    const dx = e.clientX - dragStartRef.current.x;
+    const dy = e.clientY - dragStartRef.current.y;
+    const sensX = 0.25;
+    const sensY = 0.2;
+    rotRef.current.y += dx * sensX;
+    rotRef.current.x = Math.max(
+      -25,
+      Math.min(25, rotRef.current.x - dy * sensY),
+    );
+    velocityRef.current = { x: dx * sensX, y: -dy * sensY };
+    dragStartRef.current = { x: e.clientX, y: e.clientY };
+  };
+
+  const handlePointerUp = () => {
+    isDraggingRef.current = false;
+  };
+
   return (
-    <div className="relative w-full max-w-[1900px] h-[220px] sm:h-[300px] md:h-[360px] overflow-hidden flex justify-center items-start mt-6">
-      {/* Giant Rotating Wheel */}
+    <div
+      className="relative w-full max-w-[1900px] h-[480px] sm:h-[600px] md:h-[680px] lg:h-[740px] overflow-hidden flex justify-center items-center select-none"
+      style={{
+        perspective: `${dimensions.perspective}px`,
+        perspectiveOrigin: "50% 50%",
+      }}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
+    >
       <div
-        className="relative w-[1100px] sm:w-[1350px] md:w-[1580px] aspect-square flex-shrink-0 origin-center animate-spin-wheel"
+        ref={sphereRef}
+        className="relative flex items-center justify-center pointer-events-auto"
         style={{
-          animation: "spinWheel 60s linear infinite",
+          width: "0px",
+          height: "0px",
+          transformStyle: "preserve-3d",
           willChange: "transform",
         }}
       >
-        {heroVideosData.map((item, idx) => {
-          // Calculate polar coordinates on the wheel's perimeter
-          const radiusPercent = 43; // 43% from center
-          const radians = (item.angle - 90) * (Math.PI / 180);
-          const x = 50 + radiusPercent * Math.cos(radians);
-          const y = 50 + radiusPercent * Math.sin(radians);
-
+        {Array.from({ length: 8 }).map((_, i) => {
+          const theta = i * 45;
           return (
             <div
-              key={idx}
-              className="absolute w-[120px] sm:w-[145px] md:w-[170px] aspect-[9/16] rounded-2xl md:rounded-3xl overflow-hidden bg-black/80 border border-white/20 shadow-2xl"
+              key={`top-${i}`}
+              className="absolute rounded-xl md:rounded-2xl overflow-hidden bg-[#111317] border border-white/10 shadow-2xl transition-[border-color,box-shadow] duration-300"
               style={{
-                top: `${y}%`,
-                left: `${x}%`,
-                transform: `translate(-50%, -50%) rotate(${item.angle}deg)`,
+                width: `${dimensions.topCardWidth}px`,
+                height: `${dimensions.topCardHeight}px`,
+                left: `${-dimensions.topCardWidth / 2}px`,
+                top: `${-dimensions.topCardHeight / 2}px`,
+                transformStyle: "preserve-3d",
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
+                transform: `rotateY(${theta}deg) rotateX(-${dimensions.latitudeAngle}deg) translateZ(${dimensions.radius}px)`,
               }}
             >
-              <video
-                src={item.src}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                onLoadedMetadata={(e) => {
-                  e.currentTarget.muted = true;
-                  e.currentTarget.play().catch(() => {});
-                }}
+              <img
+                src={sphereImages[i]}
+                alt={`Photo gallery top ${i + 1}`}
+                loading="eager"
                 className="w-full h-full object-cover select-none pointer-events-none"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+            </div>
+          );
+        })}
+
+        {Array.from({ length: 8 }).map((_, i) => {
+          const theta = i * 45;
+          return (
+            <div
+              key={`mid-${i}`}
+              className="absolute rounded-xl md:rounded-2xl overflow-hidden bg-[#111317] border border-white/10 shadow-2xl transition-[border-color,box-shadow] duration-300"
+              style={{
+                width: `${dimensions.midCardWidth}px`,
+                height: `${dimensions.midCardHeight}px`,
+                left: `${-dimensions.midCardWidth / 2}px`,
+                top: `${-dimensions.midCardHeight / 2}px`,
+                transformStyle: "preserve-3d",
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
+                transform: `rotateY(${theta}deg) translateZ(${dimensions.radius}px)`,
+              }}
+            >
+              <img
+                src={sphereImages[8 + i]}
+                alt={`Photo gallery middle ${i + 1}`}
+                loading="eager"
+                className="w-full h-full object-cover select-none pointer-events-none"
+              />
+            </div>
+          );
+        })}
+
+        {Array.from({ length: 8 }).map((_, i) => {
+          const theta = i * 45;
+          return (
+            <div
+              key={`bot-${i}`}
+              className="absolute rounded-xl md:rounded-2xl overflow-hidden bg-[#111317] border border-white/10 shadow-2xl transition-[border-color,box-shadow] duration-300"
+              style={{
+                width: `${dimensions.bottomCardWidth}px`,
+                height: `${dimensions.bottomCardHeight}px`,
+                left: `${-dimensions.bottomCardWidth / 2}px`,
+                top: `${-dimensions.bottomCardHeight / 2}px`,
+                transformStyle: "preserve-3d",
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
+                transform: `rotateY(${theta}deg) rotateX(${dimensions.latitudeAngle}deg) translateZ(${dimensions.radius}px)`,
+              }}
+            >
+              <img
+                src={sphereImages[16 + i]}
+                alt={`Photo gallery bottom ${i + 1}`}
+                loading="eager"
+                className="w-full h-full object-cover select-none pointer-events-none"
+              />
             </div>
           );
         })}
       </div>
-
-      {/* Subtle fade overlays at the edges for smooth blending */}
-      <div className="absolute inset-y-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-[#08090a] to-transparent pointer-events-none z-10" />
-      <div className="absolute inset-y-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-[#08090a] to-transparent pointer-events-none z-10" />
-      <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#08090a] to-transparent pointer-events-none z-10" />
     </div>
   );
 };
+
+export default HeroVideoWheel;

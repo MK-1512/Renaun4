@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Lenis from "lenis";
 import { Navbar } from "../components/organisms/Navbar";
 import { Footer } from "../components/organisms/Footer";
+import { CustomCursor } from "../components/atoms/CustomCursor";
 
-// Helper component to reset window scroll position on page change
 const ScrollToTop = ({ lenisRef }) => {
   const { pathname } = useLocation();
 
@@ -47,7 +47,6 @@ export const MainLayout = () => {
 
     animationFrameId = requestAnimationFrame(raf);
 
-    // Smooth anchor navigation handling (e.g. #pricing, #faq)
     const handleAnchorClick = (e) => {
       const link = e.target.closest("a");
       if (!link) return;
@@ -75,7 +74,6 @@ export const MainLayout = () => {
     };
   }, []);
 
-  // Handle in-page hash changes
   useEffect(() => {
     if (location.hash) {
       const targetElement = document.querySelector(location.hash);
@@ -93,6 +91,7 @@ export const MainLayout = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#08090a] text-[#f5f5f7]">
+      <CustomCursor />
       <ScrollToTop lenisRef={lenisRef} />
       <Navbar />
       <main className="flex-grow flex flex-col">
