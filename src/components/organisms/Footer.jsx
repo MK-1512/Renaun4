@@ -233,7 +233,6 @@ export const Footer = () => {
 
           <div className="pt-8 mt-12 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-500 font-mono">
             <p>© {new Date().getFullYear()} Renaun4. All rights reserved.</p>
-            <p>Replicated in React & Tailwind</p>
           </div>
         </div>
       </div>

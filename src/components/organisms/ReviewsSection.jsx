@@ -29,7 +29,7 @@ export const ReviewsSection = ({ className = "" }) => {
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#08090a] to-transparent z-10" />
 
         <motion.div
-          animate={{ x: ["0%", "-50%"] }}
+          animate={{ x: ["-50%", "0%"] }}
           transition={{
             repeat: Infinity,
             repeatType: "loop",

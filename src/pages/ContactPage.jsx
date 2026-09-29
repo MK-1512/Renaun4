@@ -11,7 +11,6 @@ const WhatsAppIcon = ({ className = "w-6 h-6" }) => (
 
 export const ContactPage = () => {
   const whatsappNumber = "919908680481";
-  const displayPhone = "+91 99086 80481";
   const whatsappCallUrl =
     "https://call.whatsapp.com/voice/bgl6yZftAJDs7B4Vdko6i9";
   const whatsappChatUrl = `https://wa.me/${whatsappNumber}?text=Hi%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20services`;
@@ -42,21 +41,7 @@ export const ContactPage = () => {
               <span>WhatsApp Direct Line</span>
             </div>
 
-            <span className="relative z-10 text-xs sm:text-sm font-mono tracking-widest uppercase text-neutral-400 mb-2">
-              WhatsApp Contact
-            </span>
-
-            <a
-              href={`https://wa.me/${whatsappNumber}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative z-10 font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white hover:text-[#d2e823] tracking-tight leading-tight transition-colors duration-300 drop-shadow-[0_0_25px_rgba(210,232,35,0.15)] my-2 inline-flex items-center gap-3 group"
-            >
-              <span>{displayPhone}</span>
-              <ArrowUpRight className="w-7 h-7 sm:w-9 sm:h-9 text-[#d2e823] opacity-0 group-hover:opacity-100 transition-opacity" />
-            </a>
-
-            <p className="relative z-10 text-sm sm:text-base text-neutral-400 max-w-lg mt-3 mb-10 leading-relaxed font-body">
+            <p className="relative z-10 text-sm sm:text-base text-neutral-400 max-w-lg mb-10 leading-relaxed font-body">
               Choose your preferred way to connect with our team — start a
               direct voice call or chat with our strategists.
             </p>

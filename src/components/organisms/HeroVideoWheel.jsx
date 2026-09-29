@@ -31,67 +31,66 @@ const sphereImages = [
 
 export const HeroVideoWheel = () => {
   const sphereRef = useRef(null);
+
   const isDraggingRef = useRef(false);
-  const dragStartRef = useRef({ x: 0, y: 0 });
-  const velocityRef = useRef({ x: 0, y: 0 });
-  const rotRef = useRef({ x: -4, y: 0 });
+
+  const dragStartRef = useRef({
+    x: 0,
+    y: 0,
+  });
+
+  const velocityRef = useRef({
+    x: 0,
+    y: 0,
+  });
+
+  const rotRef = useRef({
+    x: -4,
+    y: 0,
+  });
 
   const [dimensions, setDimensions] = useState({
-    radius: 350,
-    midCardWidth: 205,
-    midCardHeight: 255,
-    topCardWidth: 170,
-    topCardHeight: 185,
-    bottomCardWidth: 170,
-    bottomCardHeight: 185,
-    latitudeAngle: 38,
+    radius: 500,
+    midCardWidth: 120,
+    midCardHeight: 190,
     perspective: 1100,
   });
 
   useEffect(() => {
     const updateSize = () => {
       const w = window.innerWidth;
+
       if (w < 640) {
         setDimensions({
-          radius: 190,
-          midCardWidth: 110,
-          midCardHeight: 145,
-          topCardWidth: 90,
-          topCardHeight: 105,
-          bottomCardWidth: 90,
-          bottomCardHeight: 105,
-          latitudeAngle: 38,
+          radius: 270,
+          midCardWidth: 65,
+          midCardHeight: 105,
           perspective: 680,
         });
       } else if (w < 1024) {
         setDimensions({
-          radius: 275,
-          midCardWidth: 160,
-          midCardHeight: 205,
-          topCardWidth: 135,
-          topCardHeight: 150,
-          bottomCardWidth: 135,
-          bottomCardHeight: 150,
-          latitudeAngle: 38,
+          radius: 390,
+          midCardWidth: 90,
+          midCardHeight: 145,
           perspective: 900,
         });
       } else {
         setDimensions({
-          radius: 350,
-          midCardWidth: 205,
-          midCardHeight: 255,
-          topCardWidth: 170,
-          topCardHeight: 185,
-          bottomCardWidth: 170,
-          bottomCardHeight: 185,
-          latitudeAngle: 38,
+          radius: 500,
+          midCardWidth: 120,
+          midCardHeight: 190,
           perspective: 1100,
         });
       }
     };
+
     updateSize();
+
     window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
+
+    return () => {
+      window.removeEventListener("resize", updateSize);
+    };
   }, []);
 
   useEffect(() => {
@@ -100,6 +99,7 @@ export const HeroVideoWheel = () => {
 
     const loop = (time) => {
       const dt = Math.min((time - lastTime) / 1000, 0.1);
+
       lastTime = time;
 
       if (!isDraggingRef.current) {
@@ -107,7 +107,9 @@ export const HeroVideoWheel = () => {
         velocityRef.current.y *= 0.95;
 
         const constantSpeed = 14;
+
         rotRef.current.y += constantSpeed * dt + velocityRef.current.x;
+
         rotRef.current.x = Math.max(
           -25,
           Math.min(25, rotRef.current.x + velocityRef.current.y),
@@ -115,40 +117,65 @@ export const HeroVideoWheel = () => {
 
         if (Math.abs(velocityRef.current.y) < 0.01) {
           const defaultTilt = -4;
+
           rotRef.current.x += (defaultTilt - rotRef.current.x) * 0.02;
         }
       }
 
       if (sphereRef.current) {
-        sphereRef.current.style.transform = `rotateX(${rotRef.current.x.toFixed(2)}deg) rotateY(${rotRef.current.y.toFixed(2)}deg)`;
+        sphereRef.current.style.transform = `
+          rotateX(${rotRef.current.x.toFixed(2)}deg)
+          rotateY(${rotRef.current.y.toFixed(2)}deg)
+        `;
       }
 
       animId = requestAnimationFrame(loop);
     };
 
     animId = requestAnimationFrame(loop);
+
     return () => cancelAnimationFrame(animId);
   }, []);
 
   const handlePointerDown = (e) => {
     isDraggingRef.current = true;
-    dragStartRef.current = { x: e.clientX, y: e.clientY };
-    velocityRef.current = { x: 0, y: 0 };
+
+    dragStartRef.current = {
+      x: e.clientX,
+      y: e.clientY,
+    };
+
+    velocityRef.current = {
+      x: 0,
+      y: 0,
+    };
   };
 
   const handlePointerMove = (e) => {
     if (!isDraggingRef.current) return;
+
     const dx = e.clientX - dragStartRef.current.x;
     const dy = e.clientY - dragStartRef.current.y;
+
     const sensX = 0.25;
     const sensY = 0.2;
+
     rotRef.current.y += dx * sensX;
+
     rotRef.current.x = Math.max(
       -25,
       Math.min(25, rotRef.current.x - dy * sensY),
     );
-    velocityRef.current = { x: dx * sensX, y: -dy * sensY };
-    dragStartRef.current = { x: e.clientX, y: e.clientY };
+
+    velocityRef.current = {
+      x: dx * sensX,
+      y: -dy * sensY,
+    };
+
+    dragStartRef.current = {
+      x: e.clientX,
+      y: e.clientY,
+    };
   };
 
   const handlePointerUp = () => {
@@ -157,7 +184,20 @@ export const HeroVideoWheel = () => {
 
   return (
     <div
-      className="relative w-full max-w-[1900px] h-[480px] sm:h-[600px] md:h-[680px] lg:h-[740px] overflow-hidden flex justify-center items-center select-none"
+      className="
+        relative
+        w-full
+        max-w-[1900px]
+        h-[480px]
+        sm:h-[600px]
+        md:h-[680px]
+        lg:h-[740px]
+        overflow-hidden
+        flex
+        justify-center
+        items-center
+        select-none
+      "
       style={{
         perspective: `${dimensions.perspective}px`,
         perspectiveOrigin: "50% 50%",
@@ -169,7 +209,13 @@ export const HeroVideoWheel = () => {
     >
       <div
         ref={sphereRef}
-        className="relative flex items-center justify-center pointer-events-auto"
+        className="
+          relative
+          flex
+          items-center
+          justify-center
+          pointer-events-auto
+        "
         style={{
           width: "0px",
           height: "0px",
@@ -177,39 +223,24 @@ export const HeroVideoWheel = () => {
           willChange: "transform",
         }}
       >
-        {Array.from({ length: 8 }).map((_, i) => {
-          const theta = i * 45;
-          return (
-            <div
-              key={`top-${i}`}
-              className="absolute rounded-xl md:rounded-2xl overflow-hidden bg-[#111317] border border-white/10 shadow-2xl transition-[border-color,box-shadow] duration-300"
-              style={{
-                width: `${dimensions.topCardWidth}px`,
-                height: `${dimensions.topCardHeight}px`,
-                left: `${-dimensions.topCardWidth / 2}px`,
-                top: `${-dimensions.topCardHeight / 2}px`,
-                transformStyle: "preserve-3d",
-                backfaceVisibility: "hidden",
-                WebkitBackfaceVisibility: "hidden",
-                transform: `rotateY(${theta}deg) rotateX(-${dimensions.latitudeAngle}deg) translateZ(${dimensions.radius}px)`,
-              }}
-            >
-              <img
-                src={sphereImages[i]}
-                alt={`Photo gallery top ${i + 1}`}
-                loading="eager"
-                className="w-full h-full object-cover select-none pointer-events-none"
-              />
-            </div>
-          );
-        })}
+        {sphereImages.map((image, i) => {
+          const theta = i * (360 / sphereImages.length);
 
-        {Array.from({ length: 8 }).map((_, i) => {
-          const theta = i * 45;
           return (
             <div
               key={`mid-${i}`}
-              className="absolute rounded-xl md:rounded-2xl overflow-hidden bg-[#111317] border border-white/10 shadow-2xl transition-[border-color,box-shadow] duration-300"
+              className="
+                absolute
+                rounded-xl
+                md:rounded-2xl
+                overflow-hidden
+                bg-[#111317]
+                border
+                border-white/10
+                shadow-2xl
+                transition-[border-color,box-shadow]
+                duration-300
+              "
               style={{
                 width: `${dimensions.midCardWidth}px`,
                 height: `${dimensions.midCardHeight}px`,
@@ -218,41 +249,25 @@ export const HeroVideoWheel = () => {
                 transformStyle: "preserve-3d",
                 backfaceVisibility: "hidden",
                 WebkitBackfaceVisibility: "hidden",
-                transform: `rotateY(${theta}deg) translateZ(${dimensions.radius}px)`,
-              }}
-            >
-              <img
-                src={sphereImages[8 + i]}
-                alt={`Photo gallery middle ${i + 1}`}
-                loading="eager"
-                className="w-full h-full object-cover select-none pointer-events-none"
-              />
-            </div>
-          );
-        })}
 
-        {Array.from({ length: 8 }).map((_, i) => {
-          const theta = i * 45;
-          return (
-            <div
-              key={`bot-${i}`}
-              className="absolute rounded-xl md:rounded-2xl overflow-hidden bg-[#111317] border border-white/10 shadow-2xl transition-[border-color,box-shadow] duration-300"
-              style={{
-                width: `${dimensions.bottomCardWidth}px`,
-                height: `${dimensions.bottomCardHeight}px`,
-                left: `${-dimensions.bottomCardWidth / 2}px`,
-                top: `${-dimensions.bottomCardHeight / 2}px`,
-                transformStyle: "preserve-3d",
-                backfaceVisibility: "hidden",
-                WebkitBackfaceVisibility: "hidden",
-                transform: `rotateY(${theta}deg) rotateX(${dimensions.latitudeAngle}deg) translateZ(${dimensions.radius}px)`,
+                transform: `
+                  rotateY(${theta}deg)
+                  translateZ(${dimensions.radius}px)
+                `,
               }}
             >
               <img
-                src={sphereImages[16 + i]}
-                alt={`Photo gallery bottom ${i + 1}`}
+                src={image}
+                alt={`Photo gallery ${i + 1}`}
                 loading="eager"
-                className="w-full h-full object-cover select-none pointer-events-none"
+                draggable={false}
+                className="
+                  w-full
+                  h-full
+                  object-cover
+                  select-none
+                  pointer-events-none
+                "
               />
             </div>
           );
