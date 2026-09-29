@@ -22,9 +22,9 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['"Original Surfer"', "cursive", "sans-serif"],
-        body: ['"Original Surfer"', "cursive", "sans-serif"],
-        mono: ['"Original Surfer"', "cursive", "monospace"],
+        heading: ['"Lato"', "sans-serif"],
+        body: ['"Lato"', "sans-serif"],
+        mono: ['"Lato"', "sans-serif"],
       },
       animation: {
         "spin-very-slow": "spin 50s linear infinite",

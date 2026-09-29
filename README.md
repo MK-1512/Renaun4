@@ -11,7 +11,7 @@ A 100% exact, pixel-perfect replication of [https://virulhub.framer.website/](ht
 - **Animations**: Framer Motion (infinite circular rotating video orbit wheel, collapsible accordions, hover transitions)
 - **Routing**: React Router v7 (Code-split with React.lazy and Suspense)
 - **Icons**: Lucide React + custom Framer SVGs
-- **Typography**: Google Fonts (_Original Surfer_)
+- **Typography**: Google Fonts (_Lato_)
 - **Theme Palette**:
   - Lime Accent: `#d2e823`
   - Lime Hover: `#dff15c`
