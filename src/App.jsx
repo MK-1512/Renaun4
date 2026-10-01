@@ -5,41 +5,41 @@ import { MainLayout } from "./layouts/MainLayout";
 // const HomePage = lazy(() =>
 //   import("./pages/HomePage").then((m) => ({ default: m.HomePage })),
 // );
-const AboutPage = lazy(() =>
-  import("./pages/AboutPage").then((m) => ({ default: m.AboutPage })),
-);
-const ServicesPage = lazy(() =>
-  import("./pages/ServicesPage").then((m) => ({ default: m.ServicesPage })),
-);
-const CaseStudiesPage = lazy(() =>
-  import("./pages/CaseStudiesPage").then((m) => ({
-    default: m.CaseStudiesPage,
-  })),
-);
-const CaseStudyDetailPage = lazy(() =>
-  import("./pages/CaseStudyDetailPage").then((m) => ({
-    default: m.CaseStudyDetailPage,
-  })),
-);
-const ContactPage = lazy(() =>
-  import("./pages/ContactPage").then((m) => ({ default: m.ContactPage })),
-);
-const ComingSoonPage = lazy(() =>
-  import("./pages/ComingSoonPage").then((m) => ({ default: m.ComingSoonPage })),
-);
-const TermsConditionsPage = lazy(() =>
-  import("./pages/TermsConditionsPage").then((m) => ({
-    default: m.TermsConditionsPage,
-  })),
-);
-const PrivacyPolicyPage = lazy(() =>
-  import("./pages/PrivacyPolicyPage").then((m) => ({
-    default: m.PrivacyPolicyPage,
-  })),
-);
-const NotFoundPage = lazy(() =>
-  import("./pages/NotFoundPage").then((m) => ({ default: m.NotFoundPage })),
-);
+// const AboutPage = lazy(() =>
+//   import("./pages/AboutPage").then((m) => ({ default: m.AboutPage })),
+// );
+// const ServicesPage = lazy(() =>
+//   import("./pages/ServicesPage").then((m) => ({ default: m.ServicesPage })),
+// );
+// const CaseStudiesPage = lazy(() =>
+//   import("./pages/CaseStudiesPage").then((m) => ({
+//     default: m.CaseStudiesPage,
+//   })),
+// );
+// const CaseStudyDetailPage = lazy(() =>
+//   import("./pages/CaseStudyDetailPage").then((m) => ({
+//     default: m.CaseStudyDetailPage,
+//   })),
+// );
+// const ContactPage = lazy(() =>
+//   import("./pages/ContactPage").then((m) => ({ default: m.ContactPage })),
+// );
+// const ComingSoonPage = lazy(() =>
+//   import("./pages/ComingSoonPage").then((m) => ({ default: m.ComingSoonPage })),
+// );
+// const TermsConditionsPage = lazy(() =>
+//   import("./pages/TermsConditionsPage").then((m) => ({
+//     default: m.TermsConditionsPage,
+//   })),
+// );
+// const PrivacyPolicyPage = lazy(() =>
+//   import("./pages/PrivacyPolicyPage").then((m) => ({
+//     default: m.PrivacyPolicyPage,
+//   })),
+// );
+// const NotFoundPage = lazy(() =>
+//   import("./pages/NotFoundPage").then((m) => ({ default: m.NotFoundPage })),
+// );
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#08090a]">
