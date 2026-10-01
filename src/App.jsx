@@ -2,9 +2,9 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { MainLayout } from "./layouts/MainLayout";
 
-const HomePage = lazy(() =>
-  import("./pages/HomePage").then((m) => ({ default: m.HomePage })),
-);
+// const HomePage = lazy(() =>
+//   import("./pages/HomePage").then((m) => ({ default: m.HomePage })),
+// );
 const AboutPage = lazy(() =>
   import("./pages/AboutPage").then((m) => ({ default: m.AboutPage })),
 );
@@ -53,7 +53,7 @@ export function App() {
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route element={<MainLayout />}>
-            <Route path="/" element={<HomePage />} />
+            {/* <Route path="/" element={<HomePage />} /> */}
             <Route path="/about-us" element={<AboutPage />} />
             <Route path="/service" element={<ServicesPage />} />
             <Route path="/case-study" element={<CaseStudiesPage />} />
