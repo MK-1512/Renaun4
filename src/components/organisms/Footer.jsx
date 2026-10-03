@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 import { siteData } from "../../data/siteData";
+import logoImg from "../../assets/logo.png";
 
 const FacebookIcon = (props) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -44,7 +45,13 @@ export const Footer = () => {
                 </div>
               </div>
               <span className="font-heading font-bold text-2xl sm:text-3xl text-white tracking-tight">
-                <img src="src/assets/logo.png" alt="" />
+                <img
+                  src={logoImg}
+                  alt="Renaun4"
+                  onError={(e) => {
+                    e.target.src = "/logo.png";
+                  }}
+                />
               </span>
             </Link>
 

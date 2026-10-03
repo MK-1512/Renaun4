@@ -1,10 +1,12 @@
+import logoImg from "../assets/logo.png";
+
 export const siteData = {
   name: "Renaun4",
   fullName: "Renaun4 - Social Media Marketing Agency",
   tagline: "Build, Grow, and Scale Your Brand on Social Media",
   description:
     "We combine content, management, and paid media to help brands grow, engage, and convert — on the platforms that matter most.",
-  logoUrl: "src/assets/logo.png",
+  logoUrl: logoImg,
   navLinks: [
     { label: "About", href: "/about-us" },
     { label: "Services", href: "/service" },
