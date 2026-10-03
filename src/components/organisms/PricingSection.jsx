@@ -38,7 +38,7 @@ export const PricingSection = ({ className = "" }) => {
     >
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-          <Badge variant="lime" hasDot className="mb-4">
+          <Badge variant="lime" className="mb-4">
             Pricing
           </Badge>
           <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.1] mb-4">

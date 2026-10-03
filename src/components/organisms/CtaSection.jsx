@@ -76,7 +76,7 @@ export const CtaSection = ({
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#d2e823]/10 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
-        <Badge variant="lime" hasDot className="mb-6">
+        <Badge variant="lime" className="mb-6">
           {badge}
         </Badge>
 

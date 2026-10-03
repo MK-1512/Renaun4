@@ -13,7 +13,7 @@ export const CaseStudiesSection = ({ className = "" }) => {
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <Badge variant="lime" hasDot className="mb-4">
+          <Badge variant="lime" className="mb-4">
             Case Studies
           </Badge>
 
