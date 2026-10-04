@@ -5,11 +5,11 @@ import { cn } from "../../utils/cn";
 
 export const SectionHeader = ({
   badge,
-  badgeVariant = "cream",
+  badgeVariant,
   title,
   subtitle,
   align = "center",
-  theme = "dark",
+  theme = "light",
   className = "",
   titleTag: TitleTag = "h2",
 }) => {
@@ -20,6 +20,8 @@ export const SectionHeader = ({
   };
 
   const isLight = theme === "light";
+  const resolvedBadgeVariant =
+    badgeVariant || (isLight ? "cream" : "dark");
 
   return (
     <motion.div
@@ -34,7 +36,7 @@ export const SectionHeader = ({
       )}
     >
       {badge && (
-        <Badge variant={badgeVariant} hasDot>
+        <Badge variant={resolvedBadgeVariant} hasDot>
           {badge}
         </Badge>
       )}
@@ -43,7 +45,7 @@ export const SectionHeader = ({
         <TitleTag
           className={cn(
             "font-heading font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.15]",
-            isLight ? "text-[#0a0a0a]" : "text-white",
+            isLight ? "text-[#3E2723]" : "text-[#D7CCC8]",
           )}
         >
           {title}
@@ -54,7 +56,7 @@ export const SectionHeader = ({
         <p
           className={cn(
             "text-sm sm:text-base md:text-lg leading-relaxed",
-            isLight ? "text-neutral-600" : "text-neutral-400",
+            isLight ? "text-[#4E342E]" : "text-[#BCAAA4]",
           )}
         >
           {subtitle}
@@ -63,3 +65,5 @@ export const SectionHeader = ({
     </motion.div>
   );
 };
+
+export default SectionHeader;

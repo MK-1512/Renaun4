@@ -25,19 +25,18 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header className=" top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pt-5 pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full pointer-events-none">
       <div
         className={cn(
-          "pointer-events-auto w-full max-w-[880px] rounded-full transition-all duration-300",
-          "bg-[#0a0b0e]/85 backdrop-blur-xl border border-white/10 px-4 sm:px-6 py-2.5 sm:py-3 shadow-2xl",
-          scrolled &&
-            "shadow-[0_10px_35px_rgba(0,0,0,0.8)] border-white/15 border-b-[#d2e823]/30",
+          "pointer-events-auto w-full transition-all duration-300",
+          "bg-[#D7CCC8] border-b border-[#8D6E63]/40 px-4 sm:px-8 py-3.5 sm:py-4 shadow-sm",
+          scrolled && "shadow-md bg-[#D7CCC8]/95 backdrop-blur-md",
         )}
       >
-        <div className="flex items-center justify-between w-full">
+        <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
           <Logo />
 
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-2">
             {siteData.navLinks.map((link) => (
               <NavItem key={link.href} to={link.href}>
                 {link.label}
@@ -50,14 +49,14 @@ export const Navbar = () => {
               to={siteData.ctaButton.href}
               variant="primary"
               size="sm"
-              className="hidden sm:inline-flex font-bold text-xs py-2.5 px-5 bg-[#d2e823] text-black hover:bg-[#dff15c] shadow-[0_2px_12px_rgba(210,232,35,0.3)]"
+              className="hidden sm:inline-flex font-bold text-xs py-2.5 px-6 bg-[#3E2723] text-[#D7CCC8] hover:bg-[#4E342E] shadow-sm rounded-lg"
             >
               {siteData.ctaButton.label}
             </Button>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+              className="md:hidden w-9 h-9 rounded-lg bg-[#3E2723]/10 flex items-center justify-center text-[#3E2723] hover:bg-[#3E2723]/20 transition-colors cursor-pointer"
               aria-label="Toggle navigation menu"
             >
               {isOpen ? (
@@ -70,16 +69,16 @@ export const Navbar = () => {
         </div>
 
         {isOpen && (
-          <div className="md:hidden mt-4 pt-4 border-t border-white/10 flex flex-col gap-2 pb-2">
+          <div className="md:hidden mt-4 pt-4 border-t border-[#8D6E63]/30 flex flex-col gap-2 pb-2 max-w-7xl mx-auto">
             {siteData.navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
                 className={cn(
-                  "px-4 py-2.5 rounded-xl text-sm font-medium transition-colors",
+                  "px-4 py-2.5 rounded-lg text-sm font-medium transition-colors",
                   location.pathname === link.href
-                    ? "bg-[#d2e823]/10 text-[#d2e823]"
-                    : "text-neutral-300 hover:text-white hover:bg-white/5",
+                    ? "bg-[#3E2723]/15 text-[#3E2723] font-bold"
+                    : "text-[#4E342E] hover:text-[#3E2723] hover:bg-[#3E2723]/5",
                 )}
               >
                 {link.label}
@@ -90,7 +89,7 @@ export const Navbar = () => {
                 to={siteData.ctaButton.href}
                 variant="primary"
                 size="md"
-                className="w-full text-center font-bold bg-[#d2e823] text-black"
+                className="w-full text-center font-bold bg-[#3E2723] text-[#D7CCC8] rounded-lg"
               >
                 {siteData.ctaButton.label}
               </Button>
@@ -101,3 +100,5 @@ export const Navbar = () => {
     </header>
   );
 };
+
+export default Navbar;

@@ -203,40 +203,21 @@ export const PartnersTicker = () => {
   const items = [...servicesTickerData, ...servicesTickerData];
 
   return (
-    <section className="relative w-full py-8 sm:py-10 bg-[#08090a] overflow-hidden border-y border-white/[0.08] pointer-events-none select-none">
+    <section className="relative w-full py-8 sm:py-10 bg-[#4E342E] overflow-hidden border-y border-[#6D4C41] pointer-events-none select-none">
       <div className="relative w-full flex overflow-hidden">
-        <div className="absolute inset-y-0 left-0 w-20 sm:w-44 bg-gradient-to-r from-[#08090a] to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-20 sm:w-44 bg-gradient-to-l from-[#08090a] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-20 sm:w-44 bg-gradient-to-r from-[#4E342E] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-20 sm:w-44 bg-gradient-to-l from-[#4E342E] to-transparent z-10 pointer-events-none" />
 
         <div className="flex shrink-0 animate-marquee items-center gap-10 sm:gap-14">
           {items.map((service, index) => (
             <div
               key={index}
-              className="flex items-center gap-3.5 px-4.5 py-2.5 rounded-2xl border whitespace-nowrap select-none"
-              style={{
-                backgroundColor: `${service.color}0a`,
-                borderColor: `${service.color}2e`,
-                boxShadow: `0 0 20px ${service.color}12`,
-              }}
+              className="flex items-center gap-3.5 px-4.5 py-2.5 rounded-2xl bg-[#3E2723] border border-[#8D6E63] whitespace-nowrap select-none shadow-sm"
             >
-              <div
-                className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 border"
-                style={{
-                  color: service.color,
-                  backgroundColor: `${service.color}18`,
-                  borderColor: `${service.color}45`,
-                  boxShadow: `0 0 10px ${service.color}30`,
-                }}
-              >
+              <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 bg-[#4E342E] border border-[#8D6E63]/50 text-[#D7CCC8]">
                 {renderServiceIcon(service.id)}
               </div>
-              <span
-                className="font-heading font-semibold text-sm sm:text-base tracking-wide"
-                style={{
-                  color: service.color,
-                  textShadow: `0 0 12px ${service.color}66, 0 0 24px ${service.color}26`,
-                }}
-              >
+              <span className="font-heading font-semibold text-sm sm:text-base tracking-wide text-[#D7CCC8]">
                 {service.name}
               </span>
             </div>

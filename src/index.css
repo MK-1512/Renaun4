@@ -3,17 +3,21 @@
 @import "lenis/dist/lenis.css";
 
 @theme {
-  --color-brand-lime: #d2e823;
-  --color-brand-lime-hover: #dff15c;
-  --color-brand-lime-subtle: #f3fbc9;
-  --color-brand-lime-cream: #08090a;
-  --color-brand-lime-dark: #a5b00f;
-  --color-brand-dark: #08090a;
-  --color-brand-black: #000000;
-  --color-brand-card: #0e1014;
-  --color-brand-card-dark: #0a0b0e;
-  --color-brand-zinc: #09090b;
-  --color-brand-gray: #a1a1aa;
+  --color-brown-900: #3E2723;
+  --color-brown-800: #4E342E;
+  --color-brown-700: #6D4C41;
+  --color-brown-600: #8D6E63;
+  --color-brown-500: #A1887F;
+  --color-brown-200: #BCAAA4;
+  --color-brown-100: #D7CCC8;
+
+  --color-brand-darkest: #3E2723;
+  --color-brand-very-dark: #4E342E;
+  --color-brand-mid-700: #6D4C41;
+  --color-brand-mid-600: #8D6E63;
+  --color-brand-mid-500: #A1887F;
+  --color-brand-pale: #BCAAA4;
+  --color-brand-lightest: #D7CCC8;
 
   --font-heading: "Lato", sans-serif;
   --font-body: "Lato", sans-serif;
@@ -69,14 +73,13 @@
 }
 
 :root {
-  --token-lime: #d2e823;
-  --token-lime-hover: #dff15c;
-  --token-lime-subtle: rgba(210, 232, 35, 0.15);
-  --token-lime-cream: #08090a;
-  --token-dark: #08090a;
-  --token-card: #0e1014;
-  --token-border: rgba(255, 255, 255, 0.08);
-  --token-gray: #a1a1aa;
+  --color-brown-900: #3E2723;
+  --color-brown-800: #4E342E;
+  --color-brown-700: #6D4C41;
+  --color-brown-600: #8D6E63;
+  --color-brown-500: #A1887F;
+  --color-brown-200: #BCAAA4;
+  --color-brown-100: #D7CCC8;
 }
 
 body {
@@ -84,8 +87,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
-  background-color: #08090a;
-  color: #f5f5f7;
+  background-color: #D7CCC8;
+  color: #3E2723;
   overflow-x: hidden;
 }
 
@@ -110,8 +113,8 @@ body {
 }
 
 ::selection {
-  background-color: #d2e823;
-  color: #000000;
+  background-color: #3E2723;
+  color: #D7CCC8;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -120,20 +123,4 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-.neon-glow {
-  box-shadow:
-    0 0 25px rgba(210, 232, 35, 0.18),
-    0 0 50px rgba(210, 232, 35, 0.06);
-}
-
-.neon-border {
-  border-color: rgba(210, 232, 35, 0.35);
-  box-shadow: 0 0 15px rgba(210, 232, 35, 0.12);
-}
-
-.neon-text {
-  color: #d2e823;
-  text-shadow: 0 0 12px rgba(210, 232, 35, 0.45);
 }

@@ -42,8 +42,8 @@ const NotFoundPage = lazy(() =>
 );
 
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-[#08090a]">
-    <div className="w-10 h-10 border-4 border-white/10 border-t-[#d2e823] rounded-full animate-spin shadow-[0_0_15px_rgba(210,232,35,0.4)]" />
+  <div className="min-h-screen flex items-center justify-center bg-[#D7CCC8]">
+    <div className="w-10 h-10 border-4 border-[#8D6E63]/30 border-t-[#3E2723] rounded-full animate-spin" />
   </div>
 );
 

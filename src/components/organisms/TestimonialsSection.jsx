@@ -39,17 +39,18 @@ export const TestimonialsSection = ({ className = "" }) => {
 
   return (
     <section
-      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#08090a] overflow-hidden ${className}`}
+      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#D7CCC8] overflow-hidden ${className}`}
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <SectionHeader
           badge="Testimonials"
           title="What our clients say"
           subtitle="Don’t take our word for it — hear from the brands we’ve helped grow."
+          theme="light"
           className="mb-8 sm:mb-12"
         />
 
-        <div className="relative w-full max-w-4xl mx-auto rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.6)] border border-white/10 bg-black aspect-video mb-16 sm:mb-20 group">
+        <div className="relative w-full max-w-4xl mx-auto rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-2xl border border-[#8D6E63] bg-[#3E2723] aspect-video mb-16 sm:mb-20 group">
           <video
             ref={videoRef}
             src={testimonialVideo}
@@ -65,24 +66,24 @@ export const TestimonialsSection = ({ className = "" }) => {
             <button
               onClick={togglePlay}
               aria-label={isPlaying ? "Pause video" : "Play video"}
-              className="w-10 h-10 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-colors cursor-pointer"
+              className="w-10 h-10 rounded-full bg-[#3E2723] text-[#D7CCC8] flex items-center justify-center hover:bg-[#4E342E] transition-colors cursor-pointer shadow-md"
             >
               {isPlaying ? (
-                <Pause className="w-4 h-4 fill-white text-white" />
+                <Pause className="w-4 h-4 fill-current" />
               ) : (
-                <Play className="w-4 h-4 fill-white text-white ml-0.5" />
+                <Play className="w-4 h-4 fill-current ml-0.5" />
               )}
             </button>
 
             <button
               onClick={toggleMute}
               aria-label={isMuted ? "Unmute audio" : "Mute audio"}
-              className="w-10 h-10 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-colors cursor-pointer"
+              className="w-10 h-10 rounded-full bg-[#3E2723] text-[#D7CCC8] flex items-center justify-center hover:bg-[#4E342E] transition-colors cursor-pointer shadow-md"
             >
               {isMuted ? (
-                <VolumeX className="w-4 h-4 text-white" />
+                <VolumeX className="w-4 h-4" />
               ) : (
-                <Volume2 className="w-4 h-4 text-white" />
+                <Volume2 className="w-4 h-4" />
               )}
             </button>
           </div>
@@ -90,9 +91,9 @@ export const TestimonialsSection = ({ className = "" }) => {
       </div>
 
       <div className="relative w-full overflow-hidden">
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#08090a] to-transparent z-10" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#D7CCC8] to-transparent z-10" />
 
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#08090a] to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#D7CCC8] to-transparent z-10" />
 
         <motion.div
           animate={{ x: ["0%", "-50%"] }}

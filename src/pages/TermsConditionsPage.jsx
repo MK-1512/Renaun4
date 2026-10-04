@@ -66,19 +66,19 @@ export const TermsConditionsPage = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col bg-[#08090a] pt-36 sm:pt-44 md:pt-48 pb-24 px-4 sm:px-6 lg:px-8">
+    <div className="w-full flex flex-col bg-[#D7CCC8] pt-36 sm:pt-44 md:pt-48 pb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto flex flex-col gap-10">
-        <div className="flex flex-col gap-4 text-center items-center pb-8 border-b border-white/10">
-          <Badge variant="lime" hasDot>
+        <div className="flex flex-col gap-4 text-center items-center pb-8 border-b border-[#8D6E63]/30">
+          <Badge variant="cream" hasDot>
             Terms of Service
           </Badge>
-          <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight">
+          <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-[#3E2723] tracking-tight">
             Terms & Conditions
           </h1>
-          <p className="text-base text-neutral-400 max-w-xl">
+          <p className="text-base text-[#4E342E] max-w-xl font-body">
             Clear guidelines for using our services and working together.
           </p>
-          <span className="text-xs font-mono text-neutral-400">
+          <span className="text-xs font-mono text-[#4E342E]">
             Last Updated: March 2026 • Please read carefully before using our
             services
           </span>
@@ -88,12 +88,12 @@ export const TermsConditionsPage = () => {
           {sections.map((sec) => (
             <div
               key={sec.id}
-              className="p-8 rounded-3xl bg-[#0e1014] border border-white/10 hover:border-[#d2e823]/30 transition-colors shadow-sm flex flex-col gap-3"
+              className="p-8 sm:p-9 rounded-3xl bg-[#BCAAA4] border border-[#8D6E63] hover:border-[#4E342E] transition-colors shadow-md flex flex-col gap-3"
             >
-              <h2 className="font-heading font-bold text-xl sm:text-2xl text-white">
+              <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#3E2723]">
                 {sec.title}
               </h2>
-              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-body">
+              <p className="text-sm sm:text-base text-[#4E342E] leading-relaxed font-body">
                 {sec.content}
               </p>
             </div>
@@ -103,3 +103,5 @@ export const TermsConditionsPage = () => {
     </div>
   );
 };
+
+export default TermsConditionsPage;

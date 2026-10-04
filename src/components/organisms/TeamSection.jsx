@@ -6,13 +6,15 @@ import { teamData } from "../../data/teamData";
 export const TeamSection = ({ className = "" }) => {
   return (
     <section
-      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#08090a] ${className}`}
+      className={`relative w-full py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#4E342E] ${className}`}
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <SectionHeader
           badge="Team"
+          badgeVariant="dark"
           title="Meet the Team"
           subtitle="The people behind your growth"
+          theme="dark"
           className="mb-14 sm:mb-20"
         />
 

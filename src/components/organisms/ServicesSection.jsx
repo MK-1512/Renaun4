@@ -7,13 +7,15 @@ import { servicesData } from "../../data/servicesData";
 export const ServicesSection = ({ className = "" }) => {
   return (
     <section
-      className={`relative w-full py-20 sm:py-28 md:py-32 bg-[#08090a] ${className}`}
+      className={`relative w-full py-20 sm:py-28 md:py-32 bg-[#8D6E63] ${className}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         <SectionHeader
           badge="Services"
+          badgeVariant="cream"
           title="Everything you need to grow on social — done for you"
           subtitle="We handle the strategy, execution, and optimization — so you can focus on your business."
+          theme="dark"
           className="mb-10 sm:mb-14"
         />
       </div>

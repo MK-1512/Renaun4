@@ -20,10 +20,12 @@ export const Logo = ({ className = "", variant = "default" }) => {
           e.target.src = "/logo.png";
         }}
       />
-      <div className="hidden items-center gap-2 font-heading font-bold text-xl tracking-tight text-white">
-        <span className="w-3 h-3 rounded-full bg-[#d2e823]" />
+      <div className="hidden items-center gap-2 font-heading font-bold text-xl tracking-tight text-[#3E2723]">
+        <span className="w-3 h-3 rounded-full bg-[#3E2723]" />
         <span>Renaun4</span>
       </div>
     </Link>
   );
 };
+
+export default Logo;

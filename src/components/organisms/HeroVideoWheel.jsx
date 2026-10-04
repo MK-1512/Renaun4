@@ -234,10 +234,10 @@ export const HeroVideoWheel = () => {
                 rounded-xl
                 md:rounded-2xl
                 overflow-hidden
-                bg-[#111317]
+                bg-[#BCAAA4]
                 border
-                border-white/10
-                shadow-2xl
+                border-[#8D6E63]
+                shadow-xl
                 transition-[border-color,box-shadow]
                 duration-300
               "

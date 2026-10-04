@@ -59,7 +59,7 @@ export function CustomCursor() {
           vx: (Math.random() - 0.5) * 0.8 - dx * 0.08,
           vy: (Math.random() - 0.5) * 0.8 - dy * 0.08,
           size: Math.min(4.5, 2.5 + dist * 0.05),
-          alpha: 0.55,
+          alpha: 0.45,
           decay: 0.035 + Math.random() * 0.015,
         });
       }
@@ -130,9 +130,7 @@ export function CustomCursor() {
 
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(210, 232, 35, ${p.alpha})`;
-          ctx.shadowBlur = 6;
-          ctx.shadowColor = "#d2e823";
+          ctx.fillStyle = `rgba(62, 39, 35, ${p.alpha})`;
           ctx.fill();
         }
       }
@@ -170,10 +168,10 @@ export function CustomCursor() {
           isVisible ? "opacity-100" : "opacity-0"
         } ${
           isTextTarget
-            ? "w-1 h-3.5 bg-[#d2e823] rounded-xs shadow-[0_0_8px_rgba(210,232,35,0.7)]"
+            ? "w-1 h-3.5 bg-[#3E2723] rounded-xs"
             : isHovered
-              ? "w-2 h-2 bg-[#d2e823] shadow-[0_0_12px_rgba(210,232,35,0.9)]"
-              : "w-2 h-2 bg-[#d2e823] shadow-[0_0_8px_rgba(210,232,35,0.8)]"
+              ? "w-2 h-2 bg-[#3E2723]"
+              : "w-2 h-2 bg-[#3E2723]"
         }`}
       />
       <div
@@ -183,14 +181,14 @@ export function CustomCursor() {
           isVisible ? "opacity-100" : "opacity-0"
         } ${
           isTextTarget
-            ? "w-5 h-5 -ml-2.5 -mt-2.5 border border-[#d2e823]/30 bg-transparent opacity-30"
+            ? "w-5 h-5 -ml-2.5 -mt-2.5 border border-[#3E2723]/30 bg-transparent opacity-30"
             : isHovered
               ? isClicked
-                ? "w-11 h-11 -ml-[22px] -mt-[22px] border-2 border-[#d2e823] bg-[#d2e823]/25 shadow-[0_0_24px_rgba(210,232,35,0.5)] scale-90"
-                : "w-12 h-12 -ml-6 -mt-6 border-2 border-[#d2e823] bg-[#d2e823]/15 shadow-[0_0_22px_rgba(210,232,35,0.4)] scale-110"
+                ? "w-11 h-11 -ml-[22px] -mt-[22px] border-2 border-[#3E2723] bg-[#3E2723]/20 scale-90"
+                : "w-12 h-12 -ml-6 -mt-6 border-2 border-[#3E2723] bg-[#3E2723]/10 scale-110"
               : isClicked
-                ? "w-7 h-7 -ml-3.5 -mt-3.5 border border-[#d2e823] bg-[#d2e823]/20 shadow-[0_0_12px_rgba(210,232,35,0.4)] scale-75"
-                : "w-8 h-8 -ml-4 -mt-4 border border-[#d2e823]/60 bg-transparent shadow-[0_0_14px_rgba(210,232,35,0.2)]"
+                ? "w-7 h-7 -ml-3.5 -mt-3.5 border border-[#3E2723] bg-[#3E2723]/15 scale-75"
+                : "w-8 h-8 -ml-4 -mt-4 border border-[#3E2723]/60 bg-transparent"
         }`}
       />
     </>

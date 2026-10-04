@@ -59,28 +59,28 @@ export const PrivacyPolicyPage = () => {
       ],
     },
     {
-      title: "9. Contact Information",
+      title: "9. Contact Us",
       items: [
-        "If you have any questions or data requests, please contact our data privacy officer at privacy@Renaun4.com.",
+        "If you have inquiries about how your information is handled, reach us at privacy@Renaun4.com.",
       ],
     },
   ];
 
   return (
-    <div className="w-full flex flex-col bg-[#08090a] pt-36 sm:pt-44 md:pt-48 pb-24 px-4 sm:px-6 lg:px-8">
+    <div className="w-full flex flex-col bg-[#D7CCC8] pt-36 sm:pt-44 md:pt-48 pb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto flex flex-col gap-10">
-        <div className="flex flex-col gap-4 text-center items-center pb-8 border-b border-white/10">
-          <Badge variant="lime" hasDot>
-            Privacy
+        <div className="flex flex-col gap-4 text-center items-center pb-8 border-b border-[#8D6E63]/30">
+          <Badge variant="cream" hasDot>
+            Legal & Privacy
           </Badge>
-          <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight">
+          <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-[#3E2723] tracking-tight">
             Privacy Policy
           </h1>
-          <p className="text-base text-neutral-400 max-w-xl">
-            How we collect, use, and protect your information.
+          <p className="text-base text-[#4E342E] max-w-xl font-body">
+            How we collect, manage, and protect your personal and business data.
           </p>
-          <span className="text-xs font-mono text-neutral-400">
-            Last Updated: March 2026 • Your privacy matters to us
+          <span className="text-xs font-mono text-[#4E342E]">
+            Last Updated: March 2026 • Effective Immediately
           </span>
         </div>
 
@@ -88,18 +88,18 @@ export const PrivacyPolicyPage = () => {
           {sections.map((sec, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-3xl bg-[#0e1014] border border-white/10 hover:border-[#d2e823]/30 transition-colors shadow-sm flex flex-col gap-4"
+              className="p-8 sm:p-9 rounded-3xl bg-[#BCAAA4] border border-[#8D6E63] hover:border-[#4E342E] transition-colors shadow-md flex flex-col gap-4"
             >
-              <h2 className="font-heading font-bold text-xl sm:text-2xl text-white">
+              <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#3E2723]">
                 {sec.title}
               </h2>
               <ul className="flex flex-col gap-2.5">
-                {sec.items.map((item, i) => (
+                {sec.items.map((item, itemIdx) => (
                   <li
-                    key={i}
-                    className="flex items-start gap-3 text-sm sm:text-base text-neutral-300 leading-relaxed font-body"
+                    key={itemIdx}
+                    className="flex items-start gap-3 text-sm sm:text-base text-[#4E342E] leading-relaxed font-body"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#d2e823] shadow-[0_0_6px_#d2e823] mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3E2723] mt-2.5 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -111,3 +111,5 @@ export const PrivacyPolicyPage = () => {
     </div>
   );
 };
+
+export default PrivacyPolicyPage;

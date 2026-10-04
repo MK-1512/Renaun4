@@ -21,22 +21,22 @@ export const ContactInfoCard = ({
   const content = (
     <div
       className={cn(
-        "flex flex-col p-6 sm:p-8 rounded-3xl bg-[#111418] border border-white/10 text-white transition-all duration-300 hover:border-[#d2e823]/40 group",
+        "flex flex-col p-6 sm:p-8 rounded-3xl bg-[#BCAAA4] border border-[#8D6E63] text-[#3E2723] transition-all duration-300 hover:border-[#4E342E] group shadow-md",
         className,
       )}
     >
-      <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#d2e823] mb-6 transition-colors duration-300 group-hover:bg-[#d2e823] group-hover:text-black">
+      <div className="w-12 h-12 rounded-2xl bg-[#D7CCC8] border border-[#8D6E63]/60 flex items-center justify-center text-[#3E2723] mb-6 transition-colors duration-300 group-hover:bg-[#3E2723] group-hover:text-[#D7CCC8]">
         <IconComponent className="w-5 h-5" />
       </div>
 
-      <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1">
+      <span className="text-xs font-mono uppercase tracking-wider text-[#4E342E] mb-1">
         {title}
       </span>
-      <h4 className="font-heading font-bold text-lg sm:text-xl text-white mb-2 group-hover:text-[#d2e823] transition-colors">
+      <h4 className="font-heading font-bold text-lg sm:text-xl text-[#3E2723] mb-2 group-hover:text-[#4E342E] transition-colors">
         {value}
       </h4>
       {description && (
-        <p className="text-xs sm:text-sm text-neutral-400">{description}</p>
+        <p className="text-xs sm:text-sm text-[#4E342E] font-body">{description}</p>
       )}
     </div>
   );
@@ -55,3 +55,5 @@ export const ContactInfoCard = ({
 
   return content;
 };
+
+export default ContactInfoCard;

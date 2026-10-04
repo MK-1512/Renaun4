@@ -9,14 +9,22 @@ export const Badge = ({
 }) => {
   const variants = {
     cream:
-      "bg-[#d2e823]/10 text-[#d2e823] border border-[#d2e823]/30 shadow-[0_0_15px_rgba(210,232,35,0.12)] font-semibold",
-    lime: "bg-[#d2e823] text-black font-bold shadow-[0_0_20px_rgba(210,232,35,0.35)]",
+      "bg-[#BCAAA4] text-[#3E2723] border border-[#8D6E63]/50 font-semibold",
+    lime:
+      "bg-[#3E2723] text-[#D7CCC8] font-bold shadow-sm",
     limeSubtle:
-      "bg-[#d2e823]/15 text-[#d2e823] border border-[#d2e823]/40 shadow-[0_0_12px_rgba(210,232,35,0.15)]",
-    dark: "bg-[#0e1014] text-[#d2e823] border border-white/10 shadow-sm",
-    white: "bg-white/10 text-white border border-white/20 backdrop-blur-md",
-    outline: "bg-transparent text-[#d2e823] border border-[#d2e823]/30",
+      "bg-[#BCAAA4]/70 text-[#3E2723] border border-[#8D6E63]/40",
+    dark:
+      "bg-[#4E342E] text-[#D7CCC8] border border-[#8D6E63] shadow-sm",
+    white:
+      "bg-[#D7CCC8] text-[#3E2723] border border-[#8D6E63]/50 font-semibold",
+    outline:
+      "bg-transparent text-[#3E2723] border border-[#3E2723]/40",
+    outlineDark:
+      "bg-transparent text-[#D7CCC8] border border-[#8D6E63]",
   };
+
+  const isDarkVariant = variant === "dark" || variant === "outlineDark";
 
   return (
     <span
@@ -27,7 +35,12 @@ export const Badge = ({
       )}
     >
       {hasDot && (
-        <span className="w-1.5 h-1.5 rounded-full bg-[#d2e823] shadow-[0_0_8px_#d2e823]" />
+        <span
+          className={cn(
+            "w-1.5 h-1.5 rounded-full shrink-0",
+            isDarkVariant ? "bg-[#D7CCC8]" : "bg-[#3E2723]",
+          )}
+        />
       )}
       {children}
     </span>

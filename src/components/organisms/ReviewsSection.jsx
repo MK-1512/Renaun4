@@ -14,19 +14,21 @@ export const ReviewsSection = ({ className = "" }) => {
 
   return (
     <section
-      className={`relative w-full py-20 sm:py-28 md:py-32 bg-[#08090a] overflow-hidden ${className}`}
+      className={`relative w-full py-20 sm:py-28 md:py-32 bg-[#8D6E63] overflow-hidden ${className}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center mb-12 sm:mb-16">
         <SectionHeader
           badge="Reviews"
+          badgeVariant="cream"
           title="What our clients say"
           subtitle="Don’t take our word for it — hear from the brands we’ve helped grow."
+          theme="dark"
         />
       </div>
 
       <div className="relative w-full overflow-hidden">
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#08090a] to-transparent z-10" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#08090a] to-transparent z-10" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#8D6E63] to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#8D6E63] to-transparent z-10" />
 
         <motion.div
           animate={{ x: ["-50%", "0%"] }}

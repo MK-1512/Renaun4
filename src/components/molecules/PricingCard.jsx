@@ -20,37 +20,36 @@ export const PricingCard = ({
     <div
       className={cn(
         "relative flex flex-col justify-between rounded-3xl p-8 sm:p-10 transition-all duration-300",
-        isFeatured
-          ? "bg-[#111418] border-2 border-[#d2e823] shadow-[0_15px_50px_rgba(210,232,35,0.15)] text-white"
-          : "bg-[#141416] border border-white/10 text-white hover:border-white/20",
+        "bg-[#4E342E] border border-[#8D6E63] text-[#D7CCC8] shadow-xl",
+        isFeatured && "border-[#D7CCC8] shadow-2xl",
         className,
       )}
     >
       <div>
         <div className="flex items-center justify-between gap-4 mb-6">
           <Badge
-            variant={isFeatured ? "lime" : "outline"}
-            className={!isFeatured ? "text-neutral-300 border-white/20" : ""}
+            variant={isFeatured ? "dark" : "outlineDark"}
+            className="text-[#D7CCC8]"
           >
             {badge}
           </Badge>
-          <span className="text-xs font-mono uppercase tracking-wider text-neutral-400">
+          <span className="text-xs font-mono uppercase tracking-wider text-[#BCAAA4]">
             {tier}
           </span>
         </div>
 
         <div className="flex items-baseline gap-2 mb-3">
-          <h4 className="font-heading font-bold text-4xl sm:text-5xl text-white">
+          <h4 className="font-heading font-bold text-4xl sm:text-5xl text-[#D7CCC8]">
             {price}
           </h4>
-          <span className="text-sm font-mono text-neutral-400">{period}</span>
+          <span className="text-sm font-mono text-[#BCAAA4]">{period}</span>
         </div>
 
-        <p className="text-sm text-neutral-400 mb-8 leading-relaxed">
+        <p className="text-sm text-[#BCAAA4] mb-8 leading-relaxed font-body">
           {description}
         </p>
 
-        <div className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-4 pb-2 border-b border-white/10">
+        <div className="text-xs font-mono uppercase tracking-wider text-[#BCAAA4] mb-4 pb-2 border-b border-[#8D6E63]">
           Features included:
         </div>
 
@@ -58,9 +57,9 @@ export const PricingCard = ({
           {features.map((feature, idx) => (
             <li
               key={idx}
-              className="flex items-start gap-3 text-sm text-neutral-300"
+              className="flex items-start gap-3 text-sm text-[#BCAAA4] font-body"
             >
-              <div className="w-5 h-5 rounded-full bg-[#d2e823]/15 text-[#d2e823] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div className="w-5 h-5 rounded-full bg-[#3E2723] border border-[#8D6E63] text-[#D7CCC8] flex items-center justify-center flex-shrink-0 mt-0.5">
                 <Check className="w-3.5 h-3.5" />
               </div>
               <span>{feature}</span>
@@ -71,7 +70,7 @@ export const PricingCard = ({
 
       <Button
         to={buttonLink}
-        variant={isFeatured ? "primary" : "white"}
+        variant={isFeatured ? "inverted" : "dark"}
         size="lg"
         className="w-full text-center"
       >
@@ -80,3 +79,5 @@ export const PricingCard = ({
     </div>
   );
 };
+
+export default PricingCard;

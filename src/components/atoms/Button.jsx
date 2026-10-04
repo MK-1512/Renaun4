@@ -20,15 +20,21 @@ export const Button = ({
 
   const variants = {
     primary:
-      "bg-[#d2e823] text-black font-semibold hover:bg-[#dff15c] shadow-[0_0_20px_rgba(210,232,35,0.25)] hover:shadow-[0_0_30px_rgba(210,232,35,0.4)]",
-    dark: "bg-[#0e1014] text-white hover:bg-[#161a22] border border-white/10 hover:border-[#d2e823]/40 shadow-sm",
-    white:
-      "bg-white/10 text-white hover:bg-white/15 backdrop-blur-md border border-white/15 hover:border-[#d2e823]/40 shadow-sm",
+      "bg-[#3E2723] text-[#D7CCC8] font-semibold hover:bg-[#4E342E] shadow-sm",
     secondary:
-      "bg-white/5 text-white hover:bg-white/10 backdrop-blur-md border border-white/10 hover:border-[#d2e823]/30",
+      "bg-transparent text-[#3E2723] border border-[#3E2723] hover:bg-[#3E2723]/10",
     outline:
-      "bg-transparent text-white border border-white/20 hover:border-[#d2e823] hover:text-[#d2e823]",
-    ghost: "bg-transparent text-neutral-300 hover:text-white hover:bg-white/5",
+      "bg-transparent text-[#3E2723] border border-[#3E2723] hover:bg-[#3E2723] hover:text-[#D7CCC8]",
+    dark:
+      "bg-[#4E342E] text-[#D7CCC8] border border-[#8D6E63] hover:bg-[#3E2723] hover:border-[#D7CCC8] shadow-sm",
+    white:
+      "bg-transparent text-[#3E2723] border border-[#3E2723] hover:bg-[#3E2723]/10",
+    ghost:
+      "bg-transparent text-[#3E2723] hover:bg-[#BCAAA4]/40",
+    inverted:
+      "bg-[#D7CCC8] text-[#3E2723] hover:bg-[#BCAAA4] font-bold shadow-sm",
+    outlineDark:
+      "bg-transparent text-[#D7CCC8] border border-[#8D6E63] hover:border-[#D7CCC8] hover:bg-[#4E342E]",
   };
 
   const sizes = {

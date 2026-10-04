@@ -90,7 +90,7 @@ export const MainLayout = () => {
   }, [location.hash, location.pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#08090a] text-[#f5f5f7]">
+    <div className="min-h-screen flex flex-col bg-[#D7CCC8] text-[#3E2723]">
       <CustomCursor />
       <ScrollToTop lenisRef={lenisRef} />
       <Navbar />

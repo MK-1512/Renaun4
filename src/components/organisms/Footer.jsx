@@ -34,17 +34,17 @@ const TiktokIcon = (props) => (
 
 export const Footer = () => {
   return (
-    <footer className="relative w-full bg-[#08090a] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+    <footer className="relative w-full bg-[#3E2723] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#8D6E63]">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 items-stretch">
-        <div className="bg-[#0e1014] rounded-[32px] p-8 sm:p-10 flex flex-col justify-between lg:w-[38%] border border-white/10 shadow-xl">
+        <div className="bg-[#4E342E] rounded-[32px] p-8 sm:p-10 flex flex-col justify-between lg:w-[38%] border border-[#8D6E63] shadow-xl">
           <div>
             <Link to="/" className="inline-flex items-center gap-3 group">
-              <div className="w-11 h-11 rounded-full bg-[#d2e823]/10 border border-[#d2e823]/30 flex items-center justify-center shadow-[0_0_15px_rgba(210,232,35,0.2)]">
-                <div className="w-6 h-6 rounded-full bg-[#d2e823] flex items-center justify-center">
-                  <span className="text-black text-xs font-bold">✦</span>
+              <div className="w-11 h-11 rounded-full bg-[#3E2723] border border-[#8D6E63] flex items-center justify-center shadow-sm">
+                <div className="w-6 h-6 rounded-full bg-[#D7CCC8] flex items-center justify-center">
+                  <span className="text-[#3E2723] text-xs font-bold">✦</span>
                 </div>
               </div>
-              <span className="font-heading font-bold text-2xl sm:text-3xl text-white tracking-tight">
+              <span className="font-heading font-bold text-2xl sm:text-3xl text-[#D7CCC8] tracking-tight">
                 <img
                   src={logoImg}
                   alt="Renaun4"
@@ -55,14 +55,14 @@ export const Footer = () => {
               </span>
             </Link>
 
-            <p className="text-sm sm:text-base text-neutral-400 leading-relaxed font-body mt-5 mb-10 max-w-sm">
+            <p className="text-sm sm:text-base text-[#BCAAA4] leading-relaxed font-body mt-5 mb-10 max-w-sm">
               We combine content, management, & paid media to help brands grow,
               engage, & convert — on the platforms that matter most.
             </p>
           </div>
 
           <div>
-            <h4 className="font-heading font-bold text-xl text-white mb-4">
+            <h4 className="font-heading font-bold text-xl text-[#D7CCC8] mb-4">
               Follow Us
             </h4>
             <div className="grid grid-cols-2 gap-3">
@@ -70,7 +70,7 @@ export const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white/5 border border-white/10 text-white font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-all"
+                className="bg-[#3E2723] border border-[#8D6E63] text-[#D7CCC8] font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-[#D7CCC8] hover:text-[#3E2723] hover:border-[#D7CCC8] transition-all"
               >
                 <FacebookIcon className="w-4 h-4 fill-current" />
                 <span>Facebook</span>
@@ -80,7 +80,7 @@ export const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white/5 border border-white/10 text-white font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-all"
+                className="bg-[#3E2723] border border-[#8D6E63] text-[#D7CCC8] font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-[#D7CCC8] hover:text-[#3E2723] hover:border-[#D7CCC8] transition-all"
               >
                 <InstagramIcon className="w-4 h-4" />
                 <span>Instagram</span>
@@ -90,7 +90,7 @@ export const Footer = () => {
                 href="https://tiktok.com"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white/5 border border-white/10 text-white font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-all"
+                className="bg-[#3E2723] border border-[#8D6E63] text-[#D7CCC8] font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-[#D7CCC8] hover:text-[#3E2723] hover:border-[#D7CCC8] transition-all"
               >
                 <TiktokIcon className="w-4 h-4 fill-current" />
                 <span>Tiktok</span>
@@ -100,7 +100,7 @@ export const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white/5 border border-white/10 text-white font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-[#d2e823] hover:text-black hover:border-[#d2e823] transition-all"
+                className="bg-[#3E2723] border border-[#8D6E63] text-[#D7CCC8] font-semibold text-sm py-3.5 px-4 rounded-full flex items-center justify-center gap-2.5 shadow-sm hover:bg-[#D7CCC8] hover:text-[#3E2723] hover:border-[#D7CCC8] transition-all"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Community</span>
@@ -109,17 +109,17 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="bg-[#0e1014] rounded-[32px] p-8 sm:p-12 flex flex-col justify-between lg:w-[62%] text-white border border-white/10 shadow-2xl">
+        <div className="bg-[#4E342E] rounded-[32px] p-8 sm:p-12 flex flex-col justify-between lg:w-[62%] text-[#D7CCC8] border border-[#8D6E63] shadow-2xl">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10">
             <div className="flex flex-col">
-              <span className="font-heading font-bold text-base text-white mb-4 block">
+              <span className="font-heading font-bold text-base text-[#D7CCC8] mb-4 block">
                 Main
               </span>
-              <ul className="flex flex-col gap-3 text-sm text-neutral-400 mb-8">
+              <ul className="flex flex-col gap-3 text-sm text-[#BCAAA4] mb-8">
                 <li>
                   <Link
                     to="/about-us"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-[#D7CCC8] transition-colors"
                   >
                     About
                   </Link>
@@ -127,7 +127,7 @@ export const Footer = () => {
                 <li>
                   <Link
                     to="/service"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-[#D7CCC8] transition-colors"
                   >
                     Services
                   </Link>
@@ -135,21 +135,21 @@ export const Footer = () => {
                 <li>
                   <Link
                     to="/case-study"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-[#D7CCC8] transition-colors"
                   >
                     Case Studies
                   </Link>
                 </li>
               </ul>
 
-              <span className="font-heading font-bold text-base text-white mb-4 block">
+              <span className="font-heading font-bold text-base text-[#D7CCC8] mb-4 block">
                 CMS
               </span>
-              <ul className="flex flex-col gap-3 text-sm text-neutral-400">
+              <ul className="flex flex-col gap-3 text-sm text-[#BCAAA4]">
                 <li>
                   <Link
                     to="/case-study/radiance"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-[#D7CCC8] transition-colors"
                   >
                     Case Studies Details
                   </Link>
@@ -158,14 +158,14 @@ export const Footer = () => {
             </div>
 
             <div className="flex flex-col">
-              <span className="font-heading font-bold text-base text-white mb-4 block">
+              <span className="font-heading font-bold text-base text-[#D7CCC8] mb-4 block">
                 Other Page
               </span>
-              <ul className="flex flex-col gap-3 text-sm text-neutral-400">
+              <ul className="flex flex-col gap-3 text-sm text-[#BCAAA4]">
                 <li>
                   <Link
                     to="/privacy-terms/terms-conditions"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-[#D7CCC8] transition-colors"
                   >
                     Terms & Condition
                   </Link>
@@ -173,7 +173,7 @@ export const Footer = () => {
                 <li>
                   <Link
                     to="/privacy-terms/privacy-policy"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-[#D7CCC8] transition-colors"
                   >
                     Privacy & Policy
                   </Link>
@@ -181,7 +181,7 @@ export const Footer = () => {
                 <li>
                   <Link
                     to="/404"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-[#D7CCC8] transition-colors"
                   >
                     404
                   </Link>
@@ -189,7 +189,7 @@ export const Footer = () => {
                 <li>
                   <Link
                     to="/coming-soon"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-[#D7CCC8] transition-colors"
                   >
                     Coming Soon
                   </Link>
@@ -198,16 +198,16 @@ export const Footer = () => {
             </div>
 
             <div className="flex flex-col">
-              <span className="font-heading font-bold text-base text-white mb-4 block">
+              <span className="font-heading font-bold text-base text-[#D7CCC8] mb-4 block">
                 Get in touch
               </span>
-              <ul className="flex flex-col gap-4 text-sm text-neutral-300">
+              <ul className="flex flex-col gap-4 text-sm text-[#BCAAA4]">
                 <li>
                   <a
                     href="mailto:Renaun4@email.com"
-                    className="flex items-center gap-3 group hover:text-white transition-colors"
+                    className="flex items-center gap-3 group hover:text-[#D7CCC8] transition-colors"
                   >
-                    <div className="w-9 h-9 rounded-full bg-neutral-800 text-neutral-300 flex items-center justify-center shrink-0 group-hover:bg-[#d2e823] group-hover:text-black transition-colors">
+                    <div className="w-9 h-9 rounded-full bg-[#3E2723] text-[#D7CCC8] border border-[#8D6E63] flex items-center justify-center shrink-0 group-hover:bg-[#D7CCC8] group-hover:text-[#3E2723] transition-colors">
                       <Mail className="w-4 h-4" />
                     </div>
                     <span className="break-all">Renaun4@email.com</span>
@@ -218,17 +218,17 @@ export const Footer = () => {
                     href="https://wa.me/919908680481"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 group hover:text-white transition-colors"
+                    className="flex items-center gap-3 group hover:text-[#D7CCC8] transition-colors"
                   >
-                    <div className="w-9 h-9 rounded-full bg-neutral-800 text-neutral-300 flex items-center justify-center shrink-0 group-hover:bg-[#d2e823] group-hover:text-black transition-colors">
+                    <div className="w-9 h-9 rounded-full bg-[#3E2723] text-[#D7CCC8] border border-[#8D6E63] flex items-center justify-center shrink-0 group-hover:bg-[#D7CCC8] group-hover:text-[#3E2723] transition-colors">
                       <Phone className="w-4 h-4" />
                     </div>
                     <span>+91 99086 80481</span>
                   </a>
                 </li>
                 <li>
-                  <div className="flex items-center gap-3 text-neutral-300">
-                    <div className="w-9 h-9 rounded-full bg-neutral-800 text-neutral-300 flex items-center justify-center shrink-0">
+                  <div className="flex items-center gap-3 text-[#BCAAA4]">
+                    <div className="w-9 h-9 rounded-full bg-[#3E2723] text-[#D7CCC8] border border-[#8D6E63] flex items-center justify-center shrink-0">
                       <MapPin className="w-4 h-4" />
                     </div>
                     <span>London, UK</span>
@@ -238,7 +238,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="pt-8 mt-12 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-500 font-mono">
+          <div className="pt-8 mt-12 border-t border-[#8D6E63] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#BCAAA4] font-mono">
             <p>© {new Date().getFullYear()} Renaun4. All rights reserved.</p>
           </div>
         </div>

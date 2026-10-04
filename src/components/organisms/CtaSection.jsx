@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { Badge } from "../atoms/Badge";
 import { Button } from "../atoms/Button";
 
@@ -71,20 +70,18 @@ export const CtaSection = ({
 
   return (
     <section
-      className={`relative w-full pt-20 sm:pt-28 md:pt-32 pb-16 sm:pb-24 bg-black overflow-hidden ${className}`}
+      className={`relative w-full pt-20 sm:pt-28 md:pt-32 pb-16 sm:pb-24 bg-[#3E2723] overflow-hidden ${className}`}
     >
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#d2e823]/10 blur-[130px] rounded-full pointer-events-none" />
-
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
-        <Badge variant="lime" className="mb-6">
+        <Badge variant="dark" hasDot className="mb-6">
           {badge}
         </Badge>
 
-        <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.1] mb-5">
+        <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-[#D7CCC8] tracking-tight leading-[1.1] mb-5">
           {heading}
         </h2>
 
-        <p className="text-base sm:text-lg text-neutral-400 max-w-xl leading-relaxed font-body">
+        <p className="text-base sm:text-lg text-[#BCAAA4] max-w-xl leading-relaxed font-body">
           {subheading}
         </p>
 
@@ -92,10 +89,10 @@ export const CtaSection = ({
           <div className="pt-8">
             <Button
               to={buttonHref}
-              variant="primary"
+              variant="inverted"
               size="lg"
               showArrow
-              className="font-bold text-base px-9 py-4 shadow-[0_4px_25px_rgba(210,232,35,0.35)]"
+              className="font-bold text-base px-9 py-4 shadow-sm"
             >
               {buttonText}
             </Button>
@@ -111,8 +108,8 @@ export const CtaSection = ({
           height: `${dimensions.cardHeight + 140}px`,
         }}
       >
-        <div className="pointer-events-none absolute left-0 inset-y-0 w-24 sm:w-48 bg-gradient-to-r from-black via-black/80 to-transparent z-20" />
-        <div className="pointer-events-none absolute right-0 inset-y-0 w-24 sm:w-48 bg-gradient-to-l from-black via-black/80 to-transparent z-20" />
+        <div className="pointer-events-none absolute left-0 inset-y-0 w-24 sm:w-48 bg-gradient-to-r from-[#3E2723] to-transparent z-20" />
+        <div className="pointer-events-none absolute right-0 inset-y-0 w-24 sm:w-48 bg-gradient-to-l from-[#3E2723] to-transparent z-20" />
 
         <div
           className="relative origin-center pointer-events-auto animate-spin-cylinder"
@@ -130,7 +127,7 @@ export const CtaSection = ({
             return (
               <div
                 key={idx}
-                className="absolute rounded-[24px] sm:rounded-[32px] overflow-hidden bg-neutral-900 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.85)]"
+                className="absolute rounded-[24px] sm:rounded-[32px] overflow-hidden bg-[#4E342E] border border-[#8D6E63] shadow-2xl"
                 style={{
                   width: `${dimensions.cardWidth}px`,
                   height: `${dimensions.cardHeight}px`,
@@ -156,7 +153,6 @@ export const CtaSection = ({
                   }}
                   className="w-full h-full object-cover pointer-events-none select-none"
                 />
-                <div className="absolute inset-0 bg-black/10 pointer-events-none" />
               </div>
             );
           })}
