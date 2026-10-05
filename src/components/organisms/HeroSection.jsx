@@ -27,9 +27,10 @@ export const HeroSection = () => {
             delay: 0.1,
             ease: [0.21, 0.47, 0.32, 0.98],
           }}
-          className="font-heading font-bold text-4xl sm:text-6xl md:text-7xl lg:text-[76px] tracking-tight text-[#D7CCC8] leading-[1.08] max-w-4xl mx-auto mb-6 uppercase"
+          className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-[54px] tracking-tight text-[#D7CCC8] leading-[1.14] max-w-4xl mx-auto mb-6 uppercase"
         >
-          Build, Grow, and Scale Your Brand on Social Media
+          Empower your digital presence with social media strategies built to
+          scale your business.
         </motion.h1>
 
         <motion.p
@@ -53,7 +54,7 @@ export const HeroSection = () => {
             delay: 0.3,
             ease: [0.21, 0.47, 0.32, 0.98],
           }}
-          className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 mb-8"
+          className="flex flex-wrap items-center justify-center gap-4 sm:gap-5"
         >
           <Button
             to="/case-study"
@@ -77,7 +78,9 @@ export const HeroSection = () => {
         </motion.div>
       </div>
 
-      <HeroVideoWheel />
+      <div className="relative w-full z-10 pt-4 pb-16 sm:pb-24">
+        <HeroVideoWheel />
+      </div>
     </section>
   );
 };
