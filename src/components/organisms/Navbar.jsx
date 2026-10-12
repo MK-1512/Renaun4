@@ -29,16 +29,16 @@ export const Navbar = () => {
       <div
         className={cn(
           "pointer-events-auto w-full transition-all duration-300",
-          "bg-[#D7CCC8] border-b border-[#8D6E63]/40 px-4 sm:px-8 py-3.5 sm:py-4 shadow-sm",
-          scrolled && "shadow-md bg-[#D7CCC8]/95 backdrop-blur-md",
+          "bg-[#AF734F] border-b border-[#8D6E63]/40 px-4 sm:px-8 py-3.5 sm:py-4 shadow-sm",
+          scrolled && "shadow-md bg-[#AF734F]/95 backdrop-blur-md",
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
           <Logo />
 
-          <nav className="hidden md:flex items-center gap-2">
+          <nav className="hidden md:flex items-center gap-2 relative right-[20px] ">
             {siteData.navLinks.map((link) => (
-              <NavItem key={link.href} to={link.href}>
+              <NavItem key={link.href} to={link.href} className="text-[20px]">
                 {link.label}
               </NavItem>
             ))}
@@ -49,7 +49,9 @@ export const Navbar = () => {
               to={siteData.ctaButton.href}
               variant="primary"
               size="sm"
-              className="hidden sm:inline-flex font-bold text-xs py-2.5 px-6 bg-[#3E2723] text-[#D7CCC8] hover:bg-[#4E342E] shadow-sm rounded-lg"
+              className="hidden sm:inline-flex font-bold text-xs py-2.5 px-6 bg-[#3E2723] text-[#D7CCC8] hover:bg-[#4E342E] shadow-sm rounded-lg relative right-[38px]
+              text-[16px]
+              "
             >
               {siteData.ctaButton.label}
             </Button>
@@ -69,7 +71,7 @@ export const Navbar = () => {
         </div>
 
         {isOpen && (
-          <div className="md:hidden mt-4 pt-4 border-t border-[#8D6E63]/30 flex flex-col gap-2 pb-2 max-w-7xl mx-auto">
+          <div className="md:hidden mt-4 pt-4 border-t border-[#8D6E63]/30 flex flex-col gap-2 pb-2 max-w-7xl mx-auto  ">
             {siteData.navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -89,7 +91,7 @@ export const Navbar = () => {
                 to={siteData.ctaButton.href}
                 variant="primary"
                 size="md"
-                className="w-full text-center font-bold bg-[#3E2723] text-[#D7CCC8] rounded-lg"
+                className="w-full text-center !font-bold bg-[#3E2723] text-[#D7CCC8] rounded-lg "
               >
                 {siteData.ctaButton.label}
               </Button>
