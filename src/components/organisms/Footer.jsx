@@ -39,6 +39,11 @@ export const Footer = () => {
         <div className="bg-[#4E342E] rounded-[32px] p-8 sm:p-10 flex flex-col justify-between lg:w-[38%] border border-[#8D6E63] shadow-xl">
           <div>
             <Link to="/" className="inline-flex items-center gap-3 group">
+              <div className="w-11 h-11 rounded-full bg-[#3E2723] border border-[#8D6E63] flex items-center justify-center shadow-sm">
+                <div className="w-6 h-6 rounded-full bg-[#D7CCC8] flex items-center justify-center">
+                  <span className="text-[#3E2723] text-xs font-bold">✦</span>
+                </div>
+              </div>
               <span className="font-heading font-bold text-2xl sm:text-3xl text-[#D7CCC8] tracking-tight">
                 <img
                   src={logoImg}

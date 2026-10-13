@@ -15,7 +15,7 @@ export const Logo = ({ className = "", variant = "default" }) => {
       <img
         src={logoImg}
         alt="Renaun4 Logo"
-        className="!h-20  md:h-11 object-contain transition-transform duration-300 group-hover:scale-105"
+        className="h-9 md:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
         onError={(e) => {
           e.target.src = "/logo.png";
         }}
