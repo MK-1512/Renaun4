@@ -20,7 +20,7 @@ export const Logo = ({
         src={logoImg}
         alt="Renaun4 Logo"
         className={cn(
-          "h-12 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 ",
+          "h-8 md:h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105 ",
 
           imgClassName,
         )}
