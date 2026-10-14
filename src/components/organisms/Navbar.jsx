@@ -29,8 +29,8 @@ export const Navbar = () => {
       <div
         className={cn(
           "pointer-events-auto w-full transition-all duration-300",
-          "bg-[#D7CCC8] border-b border-[#8D6E63]/40 px-4 sm:px-8 py-3.5 sm:py-4 shadow-sm",
-          scrolled && "shadow-md bg-[#D7CCC8]/95 backdrop-blur-md",
+          "bg-[#BCAAA4] border-b border-[#8D6E63]/40 px-4 sm:px-8 py-3.5 sm:py-4 shadow-sm",
+          scrolled && "shadow-md bg-[#BCAAA4]/95 backdrop-blur-md",
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between w-full">

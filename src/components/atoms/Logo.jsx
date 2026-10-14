@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import { cn } from "../../utils/cn";
 import logoImg from "../../assets/logo.png";
 
-export const Logo = ({ className = "", variant = "default" }) => {
+export const Logo = ({
+  className = "",
+  imgClassName = "",
+  variant = "default",
+}) => {
   return (
     <Link
       to="/"
@@ -15,7 +19,11 @@ export const Logo = ({ className = "", variant = "default" }) => {
       <img
         src={logoImg}
         alt="Renaun4 Logo"
-        className="h-9 md:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+        className={cn(
+          "h-12 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 ",
+
+          imgClassName,
+        )}
         onError={(e) => {
           e.target.src = "/logo.png";
         }}
