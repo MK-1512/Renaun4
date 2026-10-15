@@ -36,33 +36,36 @@ export const Footer = () => {
   return (
     <footer className="relative w-full bg-[#3E2723] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#8D6E63]">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 items-stretch">
-        <div className="bg-[#4E342E] rounded-[32px] p-8 sm:p-10 flex flex-col justify-between lg:w-[38%] border border-[#8D6E63] shadow-xl">
+        <div className="bg-[#C5A47E] text-[#3E2723] rounded-[32px] p-8 sm:p-10 flex flex-col justify-between lg:w-[38%] border border-[#8D6E63] shadow-xl">
           <div>
-            <Link to="/" className="inline-flex items-center gap-3 group">
-              {/* <div className="w-11 h-11 rounded-full bg-[#3E2723] border border-[#8D6E63] flex items-center justify-center shadow-sm">
-                <div className="w-6 h-6 rounded-full bg-[#D7CCC8] flex items-center justify-center">
-                  <span className="text-[#3E2723] text-xs font-bold">✦</span>
-                </div>
-              </div> */}
-              <span className="font-heading font-bold text-2xl sm:text-3xl text-[#D7CCC8] tracking-tight">
-                <img
-                  src={logoImg}
-                  alt="Renaun4"
-                  onError={(e) => {
-                    e.target.src = "/logo.png";
-                  }}
-                />
-              </span>
-            </Link>
+            <div className="flex justify-center">
+              <Link to="/" className="inline-flex items-center gap-3 group">
+                {/* <div className="w-11 h-11 rounded-full bg-[#3E2723] border border-[#8D6E63] flex items-center justify-center shadow-sm">
+                  <div className="w-6 h-6 rounded-full bg-[#D7CCC8] flex items-center justify-center">
+                    <span className="text-[#3E2723] text-xs font-bold">✦</span>
+                  </div>
+                </div> */}
+                <span className="font-heading font-bold text-2xl sm:text-3xl text-[#3E2723] tracking-tight">
+                  <img
+                    width={48}
+                    src={logoImg}
+                    alt="Renaun4"
+                    onError={(e) => {
+                      e.target.src = "/logo.png";
+                    }}
+                  />
+                </span>
+              </Link>
+            </div>
 
-            <p className="text-sm sm:text-base text-[#BCAAA4] leading-relaxed font-body mt-5 mb-10 max-w-sm">
+            <p className="text-sm sm:text-base text-[#4E342E] leading-relaxed font-body mt-5 mb-10 max-w-sm">
               We combine content, management, & paid media to help brands grow,
               engage, & convert — on the platforms that matter most.
             </p>
           </div>
 
           <div>
-            <h4 className="font-heading font-bold text-xl text-[#D7CCC8] mb-4">
+            <h4 className="font-heading font-bold text-xl text-[#3E2723] mb-4">
               Follow Us
             </h4>
             <div className="grid grid-cols-2 gap-3">
