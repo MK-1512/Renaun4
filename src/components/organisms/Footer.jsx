@@ -47,7 +47,7 @@ export const Footer = () => {
                 </div> */}
                 <span className="font-heading font-bold text-2xl sm:text-3xl text-[#3E2723] tracking-tight">
                   <img
-                    width={48}
+                    width={137}
                     src={logoImg}
                     alt="Renaun4"
                     onError={(e) => {
